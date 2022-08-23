@@ -1,0 +1,2922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Usu_CrearUsuarioDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasena" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_Credenciales">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoAplicacionLogueado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioLogueado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioLogueado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioAplicacionLogueado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContrasenaUsuarioAplicacionLogueado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IpAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MacAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SessionId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_CrearUsuarioDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_CrearUsuarioDepartamentoResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_RespuestaCreacionUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_RespuestaCreacionUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_RespuestaCreacionUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="tns:TEC_Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronicoPrincipal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Bloqueado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsuarioVencido" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="OcupaCambioContrasena" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoUsuario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronicoANotificar" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AtencionLicencias" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Departamento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripPuesto" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaExpiracion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Oficina" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Contrasena" type="xs:base64Binary" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CorreoElectronicoActivacion" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaUltimoCambioContrasena" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVenceContrasena" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_ModificarUsuarioDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasena" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasenaAnterior" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarUsuarioDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ModificarUsuarioDepartamentoResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ValidarAccesoMetodoWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreMetodoWeb" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ValidarAccesoMetodoWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ValidarAccesoMetodoWebResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfString">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_CrearUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoANotificar" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="atencionLicencia" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="esEstudiante" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CrearUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_CrearUsuarioResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CrearUsuarioFuncionario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaExpiracion" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="DescripPuesto" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoANotificar" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TipoIdentificacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Genero" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoCivil" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AtencionLicencia" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CrearUsuarioFuncionarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_CrearUsuarioFuncionarioResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActualizarIdSegFuncionario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaExpiracion" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="DescripPuesto" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="CorreoANotificar" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActualizarIdSegFuncionarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ActualizarIdSegFuncionarioResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActualizarIdSegEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="oficina" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoANotificar" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActualizarIdSegEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ActualizarIdSegEstudianteResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CrearUsuarioEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="oficina" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoANotificar" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TipoIdentificacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Genero" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoCivil" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AtencionLicencia" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CrearUsuarioEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_CrearUsuarioEstudianteResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ValidarRelacionAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ValidarRelacionADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ValidarRelacionADResult" type="tns:TEC_MensajeOfTEC_Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_RelacionADFunc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaExpiracion" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="DescripPuesto" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_RelacionADFuncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_RelacionADFuncResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_RelacionADEst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="oficina" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_RelacionADEstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_RelacionADEstResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarUsuarioAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreUsuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarUsuarioADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarUsuarioADResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_HabilitarUsuarioAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreUsuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_HabilitarUsuarioADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_HabilitarUsuarioADResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_DeshabilitarUsuarioAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreUsuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_DeshabilitarUsuarioADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_DeshabilitarUsuarioADResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_FechaExpiracionAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="FechaExpiracion" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="FechaExpira" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_FechaExpiracionADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_FechaExpiracionADResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarPermisosUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="codAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPadre" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPermiso" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarPermisosUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarPermisosUsuarioResult" type="tns:TEC_MensajeOfListOfTEC_Permiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Permiso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Permiso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Permiso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Permiso" nillable="true" type="tns:TEC_Permiso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Permiso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRolMenu" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPermiso" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdAplicacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreAplicacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreRol" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoPermiso" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreTipoPermiso" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UrlPagina" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Padre" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VisibleMovil" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Asignado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TieneHijos" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Ordenamiento" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_ConsultarPermisoEspecificoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPermiso" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarPermisoEspecificoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarPermisoEspecificoUsuarioResult" type="tns:TEC_MensajeOfTEC_ValidacionPermiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_ValidacionPermiso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_ValidacionPermiso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_ValidacionPermiso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TienePermiso" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_ConsultarAplicacionesUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarAplicacionesUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarAplicacionesUsuarioResult" type="tns:TEC_MensajeOfListOfTEC_Aplicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Aplicacion">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Aplicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Aplicacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Aplicacion" nillable="true" type="tns:TEC_Aplicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Aplicacion">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdAplicacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_ConsultarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarUsuarioResult" type="tns:TEC_MensajeOfTEC_Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarRolesUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="codAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarRolesUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarRolesUsuarioResult" type="tns:TEC_MensajeOfListOfTEC_Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Rol">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Rol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Rol" nillable="true" type="tns:TEC_Rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Rol">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRelacionUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreRol" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoRol" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Asignado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Automatico" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuestoRol" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombrePuesto" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_AsociarRolUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AsociarRolUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_AsociarRolUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AutenticarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasena" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AutenticarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_AutenticarUsuarioResult" type="tns:TEC_MensajeOfTEC_Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AutenticarUsuario_ExclusivoMiCuentaTec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasena" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AutenticarUsuario_ExclusivoMiCuentaTecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_AutenticarUsuario_ExclusivoMiCuentaTecResult" type="tns:TEC_MensajeOfTEC_Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CambioContrasena">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasenaActual" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasenaNueva" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="contrasenaNuevaConfirmacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_CambioContrasenaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_CambioContrasenaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AsociarRolAutomatico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoRol" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AsociarRolAutomaticoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_AsociarRolAutomaticoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AsociarPuestoXRolAutomatico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="automatico" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_AsociarPuestoXRolAutomaticoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_AsociarPuestoXRolAutomaticoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActivarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioModificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActivarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ActivarUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_InactivarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioModificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_InactivarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_InactivarUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioModificacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="atencionLicencia" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ModificarUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarUsuarioRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarUsuarioRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ModificarUsuarioRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActInactivarUsuarioRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ActInactivarUsuarioRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ActInactivarUsuarioRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_EliminarUsuarioRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_EliminarUsuarioRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_EliminarUsuarioRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ListaUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="UsuarioBloqueado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ListaUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ListaUsuariosResult" type="tns:TEC_MensajeOfTEC_RespuestaUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_RespuestaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_RespuestaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_RespuestaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaUsuarios" type="tns:ArrayOfTEC_ListaUsuarios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_ListaUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_ListaUsuarios" nillable="true" type="tns:TEC_ListaUsuarios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_ListaUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoPrincipal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoSecundario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsuarioBloqueado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EstadoUsuario" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AtencionLicencias" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Fecha" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TienePerfilCompleto" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_BloquearUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_BloquearUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_BloquearUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_DesBloquearUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioModificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_DesBloquearUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_DesBloquearUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarAtencionLicencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="esAtendido" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioModificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ModificarAtencionLicenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ModificarAtencionLicenciaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_EliminarUsuarioGeneral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_EliminarUsuarioGeneralResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_EliminarUsuarioGeneralResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarUsuarioAutenticado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ConsultarUsuarioAutenticadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ConsultarUsuarioAutenticadoResult" type="tns:TEC_MensajeOfListOfTEC_Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Usuario" nillable="true" type="tns:TEC_Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_ConsultarEstadisticas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaFin" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarEstadisticasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarEstadisticasResult" type="tns:TEC_MensajeOfListOfTEC_Estadisticas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Estadisticas">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Estadisticas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Estadisticas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Estadisticas" nillable="true" type="tns:TEC_Estadisticas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Estadisticas">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Usuarios" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsuariosCreados" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ActivacionesUsuarios" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InactivacionesUsuarios" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsuariosBloqueados" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LicenciasNoAtendidas" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LicenciasAtendidas" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Permisos" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PermisosCreados" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Roles" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RolesCreados" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InactivacionesRoles" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_GenerarNombreUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_GenerarNombreUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_GenerarNombreUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_GenerarListNombreUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_GenerarListNombreUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_GenerarListNombreUsuarioResult" type="tns:TEC_MensajeOfListOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfString">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usu_GenerarNombreEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_GenerarNombreEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_GenerarNombreEstudianteResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ValidarFuncAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Usu_ValidarFuncADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Usu_ValidarFuncADResult" type="tns:TEC_MensajeOfTEC_RespuestaCreacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarRolesAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="codAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarRolesAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_ConsultarRolesAplicacionResult" type="tns:TEC_MensajeOfListOfTEC_Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarUsuariosRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="codAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarUsuariosRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_ConsultarUsuariosRolResult" type="tns:TEC_MensajeOfListOfTEC_Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarPermisosRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="codAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombrePermiso" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarPermisosRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_ConsultarPermisosRolResult" type="tns:TEC_MensajeOfListOfTEC_Permiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreRol" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_ConsultarResult" type="tns:TEC_MensajeOfListOfTEC_Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_Agregar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_AgregarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_AgregarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_ActualizarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_Activar_Inactivar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rol_Activar_InactivarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rol_Activar_InactivarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_Agregar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_AgregarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RolXMenu_AgregarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRolXMenu" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdMenu" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RolXMenu_ActualizarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_ActivarInactivar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRolXMenu" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_ActivarInactivarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RolXMenu_ActivarInactivarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_Eliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdRolXMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolXMenu_EliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RolXMenu_EliminarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarPuestoXRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuestoXRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuesto" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="automatico" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarPuestoXRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarPuestoXRolResult" type="tns:TEC_MensajeOfListOfTEC_Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearPuestoXRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuesto" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="automatico" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearPuestoXRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearPuestoXRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarPuestoXRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuestoXRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuesto" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="automatico" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarPuestoXRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarPuestoXRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarPuestoXRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuestoXRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarPuestoXRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarPuestoXRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_Activar_InactivarPuestoXRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPuestoXRol" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_Activar_InactivarPuestoXRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_Activar_InactivarPuestoXRolResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarTipoMenuResult" type="tns:TEC_MensajeOfListOfTEC_TipoMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoMenu">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoMenu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoMenu" nillable="true" type="tns:TEC_TipoMenu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoMenu">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoMenu" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NomTipoMenu" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearTipoMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearTipoMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearTipoMenuResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarTipoMenuResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarTipoMenuResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoUsuario" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarTipoUsuarioResult" type="tns:TEC_MensajeOfListOfTEC_TipoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoUsuario" nillable="true" type="tns:TEC_TipoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoUsuario" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearTipoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoUsuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearTipoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearTipoUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoUsuario" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioModificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarTipoUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarTipoUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_Consultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoRol" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Automatico" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_ConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="TipoRol_ConsultarResult" type="tns:TEC_MensajeOfListOfTEC_TipoRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoRol">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoRol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoRol" nillable="true" type="tns:TEC_TipoRol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoRol">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Automatico" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoRol_Agregar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_AgregarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="TipoRol_AgregarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="automatico" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="TipoRol_ActualizarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_Eliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoRol_EliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="TipoRol_EliminarResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoCorreo" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarTipoCorreoResult" type="tns:TEC_MensajeOfListOfTEC_TipoCorreo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoCorreo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoCorreo" nillable="true" type="tns:TEC_TipoCorreo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoCorreo" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tipo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearTipoCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearTipoCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearTipoCorreoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoCorreo" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarTipoCorreoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoCorreo" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarTipoCorreoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarBitacora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idBitacora" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovimiento" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="esError" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ipOrigen" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaCreacion" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaFin" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarBitacoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarBitacoraResult" type="tns:TEC_MensajeOfListOfTEC_Bitacora" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Bitacora">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Bitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Bitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Bitacora" nillable="true" type="tns:TEC_Bitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Bitacora">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdBitacora" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoMovimiento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdAplicacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Modulo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Metodo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EsError" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjXml" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IpOrigen" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Fecha" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoMovimiento" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NomAplicacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SessionId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_ConsultarMovUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idMovimeintoUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovimiento" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaCreacion" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="idSession" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ipOrigen" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="macAddress" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+        <xs:element minOccurs="1" maxOccurs="1" name="fechaFin" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarMovUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarMovUsuarioResult" type="tns:TEC_MensajeOfListOfTEC_MovimientoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_MovimientoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_MovimientoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_MovimientoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_MovimientoUsuario" nillable="true" type="tns:TEC_MovimientoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_MovimientoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdMovimientosUsuario" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoMovimientoUsuario" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdSession" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tipo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IpAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MacAddress" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdHistCambioVencimientoUsuario" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNueva" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaAnterior" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FechaI" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_InsertarBitacora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="pDescripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pModulo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pMetodo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pUsuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="pTipoMovimiento" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="esError" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ObjXML" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_InsertarBitacoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_InsertarBitacoraResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoActivacionCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoActivacionCuenta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoActivacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoActivacionCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarTipoActivacionCuentaResult" type="tns:TEC_MensajeOfListOfTEC_TipoActivacionCuenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoActivacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoActivacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoActivacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoActivacionCuenta" nillable="true" type="tns:TEC_TipoActivacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoActivacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoActivacionCuenta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoActivacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearTipoActivacionCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoActivacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearTipoActivacionCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearTipoActivacionCuentaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoActivacionCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoActivacionCuenta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoActivacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoActivacionCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarTipoActivacionCuentaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoActivacionCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoActivacionCuenta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoActivacionCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarTipoActivacionCuentaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoMovimientoBitacora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovBitacora" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoMovimiento" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoMovimientoBitacoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarTipoMovimientoBitacoraResult" type="tns:TEC_MensajeOfListOfTEC_TipoMovimientoBitacora" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoMovimientoBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoMovimientoBitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoMovimientoBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoMovimientoBitacora" nillable="true" type="tns:TEC_TipoMovimientoBitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoMovimientoBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoMovBitacora" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoMovimiento" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearTipoMovimientoBitacora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoMovimiento" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearTipoMovimientoBitacoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearTipoMovimientoBitacoraResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoMovimientoBitacora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovBitacora" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipoMovimiento" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoMovimientoBitacoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarTipoMovimientoBitacoraResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoMovimientoBitacora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovBitacora" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoMovimientoBitacoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarTipoMovimientoBitacoraResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarCorreoElectronico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoCorreo" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="recibeNotificacion" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarCorreoElectronicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarCorreoElectronicoResult" type="tns:TEC_MensajeOfListOfTEC_Correo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Correo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Correo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Correo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Correo" nillable="true" type="tns:TEC_Correo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Correo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCorreoElectronico" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoCorreo" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RecibeNotificacion" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsExtTEC" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsExterno" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearCorreoElectronicoSecundario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="recibeNotificacion" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearCorreoElectronicoSecundarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearCorreoElectronicoSecundarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarCorreoElectronico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoCorreo" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="recibeNotificacion" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarCorreoElectronicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarCorreoElectronicoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarCorreoElectronico_WinService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoCorreo" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="recibeNotificacion" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarCorreoElectronico_WinServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarCorreoElectronico_WinServiceResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarCorreoElectronico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarCorreoElectronicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarCorreoElectronicoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarEstadoCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarEstadoCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarEstadoCorreoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarRecibirNotifCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="recibeNotificacion" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarRecibirNotifCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarRecibirNotifCorreoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EnvioCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="destinatario" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="esHtml" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cc" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cco" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="asunto" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cuerpo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="adjuntos" type="tns:ArrayOfTecAdjunto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfTecAdjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TecAdjunto" nillable="true" type="tns:TecAdjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TecAdjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Archivo" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreArchivo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoArchivo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtensionDataObject" />
+  <xs:element name="Seg_EnvioCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EnvioCorreoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarCorreoElectronicoExterno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarCorreoElectronicoExternoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarCorreoElectronicoExternoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarVerficiacioCuentaLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idVerificacionCuenta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descTipoActivacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="esUtilizado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoActivar" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarVerficiacioCuentaLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarVerficiacioCuentaLinkResult" type="tns:TEC_MensajeOfListOfTEC_VerificacionCuenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_VerificacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_VerificacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_VerificacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_VerificacionCuenta" nillable="true" type="tns:TEC_VerificacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_VerificacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdVerificacionCuenta" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCorreoElectronico" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoActivacionCuenta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoNotificar" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaEnvio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Utilizado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_ModificarVerificacionCuentaLinkFecha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idVerificacionCuenta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarVerificacionCuentaLinkFechaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarVerificacionCuentaLinkFechaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearVerficiacioCuentaLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idCorreoElectronico" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoActivar" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descTipoActivacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearVerficiacioCuentaLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearVerficiacioCuentaLinkResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarActivacionCuentaLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idLinkActivacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="linkActivacionCuenta" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarActivacionCuentaLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarActivacionCuentaLinkResult" type="tns:TEC_MensajeOfListOfTEC_ActivacionCuenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_ActivacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_ActivacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_ActivacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_ActivacionCuenta" nillable="true" type="tns:TEC_ActivacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_ActivacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdActivacionCuenta" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdVerificacionCuenta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LinkActivacionCuenta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodigoVerificacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearActivacionCuentaLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdVerificacionCuenta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreUsuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cuentaUsuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreParametro" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="isEnvioActivacionCuenta" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearActivacionCuentaLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearActivacionCuentaLinkResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ActivarCuentaUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="linkActivacionCuenta" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ActivarCuentaUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ActivarCuentaUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarVerificacionCuentaLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idVerificacionCuenta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarVerificacionCuentaLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarVerificacionCuentaLinkResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombreAplicacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarAplicacionResult" type="tns:TEC_MensajeOfListOfTEC_Aplicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nomAplicacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dscAplicacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearAplicacionResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nomAplicacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dscAplicacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarAplicacionResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarAplicacionResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarMenuResult" type="tns:TEC_MensajeOfListOfTEC_Permiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="uRL" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="codigoPadre" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="movil" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+        <xs:element minOccurs="1" maxOccurs="1" name="orden" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearMenuResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idMenu" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="uRL" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="codigoPadre" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="movil" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+        <xs:element minOccurs="1" maxOccurs="1" name="orden" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarMenuResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idMenu" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarMenuResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarOrdenamiento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idMenu" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPadre" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="orden" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="arriba" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarOrdenamientoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarOrdenamientoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoMovimientoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarTipoMovimientoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarTipoMovimientoUsuarioResult" type="tns:TEC_MensajeOfListOfTEC_TipoMovimientoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_TipoMovimientoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_TipoMovimientoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_TipoMovimientoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_TipoMovimientoUsuario" nillable="true" type="tns:TEC_TipoMovimientoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_TipoMovimientoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoMovimientoUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Tipo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearTipoMovimientoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearTipoMovimientoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearTipoMovimientoUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoMovimientoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarTipoMovimientoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarTipoMovimientoUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoMovimientoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idTipoMovUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarTipoMovimientoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarTipoMovimientoUsuarioResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idEntidad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="rutaAD" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idSede" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarDepartamentoResult" type="tns:TEC_MensajeOfListOfTEC_Departamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Departamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Departamento" nillable="true" type="tns:TEC_Departamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Entidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSede" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sede" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RutaAD" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idEntidad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="rutaAD" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearDepartamentoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idEntidad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="rutaAD" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarDepartamentoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarDepartamentoResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarPreguntasUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPregunta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarPreguntasUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarPreguntasUsuarioSeguridadResult" type="tns:TEC_MensajeOfListOfTec_PreguntaSeguridad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTec_PreguntaSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTec_PreguntaSeguridad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTec_PreguntaSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tec_PreguntaSeguridad" nillable="true" type="tns:Tec_PreguntaSeguridad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Tec_PreguntaSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPregunta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionPregunta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearPreguntasUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearPreguntasUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearPreguntasUsuarioSeguridadResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarPreguntasUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPregunta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarPreguntasUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarPreguntasUsuarioSeguridadResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarPreguntaUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPregunta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarPreguntaUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarPreguntaUsuarioSeguridadResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarRespuestasUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idPregunta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idRespuesta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarRespuestasUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarRespuestasUsuarioSeguridadResult" type="tns:TEC_MensajeOfListOfTec_RespuestaSeguridad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTec_RespuestaSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTec_RespuestaSeguridad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTec_RespuestaSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tec_RespuestaSeguridad" nillable="true" type="tns:Tec_RespuestaSeguridad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Tec_RespuestaSeguridad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRespuesta" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPregunta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionPregunta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearRespuestasUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPregunta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearRespuestasUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearRespuestasUsuarioSeguridadResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarRespuestasUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idRespuesta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idPregunta" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="descripcion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarRespuestasUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarRespuestasUsuarioSeguridadResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarRespuestaUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idRespuesta" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarRespuestaUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarRespuestaUsuarioSeguridadResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarSistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idSistema" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sistema" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ConsultarSistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ConsultarSistemaResult" type="tns:TEC_MensajeOfListOfTEC_Sistema" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_Sistema">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_Sistema" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Sistema">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Sistema" nillable="true" type="tns:TEC_Sistema" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Sistema">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSistema" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sistema" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Url" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seg_CrearSistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="sistema" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="url" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_CrearSistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_CrearSistemaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarSistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idSistema" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sistema" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="url" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_ModificarSistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_ModificarSistemaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarSistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idSistema" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Seg_EliminarSistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Seg_EliminarSistemaResult" type="tns:TEC_MensajeOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

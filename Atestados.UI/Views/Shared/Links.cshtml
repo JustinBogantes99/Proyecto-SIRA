@@ -1,0 +1,15 @@
+﻿@model Atestados.Objetos.Dtos.AtestadoDTO
+
+<div>
+    @if ((int)Session["TipoUsuario"] == 1 || (int)Session["TipoUsuario"] == 2)
+    {
+        <h4>Opciones de revisor</h4>
+        @Html.ActionLink("Editar", "Editar", "Libro", new { id = Model.AtestadoID }, new { @class = "btn btn-warning me-2" })
+        @Html.ActionLink("Evaluar", "Evaluar", "Atestados", new { id = Model.AtestadoID }, new { @class = "btn btn-primary" })
+    }
+    @if ((int)Session["TipoUsuario"] == 3)
+    {
+        @Html.ActionLink("Editar", "Editar", "Libro", new { id = Model.AtestadoID }, new { @class = "btn btn-warning me-2" })
+    }
+</div>
+

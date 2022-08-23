@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <style>
+
+        textarea {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 10vh;
+        }
+
+        .table-wraper {
+            display: block;
+        }
+
+        .scrollbar-atestados {
+            position: relative;
+            height: 250px;
+            overflow: auto;
+        }
+    </style>
+
+    <title>SIRA</title>
+
+</head>
+<body>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <div id="main">
+        <!--Navegacion-->
+        <div>
+            @RenderPage("~/Views/Shared/Header.cshtml")
+        </div>
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                @if ((string)Session["TipoUsuarioNombre"] == "Funcionario")
+                {
+                    @RenderPage("~/Views/Shared/Sidebar.cshtml");
+                }
+                <div class="col nav-padding">
+                    @* No todas las páginas necesitan un botón de regresar. 
+                    <div class="container-fluid">
+                        @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+                    </div>*@
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        @*@RenderPage("~/Views/Shared/Footer.cshtml")*@
+        <!--Fin Footer-->
+        <!--Popups-->
+        @RenderPage("~/Views/Shared/Popups.cshtml")
+        <!--Fin Popus-->
+    </div>
+
+
+    <script type="text/javascript">
+        var rootDir = "";
+        var rootDirImage = "@Url.Content("~/")";
+    </script>
+
+    <script src="~/Scripts/Utilitarios/Mensajes.js"></script>
+    <script src="~/Scripts/Utilitarios/loadingoverlay.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

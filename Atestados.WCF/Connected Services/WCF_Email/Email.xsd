@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TEC.Email.Objetos.Clases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TEC.Email.Objetos.Clases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TecEntidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoEntidad" type="xs:int" />
+      <xs:element minOccurs="0" name="ListadoCuentas" nillable="true" type="tns:ArrayOfCuentaCorreoExtendida" />
+      <xs:element minOccurs="0" name="NombreEntidad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecEntidad" nillable="true" type="tns:TecEntidad" />
+  <xs:complexType name="ArrayOfCuentaCorreoExtendida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuentaCorreoExtendida" nillable="true" type="tns:CuentaCorreoExtendida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuentaCorreoExtendida" nillable="true" type="tns:ArrayOfCuentaCorreoExtendida" />
+  <xs:complexType name="CuentaCorreoExtendida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contador" type="xs:int" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaPrincipal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoCuenta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoCuentaPrincipal" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentaCorreoExtendida" nillable="true" type="tns:CuentaCorreoExtendida" />
+  <xs:complexType name="TecEntidades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListadoEntidades" nillable="true" type="tns:ArrayOfTecEntidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecEntidades" nillable="true" type="tns:TecEntidades" />
+  <xs:complexType name="ArrayOfTecEntidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TecEntidad" nillable="true" type="tns:TecEntidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTecEntidad" nillable="true" type="tns:ArrayOfTecEntidad" />
+  <xs:complexType name="TecRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecRespuesta" nillable="true" type="tns:TecRespuesta" />
+  <xs:complexType name="TecAdjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Archivo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="NombreArchivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoArchivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecAdjunto" nillable="true" type="tns:TecAdjunto" />
+  <xs:complexType name="ArrayOfTecAdjunto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TecAdjunto" nillable="true" type="tns:TecAdjunto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTecAdjunto" nillable="true" type="tns:ArrayOfTecAdjunto" />
+  <xs:complexType name="TecBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListadoBitacora" nillable="true" type="tns:ArrayOfBitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecBitacora" nillable="true" type="tns:TecBitacora" />
+  <xs:complexType name="ArrayOfBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bitacora" nillable="true" type="tns:Bitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBitacora" nillable="true" type="tns:ArrayOfBitacora" />
+  <xs:complexType name="Bitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuerpo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destinatarios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IpOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Metodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDestinatarios" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bitacora" nillable="true" type="tns:Bitacora" />
+  <xs:complexType name="TecCorreosNoEnviados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListadoCorreosNoEnviados" nillable="true" type="tns:ArrayOfTecCorreoFormatoBitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecCorreosNoEnviados" nillable="true" type="tns:TecCorreosNoEnviados" />
+  <xs:complexType name="ArrayOfTecCorreoFormatoBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TecCorreoFormatoBitacora" nillable="true" type="tns:TecCorreoFormatoBitacora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTecCorreoFormatoBitacora" nillable="true" type="tns:ArrayOfTecCorreoFormatoBitacora" />
+  <xs:complexType name="TecCorreoFormatoBitacora">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorreoEnviador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuerpo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destinatarios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdBitacora" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoMovimiento" type="xs:int" />
+      <xs:element minOccurs="0" name="IpOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Metodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDestinatarios" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecCorreoFormatoBitacora" nillable="true" type="tns:TecCorreoFormatoBitacora" />
+  <xs:complexType name="TecRespuestaCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="CuentaCorreo" nillable="true" type="tns:CuentaCorreo" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecRespuestaCuenta" nillable="true" type="tns:TecRespuestaCuenta" />
+  <xs:complexType name="CuentaCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contador" type="xs:int" />
+      <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="instancias" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentaCorreo" nillable="true" type="tns:CuentaCorreo" />
+  <xs:complexType name="TecCorreosEnviar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListaAdjuntos" nillable="true" type="tns:ArrayOfTecAdjunto" />
+      <xs:element minOccurs="0" name="ListaCorreosEnviar" nillable="true" type="tns:ArrayOfTecFormatoCorreo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecCorreosEnviar" nillable="true" type="tns:TecCorreosEnviar" />
+  <xs:complexType name="ArrayOfTecFormatoCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TecFormatoCorreo" nillable="true" type="tns:TecFormatoCorreo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTecFormatoCorreo" nillable="true" type="tns:ArrayOfTecFormatoCorreo" />
+  <xs:complexType name="TecFormatoCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorreoEnviador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuerpo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enviado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EsHtml" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdColaCorreo" type="xs:int" />
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TecFormatoCorreo" nillable="true" type="tns:TecFormatoCorreo" />
+</xs:schema>

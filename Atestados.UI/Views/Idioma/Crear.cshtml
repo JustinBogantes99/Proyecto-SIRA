@@ -1,0 +1,235 @@
+﻿@model Atestados.Objetos.Dtos.IdiomaCertificadoDTO
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+@using Atestados.Objetos.Dtos;
+
+<div class="container-fluid">
+    <div class="row">
+        <h2>Idioma</h2>
+        <hr />
+    </div>
+    <div class="row w-100">
+        <div class="col-lg-6">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Enlace, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Enlace, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Enlace, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <b class="control-label col-md-2">Año</b>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Annio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.Annio, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Lugar, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Lugar, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Lugar, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <b class="control-label col-md-2">
+                            Idioma
+                        </b>
+                        <div class="col-md-10">
+                            @Html.DropDownList("IdiomaID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdiomaID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-horizontal">
+                        <h4>Dominio de idioma</h4>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Escrito, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                A1
+                                @Html.RadioButtonFor(model => model.Escrito, 1)
+                                A2
+                                @Html.RadioButtonFor(model => model.Escrito, 2)
+                                B1
+                                @Html.RadioButtonFor(model => model.Escrito, 3)
+                                B2
+                                @Html.RadioButtonFor(model => model.Escrito, 4)
+                                C1
+                                @Html.RadioButtonFor(model => model.Escrito, 5)
+                                C2
+                                @Html.RadioButtonFor(model => model.Escrito, 6)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Oral, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                A1
+                                @Html.RadioButtonFor(model => model.Oral, 1)
+                                A2
+                                @Html.RadioButtonFor(model => model.Oral, 2)
+                                B1
+                                @Html.RadioButtonFor(model => model.Oral, 3)
+                                B2
+                                @Html.RadioButtonFor(model => model.Oral, 4)
+                                C1
+                                @Html.RadioButtonFor(model => model.Oral, 5)
+                                C2
+                                @Html.RadioButtonFor(model => model.Oral, 6)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Auditiva, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                A1
+                                @Html.RadioButtonFor(model => model.Auditiva, 1)
+                                A2
+                                @Html.RadioButtonFor(model => model.Auditiva, 2)
+                                B1
+                                @Html.RadioButtonFor(model => model.Auditiva, 3)
+                                B2
+                                @Html.RadioButtonFor(model => model.Auditiva, 4)
+                                C1
+                                @Html.RadioButtonFor(model => model.Auditiva, 5)
+                                C2
+                                @Html.RadioButtonFor(model => model.Auditiva, 6)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Lectura, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                A1
+                                @Html.RadioButtonFor(model => model.Lectura, 1)
+                                A2
+                                @Html.RadioButtonFor(model => model.Lectura, 2)
+                                B1
+                                @Html.RadioButtonFor(model => model.Lectura, 3)
+                                B2
+                                @Html.RadioButtonFor(model => model.Lectura, 4)
+                                C1
+                                @Html.RadioButtonFor(model => model.Lectura, 5)
+                                C2
+                                @Html.RadioButtonFor(model => model.Lectura, 6)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Crear" class="btn btn-default" id="submit" />
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+        <div class="col-lg-4">
+            <div class="form-horizontal">
+                <form id="subirArchivo">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="file" name="archivo" class="btn btn-default" id="archivo" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="submit" class="btn btn-default" value="Subir Archivo" form="subirArchivo" />
+                        </div>
+                    </div>
+                </form>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaArchivos"> </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row table-wraper scrollbar-atestados">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Idiomas agregados
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (AtestadoDTO item in ViewBag.Atestados)
+                {
+                    <tr>
+                        <td>
+                            @item.Nombre
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Editar", new { id = item.AtestadoID }) |
+                            @Html.ActionLink("Ver", "Ver", new { id = item.AtestadoID }) |
+                            @Html.ActionLink("Borrar", "Borrar", new { id = item.AtestadoID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#subirArchivo').submit(function (e) {
+        e.preventDefault();
+        var data = new FormData(this);
+        if (jQuery('#archivo').val().length != '') {
+            $('#archivo').val('');
+            $.ajax({
+                url: '@Variables.BaseUrl/Idioma/Cargar',
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function (data) {
+                    var archivo = JSON.parse(data.archivoJson)
+                    if (data != null) {
+                        $("#tablaArchivos").append('<tr><td>' + archivo.Nombre + '</td><td><a>Descargar</a> | <a>Borrar</a></td></tr>')
+                    }
+                }
+            })
+        }
+    })
+
+</script>

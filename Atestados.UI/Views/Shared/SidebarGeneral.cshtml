@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "SidebarGeneral";
+}
+
+<style>
+    .sidebar {
+        width: 15vw;
+        height: 100%;
+        margin-right: 2vw;
+        margin-top: 2vh;
+        padding: 0;
+    }
+</style>
+<div class="sidebar">
+    <ul>
+        @if ((int)Session["TipoUsuario"] == 1)
+        {
+            <li class="list-group-item" id="Administrador">@Html.RouteLink("Administración", new { action = "Index", controller = "Administrador" })</li>
+
+        }
+
+        @if ((int)Session["TipoUsuario"] == 1 || (int)Session["TipoUsuario"] == 2)
+        {
+            <li class="list-group-item" id="Administrador">@Html.RouteLink("Comisión", new { action = "Index", controller = "Comision" })</li>
+
+        }
+        <li class="list-group-item" id="Funcionario">@Html.RouteLink("Funcionario", new { action = "Index", controller = "Funcionario" })</li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var controller = '@ViewContext.RouteData.Values["controller"].ToString()';
+        if(controller != "Funcionario" && controller != "Administrador" && controller != "Comision")
+            $('#' + controller).addClass("active");
+    });
+</script>

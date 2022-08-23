@@ -1,0 +1,104 @@
+﻿@model  List<Atestados.Objetos.Dtos.EnviadoDTO>
+@Scripts.Render("~/bundles/jquery")
+
+@using Atestados.Objetos.Dtos;
+@{ ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_LayoutGeneral.cshtml";
+}
+
+<style>
+    .table-wraper {
+        display: block;
+    }
+
+    .scrollbar {
+        position: relative;
+        height: 400px;
+        overflow: auto;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <h2>Comisión</h2>
+        <hr />
+    </div>
+    <div class="row">
+        <h4>Atestados por descargar</h4>
+    </div>
+    <div class="row table-wraper scrollbar">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Primer Apellido
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Cantidad de atestados
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (EnviadoDTO enviado in Model)
+                {
+                <tr>
+                    <td scope="col">
+                        @enviado.Persona.Nombre
+                    </td>
+                    <td scope="col">
+                        @enviado.Persona.PrimerApellido
+                    </td>
+                    <td scope="col">
+                        @enviado.Persona.Email
+                    </td>
+                    <td scope="col">
+                        @enviado.Atestados.Count
+                    </td>
+                    <td>
+                        @Html.ActionLink("Ver Puntos", "VerPuntos", new { id = enviado.PersonaID }) |
+                        @Html.ActionLink("Descargar Excel", "GenerarExcel", new { id = enviado.PersonaID }) |
+                        @Html.ActionLink("Descargar Archivos", "Descarga", new { id = enviado.PersonaID })
+                        <!--| @Html.ActionLink("Ver", "VerFuncionario", new { id = enviado.PersonaID })-->
+                    </td>
+                    <td scope="col">
+                        <a class="btn btn-outline-primary" id="@enviado.PersonaID" action="Ver">Ver</a>
+                        
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+        @{string host = HttpContext.Current.Request.Url.Host; }
+
+
+        var url = "";
+
+
+        $("a").click(e => {
+            var id = $(e.target).attr('id')
+            var action = $(e.target).attr('action')
+
+            url = "/Funcionario/" + action + "/" + id
+
+            if (action == "Ver") {
+                if ("@host" == "localhost")
+                    url = "/Atestados" + url
+                window.location.href = url
+            } else
+                console.log("borrar")
+
+        });
+</script>

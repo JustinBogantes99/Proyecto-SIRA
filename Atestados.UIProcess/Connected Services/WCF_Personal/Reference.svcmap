@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="099fe0ff-7512-4afb-acd1-46ebfe104b12" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFPersona.xsd" MetadataType="Schema" ID="1aeba040-a90c-47c2-838a-580a0cfc4fd3" SourceId="1" SourceUrl="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFPersona1.xsd" MetadataType="Schema" ID="11c38fa4-e27e-4afd-9e50-05151f0f9443" SourceId="1" SourceUrl="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCFPersona2.xsd" MetadataType="Schema" ID="8d796d65-d345-43bc-9e18-414d296db8e5" SourceId="1" SourceUrl="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCFPersona.wsdl" MetadataType="Wsdl" ID="f7ddc46a-86be-4224-8a06-29c32051848a" SourceId="1" SourceUrl="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?wsdl" />
+    <MetadataFile FileName="WCFPersona.disco" MetadataType="Disco" ID="072516df-34f9-405b-ad27-adacea04dcb6" SourceId="1" SourceUrl="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

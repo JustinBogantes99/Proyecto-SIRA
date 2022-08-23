@@ -1,0 +1,136 @@
+﻿@model Atestados.Datos.Modelo.Atestado
+
+@{
+    ViewBag.Title = "Borrar";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+@RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+<h2 class="mt-4">Borrar un atestado</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <h3>¿Está seguro/a que desea borrar esta obra didáctica?</h3>
+        <hr />
+    </div>
+    <div class="row w-100">
+        <div class="col-lg-6">
+            <!-- columna izquierda -->
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Enlace)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Enlace)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha.FechaFinal)
+                </dd>
+
+                <dt>
+                    Curso
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CatalogoTipo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="col-lg-4">
+            <!-- columna derecha -->
+            <div class="row table-wraper scrollbar-atestados">
+                <h4>Archivos</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Archivo)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Nombre
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="row table-wraper scrollbar-atestados">
+                <h4>Autores</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Apellidos
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Porcentaje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.Autores)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Nombre
+                                </td>
+                                <td>
+                                    @item.PrimerApellido @item.SegundoApellido
+                                </td>
+                                <td>
+                                    @item.Email
+                                </td>
+                                <td>
+                                    @item.Porcentaje
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" />
+        </div>
+    }
+</div>

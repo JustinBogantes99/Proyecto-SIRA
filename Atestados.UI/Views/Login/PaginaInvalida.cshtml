@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "PaginaInvalida";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<!--Form de Logueo de aplicación-->
+<form role="form" class="paginaInvalidaMargen" name="">
+    <div class="text-center">
+        <br /><br />
+        <div class="bordeadoLogin"><h3 class="tituloLogueo">Sesión Caducada / Acción Inválida.</h3></div><br /> <br />
+        <a class="btn btn-generadoNew hoverShadowBuscar" type="button" href="@Url.Action("Index", "Login")"> <span class="glyphicon glyphicon-home"></span>  &nbsp; Ir a página de ingreso</a>
+    </div>
+</form>
+
+
+

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Email" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd3" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TEC.Email.Objetos.Clases" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEmail_EnviarCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_EnviarCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_EnviarCorreoMasivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreoMasivo" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_EnviarCorreoMasivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreoMasivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_InsertarCuentaCorreoPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCuentaCorreoPadre" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_InsertarCuentaCorreoPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCuentaCorreoPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_InsertarCorreoSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCorreoSistema" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_InsertarCorreoSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCorreoSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarEntidadesCuentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEntidadesCuentas" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarEntidadesCuentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEntidadesCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_InsertarEntidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEntidad" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_InsertarEntidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEntidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaEstadoCuentaPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaEstadoCuentaPadre" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaEstadoCuentaPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaEstadoCuentaPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaEstadoCuentaCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaEstadoCuentaCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaEstadoCuentaCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaEstadoCuentaCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaContrasenaCorreoSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaContrasenaCorreoSistema" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaContrasenaCorreoSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaContrasenaCorreoSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaContrasenaCuentaPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaContrasenaCuentaPadre" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaContrasenaCuentaPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaContrasenaCuentaPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarBitacoraPorCorreoSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBitacoraPorCorreoSistema" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarBitacoraPorCorreoSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBitacoraPorCorreoSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarBitacoraPorCuentaPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBitacoraPorCuentaPadre" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarBitacoraPorCuentaPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBitacoraPorCuentaPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarBitacoraPorEntidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBitacoraPorEntidad" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarBitacoraPorEntidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBitacoraPorEntidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaEntidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaEntidad" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ModificaEntidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaEntidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarCorreosNoEnviados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCorreosNoEnviados" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarCorreosNoEnviados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCorreosNoEnviadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarCuentaPadreAPartirHijo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentaPadreAPartirHijo" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarCuentaPadreAPartirHijo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentaPadreAPartirHijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ActualizarExitoFlujoAlterno_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarExitoFlujoAlterno" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ActualizarExitoFlujoAlterno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarExitoFlujoAlternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarCorreosXEnviar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCorreosXEnviar" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_ConsultarCorreosXEnviar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCorreosXEnviarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_DesmarcarEnviadoCola_InputMessage">
+    <wsdl:part name="parameters" element="tns:DesmarcarEnviadoCola" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_DesmarcarEnviadoCola_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DesmarcarEnviadoColaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_EnviadorMensajesMasivosExclusivoWinService_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviadorMensajesMasivosExclusivoWinService" />
+  </wsdl:message>
+  <wsdl:message name="IEmail_EnviadorMensajesMasivosExclusivoWinService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviadorMensajesMasivosExclusivoWinServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEmail">
+    <wsdl:operation name="EnviarCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/EnviarCorreo" message="tns:IEmail_EnviarCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/EnviarCorreoResponse" message="tns:IEmail_EnviarCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreoMasivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/EnviarCorreoMasivo" message="tns:IEmail_EnviarCorreoMasivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/EnviarCorreoMasivoResponse" message="tns:IEmail_EnviarCorreoMasivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCuentaCorreoPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/InsertarCuentaCorreoPadre" message="tns:IEmail_InsertarCuentaCorreoPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/InsertarCuentaCorreoPadreResponse" message="tns:IEmail_InsertarCuentaCorreoPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCorreoSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/InsertarCorreoSistema" message="tns:IEmail_InsertarCorreoSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/InsertarCorreoSistemaResponse" message="tns:IEmail_InsertarCorreoSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEntidadesCuentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarEntidadesCuentas" message="tns:IEmail_ConsultarEntidadesCuentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarEntidadesCuentasResponse" message="tns:IEmail_ConsultarEntidadesCuentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEntidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/InsertarEntidad" message="tns:IEmail_InsertarEntidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/InsertarEntidadResponse" message="tns:IEmail_InsertarEntidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaEstadoCuentaPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ModificaEstadoCuentaPadre" message="tns:IEmail_ModificaEstadoCuentaPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ModificaEstadoCuentaPadreResponse" message="tns:IEmail_ModificaEstadoCuentaPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaEstadoCuentaCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ModificaEstadoCuentaCorreo" message="tns:IEmail_ModificaEstadoCuentaCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ModificaEstadoCuentaCorreoResponse" message="tns:IEmail_ModificaEstadoCuentaCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaContrasenaCorreoSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ModificaContrasenaCorreoSistema" message="tns:IEmail_ModificaContrasenaCorreoSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ModificaContrasenaCorreoSistemaResponse" message="tns:IEmail_ModificaContrasenaCorreoSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaContrasenaCuentaPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ModificaContrasenaCuentaPadre" message="tns:IEmail_ModificaContrasenaCuentaPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ModificaContrasenaCuentaPadreResponse" message="tns:IEmail_ModificaContrasenaCuentaPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBitacoraPorCorreoSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarBitacoraPorCorreoSistema" message="tns:IEmail_ConsultarBitacoraPorCorreoSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarBitacoraPorCorreoSistemaResponse" message="tns:IEmail_ConsultarBitacoraPorCorreoSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBitacoraPorCuentaPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarBitacoraPorCuentaPadre" message="tns:IEmail_ConsultarBitacoraPorCuentaPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarBitacoraPorCuentaPadreResponse" message="tns:IEmail_ConsultarBitacoraPorCuentaPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBitacoraPorEntidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarBitacoraPorEntidad" message="tns:IEmail_ConsultarBitacoraPorEntidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarBitacoraPorEntidadResponse" message="tns:IEmail_ConsultarBitacoraPorEntidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaEntidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ModificaEntidad" message="tns:IEmail_ModificaEntidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ModificaEntidadResponse" message="tns:IEmail_ModificaEntidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCorreosNoEnviados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarCorreosNoEnviados" message="tns:IEmail_ConsultarCorreosNoEnviados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarCorreosNoEnviadosResponse" message="tns:IEmail_ConsultarCorreosNoEnviados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentaPadreAPartirHijo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarCuentaPadreAPartirHijo" message="tns:IEmail_ConsultarCuentaPadreAPartirHijo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarCuentaPadreAPartirHijoResponse" message="tns:IEmail_ConsultarCuentaPadreAPartirHijo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarExitoFlujoAlterno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ActualizarExitoFlujoAlterno" message="tns:IEmail_ActualizarExitoFlujoAlterno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ActualizarExitoFlujoAlternoResponse" message="tns:IEmail_ActualizarExitoFlujoAlterno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCorreosXEnviar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/ConsultarCorreosXEnviar" message="tns:IEmail_ConsultarCorreosXEnviar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/ConsultarCorreosXEnviarResponse" message="tns:IEmail_ConsultarCorreosXEnviar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DesmarcarEnviadoCola">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/DesmarcarEnviadoCola" message="tns:IEmail_DesmarcarEnviadoCola_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/DesmarcarEnviadoColaResponse" message="tns:IEmail_DesmarcarEnviadoCola_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviadorMensajesMasivosExclusivoWinService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmail/EnviadorMensajesMasivosExclusivoWinService" message="tns:IEmail_EnviadorMensajesMasivosExclusivoWinService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmail/EnviadorMensajesMasivosExclusivoWinServiceResponse" message="tns:IEmail_EnviadorMensajesMasivosExclusivoWinService_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEmail" type="tns:IEmail">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnviarCorreo">
+      <soap:operation soapAction="http://tempuri.org/IEmail/EnviarCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreoMasivo">
+      <soap:operation soapAction="http://tempuri.org/IEmail/EnviarCorreoMasivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCuentaCorreoPadre">
+      <soap:operation soapAction="http://tempuri.org/IEmail/InsertarCuentaCorreoPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCorreoSistema">
+      <soap:operation soapAction="http://tempuri.org/IEmail/InsertarCorreoSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEntidadesCuentas">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarEntidadesCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEntidad">
+      <soap:operation soapAction="http://tempuri.org/IEmail/InsertarEntidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaEstadoCuentaPadre">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ModificaEstadoCuentaPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaEstadoCuentaCorreo">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ModificaEstadoCuentaCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaContrasenaCorreoSistema">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ModificaContrasenaCorreoSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaContrasenaCuentaPadre">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ModificaContrasenaCuentaPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBitacoraPorCorreoSistema">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarBitacoraPorCorreoSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBitacoraPorCuentaPadre">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarBitacoraPorCuentaPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBitacoraPorEntidad">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarBitacoraPorEntidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaEntidad">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ModificaEntidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCorreosNoEnviados">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarCorreosNoEnviados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentaPadreAPartirHijo">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarCuentaPadreAPartirHijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarExitoFlujoAlterno">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ActualizarExitoFlujoAlterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCorreosXEnviar">
+      <soap:operation soapAction="http://tempuri.org/IEmail/ConsultarCorreosXEnviar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesmarcarEnviadoCola">
+      <soap:operation soapAction="http://tempuri.org/IEmail/DesmarcarEnviadoCola" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviadorMensajesMasivosExclusivoWinService">
+      <soap:operation soapAction="http://tempuri.org/IEmail/EnviadorMensajesMasivosExclusivoWinService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Email">
+    <wsdl:port name="BasicHttpBinding_IEmail" binding="tns:BasicHttpBinding_IEmail">
+      <soap:address location="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,58 @@
+﻿<nav id="navHeader" class="navbar navbar-expand-lg navbar-dark navbar-tec fixed-top px-3" role="navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="@Url.Action("Index", "Login")">
+            <img src="~/Content/img/logotec_blanco.png" alt="Logo ITCR">
+            <img class="logo mx-3" src="~/Content/img/sira.svg" alt="Logo SIRA">
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <ul class="nav nav-pills align-items-center">
+                    <li class="nav-item dropdown px-2">
+                        <span type="button" class="badge rounded-pill bg-light text-dark unselectable" data-bs-toggle="dropdown">@Session["TipoUsuarioNombre"]</span>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            @if ((int)Session["TipoUsuario"] == 1)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Administrador")">Admin</a></li>
+                            }
+                            @if ((int)Session["TipoUsuario"] == 1 || (int)Session["TipoUsuario"] == 2)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Comision")">Revisor</a></li>
+                            }
+                            <li><a class="dropdown-item" href="@Url.Action("Index", "Funcionario")">Funcionario</a></li>
+                        </ul>
+                    </li>
+                    <li class="text-white">
+                        <font size="5">
+                            |
+                        </font>
+                    </li>
+                    <li class="px-1">
+                        <label class="text-white">@Session["NombreCorto"]</label>
+                    </li>
+                    <li class="nav-item dropdown ps-2 pe-3">
+                        <a href="#" class="" data-bs-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a href="@Url.Action("CerrarSesion","Login")" class="btn btn-outline-danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z" />
+                                        <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                                    </svg>
+                                    Cerrar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

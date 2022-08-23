@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c0f799d84184178bc7cdff85495df9b" Name="Diagram1">
+        <EntityTypeShape EntityType="AtestadosModel.Archivo" Width="1.5" PointX="9.125" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Atestado" Width="1.5" PointX="6.875" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.AtestadoXPersona" Width="1.5" PointX="9.125" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.DominioIdioma" Width="1.5" PointX="12.125" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Fecha" Width="1.5" PointX="9.125" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Idioma" Width="1.5" PointX="9.875" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.InfoEditorial" Width="1.5" PointX="9.125" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Pais" Width="1.5" PointX="4.625" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Persona" Width="1.5" PointX="4.625" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Rubro" Width="1.5" PointX="4.625" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.TipoRubro" Width="1.5" PointX="5.375" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AtestadosModel.Usuario" Width="1.5" PointX="6.875" PointY="17" IsExpanded="true" />
+        <AssociationConnector Association="AtestadosModel.FK_Archivo_AtestadoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK__Atestado__PaisID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK__Atestado__Person__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK__Atestado__RubroI__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK_AtestadoXPersona_AtestadoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK_DominioIdioma_AtestadoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK_Fecha_AtestadoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK_InfoEditorial_AtestadoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK_AtestadoXPersona_PersonaID" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK__DominioId__Idiom__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.FK__Usuario__Usuario__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="AtestadosModel.Fk_TipoRubro" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AtestadosModel.TipoCategoria" Width="1.5" PointX="2.375" PointY="10.375" />
+        <EntityTypeShape EntityType="AtestadosModel.TipoUsuario" Width="1.5" PointX="2.375" PointY="8" />
+        <EntityTypeShape EntityType="AtestadosModel.EvaluaciónXAtestado" Width="1.5" PointX="12.125" PointY="12.75" />
+        <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Atestado" />
+        <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona" />
+        <AssociationConnector Association="AtestadosModel.FK_Persona_TipoCategoria" />
+        <AssociationConnector Association="AtestadosModel.FK_Persona_TipoUsuario" />
+        <EntityTypeShape EntityType="AtestadosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

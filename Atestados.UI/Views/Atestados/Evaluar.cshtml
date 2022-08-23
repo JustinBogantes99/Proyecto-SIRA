@@ -1,0 +1,181 @@
+﻿@model Atestados.Objetos.Dtos.EvaluacionXAtestadoDTO
+@{
+    ViewBag.Title = "Evaluar";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+
+
+@section Scripts
+ {
+    <script>
+        $("#addRow").click(function () {
+            var rowCount = parseInt($("#total").val());
+            rowCount++;
+            $("#total").val(rowCount);
+            var html = '';
+            html += '<div id="inputRow">';
+            html += '<input type="text" name="[' + (rowCount - 1) + '].Rubro"  />';
+            html += '<input type="number" name="[' + (rowCount - 1) + '].Puntaje"  />';
+            //add more inputs here...
+            html += '<button id="removeRow" type="button" class="btn btn-danger">Eliminar</button>';
+            html += '</div>';
+
+            $('#newRow').append(html);
+        });
+        $(document).on('click', '#removeRow', function () {
+            var rowCount = parseInt($("#total").val());
+            rowCount--;
+            $("#total").val(rowCount);
+            $(this).closest('#inputRow').remove();
+        });
+    </script>
+}
+
+<div class="container-fluid">
+    <div class="mt-4">
+        <h2>Evaluar</h2>
+        <hr />
+    </div>
+    <p>Ingrese la evaluación correspondiente al atestado<p>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="row w-100">
+                <div class="col-lg-6">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Funcionario
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Atestado.Persona.Nombre)
+                            @Html.DisplayFor(model => model.Atestado.Persona.PrimerApellido)
+                            @Html.DisplayFor(model => model.Atestado.Persona.SegundoApellido)
+                        </dd>
+                    </dl>
+
+                    <form method="post">
+                    <dt>
+                        Formulario
+                    </dt>
+                    <div id="newRow">
+                        <input type="hidden" id="total" value="0" />
+                    </div>
+                    <button id="addRow" type="button" class="btn btn-outline-primary">Agregar</button>
+                    <input type="submit" class="btn btn-outline-primary" value="Crear"/>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <!-- columna izquierda -->
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <h5>Puntaje</h5>
+                        <div class="form-group" id="autores">
+
+                        </div>
+                        <br />
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 10px">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Evaluar" class="btn btn-outline-primary" id="submit" />
+                                <a class="btn btn-outline-primary" href="https://www.tec.ac.cr/reglamentos/normas-aplicacion-reglamento-carrera-profesional-instituto-tecnologico-costa-rica" target="_blank">Consultar Reglamento</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    $.ajax({
+        type: 'POST',
+        url: '@Variables.BaseUrl/Atestados/ObtenerAutores',
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            console.log(response);
+
+            var i = 0
+            response.forEach(function (autor) {
+                $("#autores").append(
+                    '<dt>' + autor.Nombre +' ' + autor.PrimerApellido + '</dt>' +
+                    '<div id="' + i + '">' +
+                    '<input type="number" class="puntaje" name="' + autor.PersonaID + '" min="0" max="100"  />' +
+                    '</div>'
+                )
+                i += 1;
+            });
+
+        }
+    })
+
+
+
+    $.ajax({
+        type: 'POST',
+        url: '@Variables.BaseUrl/Atestados/ObtenerEvaluaciones',
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            console.log(response.evaluaciones);
+            evaluaciones = response.evaluaciones
+            if (evaluaciones) {
+                evaluaciones.forEach(function (evaluacion) {
+                    $(".puntaje").each(function () {
+                        if ($(this).attr('name') == evaluacion.AutorID) {
+                            $(this).val(evaluacion.PorcentajeObtenido);
+                        }
+                    });
+                })
+            } else {
+                console.log("sin evaluaciones")
+            }
+
+        }
+    })
+
+
+    $('#submit').click(function () {
+
+        var autores = []
+
+        $(".puntaje").each(function () {
+            var autor = new Object();
+            autor.AutorID = $(this).attr('name');
+            autor.PorcentajeObtenido = $(this).val();
+            console.log($(this).attr('name') + ": " + $(this).val());
+
+            autores.push(autor);
+
+        });
+
+        //console.log(autores);
+        console.log(JSON.stringify(autores));
+
+        $.ajax({
+            type: 'POST',
+            url: '@Variables.BaseUrl/Atestados/AsignarPuntos',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: JSON.stringify(autores),
+            success: function (response) {
+                console.log("guardando puntajes");
+            }
+        })
+    })
+
+
+</script>

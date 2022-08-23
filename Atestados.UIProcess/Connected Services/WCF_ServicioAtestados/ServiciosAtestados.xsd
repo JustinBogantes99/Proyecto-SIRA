@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atestados.Objetos.Clases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atestados.Objetos.Clases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="oRespuestaOfArrayOfConfiguracionhHNjng7V">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="oRespuestaOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Atestados.Objetos.Clases" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfConfiguracion" Namespace="http://schemas.datacontract.org/2004/07/Atestados.Objetos.Clases" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajeRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjetoRespuesta" nillable="true" type="tns:ArrayOfConfiguracion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="oRespuestaOfArrayOfConfiguracionhHNjng7V" nillable="true" type="tns:oRespuestaOfArrayOfConfiguracionhHNjng7V" />
+  <xs:complexType name="ArrayOfConfiguracion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Configuracion" nillable="true" type="tns:Configuracion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConfiguracion" nillable="true" type="tns:ArrayOfConfiguracion" />
+  <xs:complexType name="Configuracion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdConfiguracion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoConfiguracion" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoConfiguracion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Configuracion" nillable="true" type="tns:Configuracion" />
+</xs:schema>

@@ -1,0 +1,99 @@
+﻿
+<!-- Menu Up -->
+@{
+
+            ViewBag.Permisos = Session["PermisosMenu"];
+            ViewBag.TipoPermiso = Session["IdTipoPermiso"];
+}
+<!--Menu Dinamico-->
+
+@*Framework del menú*@
+
+
+<script>
+    var inc = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Permisos))';
+    var menu = JSON.parse(inc);
+    $(document).ready(function() {
+        //Ejecuta el menú
+        CreaMenuEstructuraInterna(menu);
+
+
+
+    });
+</script>
+
+
+    <div class='container-menu'>
+        <nav>
+            <ul  id="menu_0" class='core-menu'>            </ul>
+        </nav>
+    </div>
+
+
+
+@*<nav id="menu">
+        <label for="tm" id="toggle-menu">Menú<span class="drop-icon">▾</span></label>
+        <input type="checkbox" id="tm">
+
+        <ul id="menu_0" class="main-menu clearfix"></ul>
+    </nav>*@
+
+
+
+
+@*<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+ 
+    
+
+    <ul class="nav navbar-nav">
+
+
+
+        @if (ViewBag.Permisos != null && ViewBag.Permisos.ObjetoRespuesta != null)
+        {
+            foreach (var item in ViewBag.Permisos.ObjetoRespuesta)
+            {
+                if (item.Padre == 0)
+                {
+                    <li>
+                        @if (item.TieneHijos == true)
+                        {
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@item.Nombre</a>
+                            <ul class="dropdown-menu" role="menu">
+                                @foreach (var submenu in ViewBag.Permisos.ObjetoRespuesta)
+                                {
+                                    if (submenu.IdTipoPermiso == 1)
+                                    {
+                                        if (item.IdPermiso == submenu.Padre)
+                                        {
+                                            string url = @submenu.UrlPagina;
+                                            string[] datos = url.Split('/');
+
+                                            <li class="" id="limenu-{{$index}}">
+                                                <a href="@Url.Action(datos[1], datos[0])">@submenu.Nombre</a>
+                                            </li>
+
+                                        }
+                                    }
+
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action(@item.UrlPagina)">@item.Nombre</a>
+                        }
+
+                    </li>
+                }
+
+            }
+        }
+
+
+
+
+
+    </ul>
+</div>*@

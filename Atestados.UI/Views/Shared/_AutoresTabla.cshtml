@@ -1,0 +1,28 @@
+﻿@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+<div id="autoresTabla">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Porcentaje</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tablaAutores">
+            @foreach (AutorDTO autor in Session["Autores"] as List<AutorDTO>)
+            {
+                <tr>
+                    <td class="numAut">@autor.numAutor</td>
+                    <td>@autor.Nombre</td>
+                    <td>@autor.PrimerApellido @autor.SegundoApellido</td>
+                    <td>@autor.Porcentaje%</td>
+                    <td><button class="btn btn-danger btn-sm remove">Borrar</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

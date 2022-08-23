@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Expediente.Objetos.Objetos" />
+  <xs:element name="BuscarPersonas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_Consulta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoPersona" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCualidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CatalogoPadre" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoContacto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoDato" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CampoObligatorio" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="idRequisitoAdm" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatRequisitos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatEstado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSancion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCaso" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoSancion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNivelSancion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaFinal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaOlvido" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNacionalidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPais" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NacionalidadPrincipal" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdContacto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdContactoEmergencia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPlan" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdJornada" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSede" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdGrado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEnfasis" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPeriodo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSolicitud" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCampo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="annoIngreso" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdModalidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNombramiento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoNombramiento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SubEstados" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdFormaIngreso" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListCarnets" type="tns:ArrayOfInt" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ReferenciaValor" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdInfCarrera" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EstadoNombramiento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoDireccion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdProvincia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCanton" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDistrito" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefonos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCorreo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCualidaP" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDireccion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdInfColegio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AmpliarCuenta" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfInt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuscarPersonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarPersonasResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_RPersona">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_RPersona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_RPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaPersonas" type="tns:ArrayOfTEC_Persona" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CantidadEstudiantes" type="tns:ArrayOfTEC_CantidadEstudiantes" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InformacionBasica" type="tns:ArrayOfTEC_InfoBasica" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaFuncionarios" type="tns:ArrayOfTEC_Funcionario" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InformacionPersonal" type="tns:ArrayOfTEC_InfoPersonal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaDirecciones" type="tns:ArrayOfTEC_Direccion" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaTelefonos" type="tns:ArrayOfTEC_Telefonos" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCorreos" type="tns:ArrayOfTEC_CorreoElectronico" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaContactosEmergencia" type="tns:ArrayOfTEC_ContactoEmergencia" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Persona" type="tns:TEC_Persona" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaSolicitudCuentas" type="tns:ArrayOfTEC_CreacionCuenta" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SolicitudCuentas" type="tns:TEC_CreacionCuenta" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InformacionTribunal" type="tns:ArrayOfTEC_Persona" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaPersonasAutorizadas" type="tns:ArrayOfTEC_AutorizacionIngreso" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaTodosNombActivo" type="tns:ArrayOfTEC_AutorizacionIngreso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Persona" nillable="true" type="tns:TEC_Persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Persona">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoIdentificacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoGenero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Genero" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoCivil" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoCivil" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estudiante" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConocidoComo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ModificacionForzada" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ActualizaInformacion" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InformacionCompleta" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoCaracteristicas" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CaracteristicaEstado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioUltimaModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Persona" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoNombramiento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCualiPersona" type="tns:ArrayOfTEC_PersonaCualidad" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCarreras" type="tns:ArrayOfTEC_CarrerasEstudiante" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaContactosEmergencia" type="tns:ArrayOfTEC_ContactoEmergencia" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaDirecciones" type="tns:ArrayOfTEC_Direccion" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaTelefonos" type="tns:ArrayOfTEC_Telefonos" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCorreos" type="tns:ArrayOfTEC_CorreoElectronico" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaNacionalidad" type="tns:ArrayOfTEC_Nacionalidad" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaSanciones" type="tns:ArrayOfTEC_Sanciones" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaRequisitosAdm" type="tns:ArrayOfTEC_RequisitoAdm" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaSolCambios" type="tns:ArrayOfTEC_SolicitudCambios" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaNombramientos" type="tns:ArrayOfTEC_Nombramiento" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaColegios" type="tns:ArrayOfTEC_InformacionColegio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_PersonaCualidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_PersonaCualidad" nillable="true" type="tns:TEC_PersonaCualidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_PersonaCualidad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersonaCualidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCualidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cualidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_CarrerasEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_CarrerasEstudiante" nillable="true" type="tns:TEC_CarrerasEstudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_CarrerasEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdInfCarrera" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorCarreraEnfasis" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreEnfasis" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorJornada" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreJornada" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSede" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sede" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorPlanEstudio" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SiglaPlan" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionPlan" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorGrado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreGrado" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AnoIngreso" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPeriodo" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorModalidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreModalidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorFormaIngreso" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreFormaIngreso" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCaracteristicas" type="tns:ArrayOfTEC_BitacoraCaracteristicasCatalogo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_BitacoraCaracteristicasCatalogo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_BitacoraCaracteristicasCatalogo" nillable="true" type="tns:TEC_BitacoraCaracteristicasCatalogo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_BitacoraCaracteristicasCatalogo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdBitacoraCaracteristicas" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoCaracteristicas" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Caracteristica" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdInfCarrera" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_ContactoEmergencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_ContactoEmergencia" nillable="true" type="tns:TEC_ContactoEmergencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_ContactoEmergencia">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdContactoEmergencia" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoContacto" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoContacto" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoParentesco" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Parentesco" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Direccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Direccion" nillable="true" type="tns:TEC_Direccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Direccion">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDireccion" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoDireccion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoDireccion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPais" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Pais" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdProvincia" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Provincia" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCanton" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Canton" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdDistrito" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Distrito" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OtrasSenas" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Telefonos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Telefonos" nillable="true" type="tns:TEC_Telefonos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Telefonos">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTelefono" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefono" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoTelefono" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_CorreoElectronico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_CorreoElectronico" nillable="true" type="tns:TEC_CorreoElectronico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_CorreoElectronico">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCorreoElectronico" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CorreoPrincipal" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Nacionalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Nacionalidad" nillable="true" type="tns:TEC_Nacionalidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Nacionalidad">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNacionalidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPais" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NacionalidadPrincipal" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Sanciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Sanciones" nillable="true" type="tns:TEC_Sanciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Sanciones">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSanciones" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCaso" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoSancion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoSancion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNivelSancion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NivelSancion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaOlvido" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEstadoSancion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_RequisitoAdm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_RequisitoAdm" nillable="true" type="tns:TEC_RequisitoAdm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_RequisitoAdm">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdRequisitoAdministrativo" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoRequisito" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Requisito" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoRequisitos" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_SolicitudCambios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_SolicitudCambios" nillable="true" type="tns:TEC_SolicitudCambios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_SolicitudCambios">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoCampo" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Campo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NuevoDato" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Justificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RespuestaSolicitud" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaEstadoSolicitud" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioSolicitud" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Nombramiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Nombramiento" nillable="true" type="tns:TEC_Nombramiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Nombramiento">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNombramiento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Entidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Persona" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoNombramiento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoNombramiento" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Puesto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInactivacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioInactivacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdUsuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_InformacionColegio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_InformacionColegio" nillable="true" type="tns:TEC_InformacionColegio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_InformacionColegio">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdInformacionColegio" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdColegio" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_CantidadEstudiantes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_CantidadEstudiantes" nillable="true" type="tns:TEC_CantidadEstudiantes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_CantidadEstudiantes">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorPlanEstudio" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSede" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Sede" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AnoIngreso" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdentificadorModalidad" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPeriodo" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Cantidad" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_InfoBasica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_InfoBasica" nillable="true" type="tns:TEC_InfoBasica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_InfoBasica">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoIdentificacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estudiante" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoGenero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Genero" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoCivil" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoCivil" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaNacionalidad" type="tns:ArrayOfTEC_Nacionalidad" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCorreos" type="tns:ArrayOfTEC_CorreoElectronico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_Funcionario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_Funcionario" nillable="true" type="tns:TEC_Funcionario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Funcionario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoIdentificacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoGenero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Genero" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoCivil" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoCivil" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estudiante" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NoCarnet" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ModificacionForzada" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ActualizaInformacion" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoCaracteristicas" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CaracteristicaEstado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioUltimaModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCualiPersona" type="tns:ArrayOfTEC_PersonaCualidad" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaNacionalidad" type="tns:ArrayOfTEC_Nacionalidad" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaNombramientos" type="tns:ArrayOfTEC_Nombramiento" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCorreos" type="tns:ArrayOfTEC_CorreoElectronico" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaDirecciones" type="tns:ArrayOfTEC_Direccion" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaTelefonos" type="tns:ArrayOfTEC_Telefonos" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCarreras" type="tns:ArrayOfTEC_CarrerasEstudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_InfoPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_InfoPersonal" nillable="true" type="tns:TEC_InfoPersonal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_InfoPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdTipoNombramiento" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AmpliarCuenta" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubEstado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ListaCarreras" type="tns:ArrayOfTEC_CarrerasEstudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_CreacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_CreacionCuenta" nillable="true" type="tns:TEC_CreacionCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_CreacionCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersonaSolicitud" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoIdentificacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoGenero" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Genero" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoCivil" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EstadoCivil" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEstado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoANotificar" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Entidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Puesto" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Extension" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaExpiracion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FuncionarioExterno" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_AutorizacionIngreso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_AutorizacionIngreso" nillable="true" type="tns:TEC_AutorizacionIngreso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_AutorizacionIngreso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdAutorizacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Persona" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Entidad" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaFinalizacion" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaModificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CantidadEstudiantes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CantidadEstudiantesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CantidadEstudiantesResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarEstudianteResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarFuncionario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarFuncionarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarFuncionarioResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarInfBasica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarInfBasicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarInfBasicaResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="dpersona" type="tns:TEC_Persona" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nacionalidad" type="tns:TEC_Nacionalidad" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombramiento" type="tns:TEC_Nombramiento" />
+        <xs:element minOccurs="0" maxOccurs="1" name="telefono" type="tns:TEC_Telefonos" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="tns:TEC_CorreoElectronico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="InsertarPersonaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_Mensaje_Accion">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListInfAutenticacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInfAutenticacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListInfAutenticacionResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="consulta" type="tns:TEC_Consulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="AutenticarUsuarioResult" type="tns:TEC_MensajeOfArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutenticarSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoIdentificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatEstado" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="AutenticarSeguridadResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Buscar_EstudiantesXPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Carnet" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPlan" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Buscar_EstudiantesXPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Buscar_EstudiantesXPlanResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersonaXNombre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TipoFuncionario" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersonaXNombreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarPersonaXNombreResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_IndicadorAmpliarCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoSubEstado" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IndicadorAmpliacionCuenta" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoPersona" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_IndicadorAmpliarCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Actualizar_IndicadorAmpliarCuentaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersona_Tribunal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_Credenciales">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoAplicacionLogueado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioLogueado" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioLogueado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioAplicacionLogueado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContrasenaUsuarioAplicacionLogueado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IpAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MacAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SessionId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuscarPersona_TribunalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarPersona_TribunalResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_TipoFuncionario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TipoFuncionario" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_TipoFuncionarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Actualizar_TipoFuncionarioResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fotografia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FotografiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="FotografiaResult" type="tns:TEC_MensajeOfTEC_Foto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_Foto">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_Foto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_Foto">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdFoto" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Foto" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FotoBase64" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgregarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoIdentificacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoGenero" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoCivil" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estudiante" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="tns:TEC_CorreoElectronico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="AgregarUsuarioResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="UsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarSeguridadResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearCorreoSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Principal" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearCorreoSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CrearCorreoSeguridadResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCorreoSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Correo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Principal" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCorreoSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarCorreoSeguridadResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarIdSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarIdSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarIdSeguridadResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarNoCarnet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarNoCarnetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarNoCarnetResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarUsuarioSeguridad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoIdentificacion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoGenero" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoEstadoCivil" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estudiante" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido1" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Apellido2" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoCarnet" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarUsuarioSeguridadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="EliminarUsuarioSeguridadResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActivarUsuarioResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InactivarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InactivarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="InactivarUsuarioResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarTelefonoSeg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefono" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarTelefonoSegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="AgregarTelefonoSegResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarTelefonoSeg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTelefono" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarTelefonoSegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarTelefonoSegResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarTelefonoSeg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTelefono" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarTelefonoSegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="EliminarTelefonoSegResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarTelefonoSeg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdUsuarioSeguridad" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefono" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarTelefonoSegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarTelefonoSegResult" type="tns:TEC_MensajeOfTEC_Persona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfTEC_Persona">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:TEC_Persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaCorreos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaCorreosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListaCorreosResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="correo" type="tns:TEC_CorreoElectronico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CrearCorreoResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActCorreo_WinServices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdUsuarioSeguridad" type="xs:int" />
+        <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActCorreo_WinServicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Expediente.Objetos.Objetos" minOccurs="0" name="ActCorreo_WinServicesResult" nillable="true" type="q1:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTelefonos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefonos" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTelefonosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListaTelefonosResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearTelefono">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefono" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearTelefonoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CrearTelefonoResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarTelefono">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTelefono" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTelefono" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Notificaciones" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Usuario" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarTelefonoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarTelefonoResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDirecciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdDireccion" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoDireccion" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPais" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdProvincia" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCanton" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdDistrito" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDireccionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListaDireccionesResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoDireccion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPais" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdProvincia" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCanton" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdDistrito" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="OtrasSenas" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearDireccionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CrearDireccionResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdDireccion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoDireccion" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPais" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdProvincia" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCanton" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdDistrito" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="OtrasSenas" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDireccionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarDireccionResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaContactosEmergencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdContactoEmergencia" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdTipoContacto" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoIdentificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaContactosEmergenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListaContactosEmergenciaResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarContactoEmergencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoContacto" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoParentesco" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NoIdentificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarContactoEmergenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="AgregarContactoEmergenciaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarContactoEmergencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdContactoEmergencia" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoTipoContacto" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdCatalogoParentesco" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Identificacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Valor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioModificacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarContactoEmergenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarContactoEmergenciaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Solicitud_CreacionCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cuentas" type="tns:TEC_CreacionCuenta" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Solicitud_CreacionCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Solicitud_CreacionCuentaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Solicitud_ActualizacionCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="cuentas" type="tns:TEC_CreacionCuenta" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Solicitud_ActualizacionCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Solicitud_ActualizacionCuentaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Solicitud_ActualEstCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdEstado" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Observaciones" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Solicitud_ActualEstCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Solicitud_ActualEstCuentaResult" type="tns:TEC_Mensaje_Accion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoliCreacionCuentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdSolicitud" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPuesto" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdEntidad" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="FuncionarioExterno" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="1" maxOccurs="1" name="IdEstado" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoliCreacionCuentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SoliCreacionCuentasResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Buscar_AutorizadosLicencias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" nillable="true" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Estado" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Buscar_AutorizadosLicenciasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Buscar_AutorizadosLicenciasResult" type="tns:TEC_MensajeOfListOfTEC_AutorizadosLicencias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TEC_MensajeOfListOfTEC_AutorizadosLicencias">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjetoRespuesta" type="tns:ArrayOfTEC_AutorizadosLicencias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTEC_AutorizadosLicencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEC_AutorizadosLicencias" nillable="true" type="tns:TEC_AutorizadosLicencias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEC_AutorizadosLicencias">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdAutorizado" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPersona" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Persona" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsuarioUltimaModificacion" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuscarEstadoSolicitudCuentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="IdSolicitud" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="credenciales" type="tns:TEC_Credenciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarEstadoSolicitudCuentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="BuscarEstadoSolicitudCuentasResult" type="tns:TEC_MensajeOfTEC_RPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

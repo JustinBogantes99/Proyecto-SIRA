@@ -1,0 +1,104 @@
+﻿@model Atestados.Datos.Modelo.Atestado
+
+@{
+    ViewBag.Title = "Borrar";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Está seguro/a que desea borrar este atestado?</h3>
+<div class="container-fluid">
+    <div class="row">
+        <h2>Idioma</h2>
+        <hr />
+    </div>
+    <div class="row w-100">
+        <div class="col-lg-6">
+            <!-- columna izquierda -->
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Enlace)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Enlace)
+                </dd>
+
+                <dt>
+                    Año
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha.FechaFinal)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Lugar)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Lugar)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DominioIdioma.Idioma)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DominioIdioma.Idioma)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="col-lg-4">
+            <!-- columna derecha -->
+            <div class="row table-wraper scrollbar-atestados">
+                <h4>Archivos</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Archivo)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Nombre
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" />
+        </div>
+    }
+</div>

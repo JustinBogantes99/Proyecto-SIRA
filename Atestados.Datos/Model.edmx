@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Configuracion">
+          <Key>
+            <PropertyRef Name="IdConfiguracion" />
+          </Key>
+          <Property Name="IdConfiguracion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipoConfiguracion" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valor" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoConfiguracion">
+          <Key>
+            <PropertyRef Name="IdTipoConfiguracion" />
+          </Key>
+          <Property Name="IdTipoConfiguracion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Configuracion_TipoConfiguracion">
+          <End Role="TipoConfiguracion" Type="Self.TipoConfiguracion" Multiplicity="1" />
+          <End Role="Configuracion" Type="Self.Configuracion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoConfiguracion">
+              <PropertyRef Name="IdTipoConfiguracion" />
+            </Principal>
+            <Dependent Role="Configuracion">
+              <PropertyRef Name="IdTipoConfiguracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="pr_ObtieneConfiguracion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdConfiguracion" Type="int" Mode="In" />
+          <Parameter Name="Codigo" Type="smallint" Mode="InOut" />
+          <Parameter Name="Mensaje" Type="varchar" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="BDModelStoreContainer">
+          <EntitySet Name="Configuracion" EntityType="Self.Configuracion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoConfiguracion" EntityType="Self.TipoConfiguracion" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Configuracion_TipoConfiguracion" Association="Self.FK_Configuracion_TipoConfiguracion">
+            <End Role="TipoConfiguracion" EntitySet="TipoConfiguracion" />
+            <End Role="Configuracion" EntitySet="Configuracion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Configuracion">
+          <Key>
+            <PropertyRef Name="IdConfiguracion" />
+          </Key>
+          <Property Name="IdConfiguracion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoConfiguracion" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TipoConfiguracion" Relationship="Self.FK_Configuracion_TipoConfiguracion" FromRole="Configuracion" ToRole="TipoConfiguracion" />
+        </EntityType>
+        <EntityType Name="TipoConfiguracion">
+          <Key>
+            <PropertyRef Name="IdTipoConfiguracion" />
+          </Key>
+          <Property Name="IdTipoConfiguracion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Configuracion" Relationship="Self.FK_Configuracion_TipoConfiguracion" FromRole="TipoConfiguracion" ToRole="Configuracion" />
+        </EntityType>
+        <Association Name="FK_Configuracion_TipoConfiguracion">
+          <End Role="TipoConfiguracion" Type="Self.TipoConfiguracion" Multiplicity="1" />
+          <End Role="Configuracion" Type="Self.Configuracion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoConfiguracion">
+              <PropertyRef Name="IdTipoConfiguracion" />
+            </Principal>
+            <Dependent Role="Configuracion">
+              <PropertyRef Name="IdTipoConfiguracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDAtestadosMVC_ServiciosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Configuracion" EntityType="Self.Configuracion" />
+          <EntitySet Name="TipoConfiguracion" EntityType="Self.TipoConfiguracion" />
+          <AssociationSet Name="FK_Configuracion_TipoConfiguracion" Association="Self.FK_Configuracion_TipoConfiguracion">
+            <End Role="TipoConfiguracion" EntitySet="TipoConfiguracion" />
+            <End Role="Configuracion" EntitySet="Configuracion" />
+          </AssociationSet>
+          <FunctionImport Name="pr_ObtieneConfiguracion" ReturnType="Collection(BDModel.pr_ObtieneConfiguracion_Result)">
+            <Parameter Name="IdConfiguracion" Mode="In" Type="Int32" />
+            <Parameter Name="Codigo" Mode="InOut" Type="Int16" />
+            <Parameter Name="Mensaje" Mode="InOut" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="pr_ObtieneConfiguracion_Result">
+          <Property Type="Int32" Name="IdConfiguracion" Nullable="false" />
+          <Property Type="Int32" Name="IdTipoConfiguracion" Nullable="false" />
+          <Property Type="String" Name="TipoConfiguracion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Valor" Nullable="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDModelStoreContainer" CdmEntityContainer="BDAtestadosMVC_ServiciosEntities">
+          <EntitySetMapping Name="Configuracion">
+            <EntityTypeMapping TypeName="BDModel.Configuracion">
+              <MappingFragment StoreEntitySet="Configuracion">
+                <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
+                <ScalarProperty Name="IdTipoConfiguracion" ColumnName="IdTipoConfiguracion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoConfiguracion">
+            <EntityTypeMapping TypeName="BDModel.TipoConfiguracion">
+              <MappingFragment StoreEntitySet="TipoConfiguracion">
+                <ScalarProperty Name="IdTipoConfiguracion" ColumnName="IdTipoConfiguracion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pr_ObtieneConfiguracion" FunctionName="BDModel.Store.pr_ObtieneConfiguracion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BDModel.pr_ObtieneConfiguracion_Result">
+                <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
+                <ScalarProperty Name="IdTipoConfiguracion" ColumnName="IdTipoConfiguracion" />
+                <ScalarProperty Name="TipoConfiguracion" ColumnName="TipoConfiguracion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

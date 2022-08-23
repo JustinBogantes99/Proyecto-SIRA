@@ -1,0 +1,155 @@
+﻿@model Atestados.Objetos.Dtos.PersonaDTO
+
+@using Atestados.Objetos.Dtos;
+@{ ViewBag.Title = "Ver";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+<div class="container-fluid">
+    <div class="mt-4">
+        <h2>Funcionario</h2>
+        <hr />
+    </div>
+    <div class="row w-100">
+        <div class="col-lg-6">
+            <!-- columna izquierda -->
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                    @Html.DisplayFor(model => model.PrimerApellido)
+                    @Html.DisplayFor(model => model.SegundoApellido)
+                </dd>
+
+
+
+            </dl>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <h4>Documentos enviados</h4>
+    </div>
+    <div class="row table-wraper scrollbar">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Rubro
+                    </th>
+                    <th scope="col">
+                        Nombre
+                    </th>
+                    <th scope="col">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (AtestadoDTO item in ViewBag.Enviados)
+                {
+                    <tr>
+                        <td scope="col">
+                            @item.Rubro.Nombre
+                        </td>
+                        <td scope="col">
+                            @item.Nombre
+                        </td>
+
+                        <td scope="col">
+                            <a class="btn btn-outline-primary" rubro="@item.RubroID" atestado="@item.AtestadoID" action="Ver">Ver</a>
+                        </td>
+
+                        <!--
+                            <td>
+                                @Html.ActionLink("Ver", "VerAtestado", new { id = item.AtestadoID})
+                            </td>
+                        -->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+        @{InformacionAtestado infoAtestado = new InformacionAtestado(); }
+        @{string host = HttpContext.Current.Request.Url.Host; }
+
+        var controllers = []
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Artículo"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Capacitación profesional"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Grados académicos"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Idiomas"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("libro"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Obra administrativa de desarrollo"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Obra didáctica"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Ponencia"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"))
+
+        $('#seleccionarTodos').click(function (e) {
+                var table = $(e.target).closest('table');
+            $('td input:checkbox', table).prop('checked', this.checked);
+        });
+
+        var url = "";
+
+
+        $("a").click(e => {
+            var rubro = $(e.target).attr('rubro')
+            var atestado = $(e.target).attr('atestado')
+            var action = $(e.target).attr('action')
+            switch (rubro) {
+                case controllers[0].toString():
+                    url = "/Articulo/" + action + "/" + atestado  // para que funcione en local se debe colocar /Atestados antes | se quita para el deploy
+
+                    break;
+                case controllers[1].toString():
+                    url = "/Capacitacion/" + action + "/" + atestado
+                    break;
+                case controllers[2].toString():
+                    url = "/Certificado/" + action + "/" + atestado
+                    break;
+                case controllers[3].toString():
+                    url = "/Idioma/" + action + "/" + atestado
+                    break;
+                case controllers[4].toString():
+                    url = "/Libro/" + action + "/" + atestado
+                    break;
+                case controllers[5].toString():
+                    url = "/ObraAdministrativa/" + action + "/" + atestado
+                    break;
+                case controllers[6].toString():
+                    url = "/ObraDidactica/" + action + "/" + atestado
+                    break;
+                case controllers[7].toString():
+                    url = "/Ponencia/" + action + "/" + atestado
+                    break;
+                case controllers[8].toString():
+                    url = "/Proyecto/" + action + "/" + atestado
+                    break;
+                default:
+                    url = "/" + action + "/" + atestado
+            }
+
+
+            if (action == "Ver") {
+                if ("@host" == "localhost")
+                    url = "/Atestados" + url
+                window.location.href = url
+            } else
+                console.log("borrar")
+
+        });
+</script>
+

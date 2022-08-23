@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MensajeGenerico" xml:space="preserve">
+    <value>Problemas procesando la solicitud. Intentarlo más tarde.</value>
+    <comment>Error general de la aplicación.</comment>
+  </data>
+  <data name="MensajeNuevo" xml:space="preserve">
+    <value>Agregar algún mensaje acá</value>
+    <comment>Comentarios para el mensaje nuevo</comment>
+  </data>
+  <data name="AtestadosCorreo" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+
+    &lt;html lang="es"&gt;
+
+    &lt;head&gt;
+
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+
+        &lt;meta charset="utf-8" /&gt;
+
+        &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+
+        &lt;link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"&gt;
+
+        &lt;style&gt;
+
+       
+
+            body{
+
+                font-family: ''Helvetica Regular'', Helvetica, ''Roboto'', sans-serif, Arial;
+
+                font-weight: normal;
+
+                font-variant:normal;
+
+            }
+
+           
+
+            #Contenido{
+
+                margin: 0 0 auto;
+
+                border-width:1px;
+
+                border-color: #140e39;
+
+                border-style:solid;
+
+                max-width:800px;
+
+                min-width:800px;
+
+                width:800px;
+
+                min-height:243px;
+
+                text-align : left;
+
+            }
+
+            h1{
+
+                margin-top:20px;
+
+                color:#14477B;
+
+                font-size:25pt;
+
+                margin-left:25px;
+
+                vspace:50px;
+
+                font-weight: 100;
+
+                text-align : left;
+
+            }
+
+           
+
+            h2{
+
+                position: relative;
+
+                color:#D1D3D4;
+
+                max-width:750px;
+
+                min-width:750px;
+
+                width:750px;
+
+                text-align:right;
+
+                font-size: 22pt;
+
+                margin-top:0;
+
+                margin-bottom:20px;
+
+                font-weight: 100;
+
+            }
+
+           
+
+            a{
+
+                color:#14477B;
+
+                /*font-weight: 100;*/
+
+            }
+
+           
+
+            p{
+
+                color:#140e39;     
+
+                /*font-weight: 100;*/
+
+                max-width:750px;
+
+                min-width:750px;
+
+                width:750px;
+
+                line-height: 20pt;
+
+                font-size:12pt;
+
+                font-style: normal;
+
+                font-variant: normal;
+
+                margin-left: 25px;
+
+            }
+
+           
+
+            b{
+
+                color:#262626;
+
+                font-weight: 500;
+
+            }
+
+           
+
+            hr{
+
+                max-width:750px;
+
+                min-width:750px;
+
+                width:750px;
+
+                border-color:#14477B;
+
+                border-style:solid;
+
+                border-width:1px;
+
+                border-bottom-style:none;
+
+                margin-top:0;
+
+            }
+
+    @media (max-width: 300px) {
+
+           h1{
+
+                font-size:18pt !important;
+
+            }
+
+    }
+
+   
+
+    @media (mix-width: 301px) and (max-width: 767px) {
+
+            h1{
+
+                font-size:22pt !important;
+
+            }
+
+    }
+
+   
+
+    
+
+    @media (min-width: 768px) and (max-width: 899px) {
+
+            h1{
+
+                font-size:25pt !important;
+
+            }
+
+    }
+
+           
+
+    @media (max-width: 899px) {
+
+            body{
+
+                margin: 00 auto;
+
+            }
+
+   
+
+            #Contenido{
+
+                max-width: none !important;
+
+                min-width: unset !important;
+
+                width: 80% !important;
+
+                height: auto !important;
+
+                margin-left:5% !important;
+
+                margin-right:5% !important;
+
+                margin-top: 10px !important;
+
+                padding-left:5%;
+
+                padding-right:5%;
+
+            }
+
+           
+
+            h1{
+
+                margin-left:auto  !important;
+
+                margin-bottom:8px !important;
+
+            }
+
+           
+
+            h2{
+
+                font-size:40pt !important;
+
+                margin-top:10px !important;
+
+                margin-bottom:20px !important;
+
+                font-size: 30px !important;
+
+                margin-left: auto !important;
+
+                text-align: right;
+
+                margin-left: auto !important;
+
+               
+
+                max-width: none !important;
+
+                min-width: unset !important;
+
+                width: 80% !important;
+
+            }
+
+           
+
+            p{
+
+                max-width: none !important;
+
+                min-width: unset !important;
+
+                width: auto !important;
+
+                margin-left:auto !important;
+
+            }
+
+           
+
+            hr{
+
+                max-width: none !important;
+
+                min-width: unset !important;
+
+                width: auto !important;
+
+                margin-left:auto !important;
+
+                margin-bottom:16px !important;
+
+                margin-top:0 !important;
+
+            }        
+
+    }
+
+    @media (min-width: 900px) and (max-width: 1200px) {
+
+            h1{
+
+                font-size:25pt !important;
+
+            }
+
+    }
+
+               
+
+ 
+
+           
+
+        &lt;/style&gt;
+
+        &lt;/head&gt;
+
+        &lt;body style="font-family: ''Helvetica Regular'', Helvetica, ''Roboto'', sans-serif, Arial;  color:#140e39;    font-weight: normal; font-variant:normal;"&gt;
+
+        &lt;!--[if (mso)|(IE)]&gt;&lt;table width="800" style="width: 800px; border-width:1.5px;    border-color: #140e39; border-style:solid; font-family: ''Helvetica Regular'', Helvetica, ''Roboto'', sans-serif, Arial;" align="center" cellpadding="0" cellspacing="0" role="presentation"&gt;&lt;tr&gt;&lt;td style="valign:top;"&gt;&lt;![endif]--&gt;
+
+            &lt;div id="Contenido" style=" border-width:1px;    border-color: #140e39; border-style:solid; max-width:800px;    min-width:800px; width:800px; min-height:243px;" width="800px"&gt;
+
+            &lt;!--[if (mso)|(IE)]&gt;
+
+            &lt;table align="left" cellpadding="0" cellspacing="0" role="presentation"&gt;
+
+                &lt;tr style="margin-bottom:0;"&gt;
+
+                    &lt;td width="750" style="border-top:1px; border-style:solid; border-color:#FFFFFF; width: 750px;"&gt;&lt;![endif]--&gt;
+
+                                                                                  &lt;!--[if (mso)|(IE)]&gt;           
+
+                &lt;/td&gt;&lt;/tr&gt;
+
+                &lt;tr&gt;&lt;td width="750" style="width: 750px; padding-left:25px;"&gt;&lt;![endif]--&gt; 
+
+                &lt;br/&gt;                                  
+
+                &lt;hr style="max-width:750px; width:750px; min-width:750px; vspace:50px;border-color:#140e39;    border-style:solid;    border-width:2px;border-bottom-style:none;margin-bottom:16px;margin-top:0;" width="750px"&gt;
+
+                &lt;h1 style="text-align:center; margin-top:8px; color:#140e39; font-size:23pt; margin-left:25px; vspace:50px; font-weight: 100; margin-bottom:8px;"&gt;Agenda Atestados TEC&lt;/h1&gt;
+
+            &lt;!--[if (mso)|(IE)]&gt;           
+
+                &lt;/td&gt;&lt;/tr&gt;
+
+                &lt;tr&gt;&lt;td width="750" style="width: 750px; padding-left:25px;"&gt;&lt;![endif]--&gt;   
+
+                &lt;hr style="max-width:750px; width:750px; min-width:750px; vspace:50px;border-color:#140e39;    border-style:solid;    border-width:2px;border-bottom-style:none;margin-bottom:16px;margin-top:0;" width="750px"&gt;
+
+            &lt;!--[if (mso)|(IE)]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="750" style="width: 750px; border-top:1px; border-style:solid; border-color:#FFFFFF;"&gt;&lt;![endif]--&gt;   
+
+                &lt;p style="font-size:12pt; max-width:700px; width:700px; min-width:700px; margin-left:25px;"&gt;pContenido 
+               &lt;div style="display: pMostrar;font-size: 18px;font-weight: bold;"&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;center&gt;Id reunión Atestados: pIdReunionSection&lt;/center&gt;&lt;/div&gt; 
+                &lt;div style="display: pMostrar; font-size: 15px;font-weight: bold;"&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;center&gt;URL: &lt;a href="pLinkSection"&gt;pLinkSection&lt;/a&gt;&lt;/center&gt;&lt;/div&gt; 
+                &lt;div style="display: pMostrar;font-size: 15px;font-weight: bold;"&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;center&gt;Contraseña: pPasswordSection&lt;/center&gt;&lt;/div&gt; 
+                &lt;/p&gt;&lt;br/&gt;
+
+                               
+                               &lt;p style="font-size:12pt; max-width:750px; width:750px; min-width:750px; margin-left:25px;"&gt;pNOTAS
+
+&lt;/p&gt;
+
+            &lt;!--[if (mso)|(IE)]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="750"  style="width: 750px; border-top:1px; border-style:solid; border-color:#FFFFFF;"&gt;&lt;![endif]--&gt;   
+
+                                                             
+&lt;br/&gt;
+                                                                &lt;p style="font-size:10pt; max-width:750px; width:750px; min-width:750px; margin-left:25px;"&gt;Cualquier consulta puede comunicarse al correo: &lt;b&gt;pCorreoSoporteTEC&lt;/b&gt;&lt;p&gt;
+
+                               
+                &lt;p style="font-size:9pt; max-width:750px; width:750px; min-width:750px; margin-left:25px;"&gt;Este correo es generado automáticamente, por favor no responder.&lt;br/&gt;Fecha de envío de este correo: pFecha&lt;p&gt;
+                                                               
+
+                                                               
+
+            &lt;!--[if (mso)|(IE)]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="width: 750px; border-top:1px; border-style:solid; border-color:#FFFFFF;"&gt;&lt;![endif]--&gt;   
+
+                &lt;!--&lt;h2 style="position: relative; color:#D1D3D4; font-size:25pt;    margin-top:0; margin-bottom:20px; font-weight: 100; max-width:750px; min-width:750px;    width:750px; text-align:right; margin-left: 25px;" &gt;Atestados - TEC&lt;/h2&gt;  --&gt; 
+                &lt;br/&gt;
+&lt;center&gt;&lt;img src="https://tecdigital.tec.ac.cr/repositorio/datic/201912131337860_tecAtestados.png" alt="logos"&gt;&lt;/center&gt;
+  &lt;br/&gt;
+            &lt;!--[if (mso)|(IE)]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;![endif]--&gt;
+
+            &lt;/div&gt;
+
+        &lt;!--[if (mso)|(IE)]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;![endif]--&gt;
+
+       
+
+        &lt;/body&gt;
+
+    &lt;/html&gt;</value>
+  </data>
+  <data name="ValidacionCaracteresContrasena" xml:space="preserve">
+    <value>La contraseña ingresada posee caracteres inválidos.</value>
+    <comment>Caracteres inválidos para el atributo contraseña</comment>
+  </data>
+  <data name="ValidacionCaracteresUsuario" xml:space="preserve">
+    <value>El usuario ingresado posee caracteres inválidos.</value>
+    <comment>Caracteres inválidos para el atributo usuario</comment>
+  </data>
+  <data name="ValidacionNulos" xml:space="preserve">
+    <value>Los datos no pueden ser nulos.</value>
+    <comment>Se utiliza para validar campos nulos</comment>
+  </data>
+  <data name="ValidacionPermisosMetodo" xml:space="preserve">
+    <value>No posee permisos para utilizar este método. Revisar los datos suministrados Usuario y Contraseña.</value>
+    <comment>En caso que se trate de usar un método y no se posee permiso.</comment>
+  </data>
+  <data name="ValidacionPermisosUsuario" xml:space="preserve">
+    <value>El usuario no posee permisos activos en la aplicación.</value>
+    <comment>Cuando un usuario no tiene permisos en una aplicación.</comment>
+  </data>
+  <data name="Atestados_EmailInvalido" xml:space="preserve">
+    <value>El formato de correo no es correcto.</value>
+  </data>
+  <data name="Atestados_EmailInvalidoTEC" xml:space="preserve">
+    <value>El formato de correo no es correcto, solamente direcciones de correo TEC.</value>
+  </data>
+  <data name="Atestados_ErrordeEjecucion" xml:space="preserve">
+    <value>Error de ejecución del servicio.</value>
+  </data>
+  <data name="Atestados_ErrorGeneracionToken" xml:space="preserve">
+    <value>Error al generar el token de acceso.</value>
+  </data>
+  <data name="Atestados_ListaVacia" xml:space="preserve">
+    <value>La lista no puede ser vacía.</value>
+  </data>
+  <data name="Atestados_ObjetoInvalido" xml:space="preserve">
+    <value>El objeto tiene valores incorrectos.</value>
+  </data>
+  <data name="Atestados_Parametros_invalidos" xml:space="preserve">
+    <value>Parámetros de entrada inválidos.</value>
+  </data>
+  <data name="Atestados_PasswordInvalido" xml:space="preserve">
+    <value>La contraseña no debe ser mayor de 32 carácteres.</value>
+  </data>
+</root>

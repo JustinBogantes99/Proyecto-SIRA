@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0e62b5d6-751a-4e4c-8add-a4659f0a5cd5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Email.xsd" MetadataType="Schema" ID="ab6298ed-0075-4770-8a37-657367c1d9f6" SourceId="1" SourceUrl="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd2" />
+    <MetadataFile FileName="Email.wsdl" MetadataType="Wsdl" ID="79bbdaa4-3e12-4a43-8c33-4994ba77f64c" SourceId="1" SourceUrl="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?wsdl" />
+    <MetadataFile FileName="Email.disco" MetadataType="Disco" ID="826ea192-b58a-4e83-9c0a-5d0615bba4dd" SourceId="1" SourceUrl="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?disco" />
+    <MetadataFile FileName="Email1.xsd" MetadataType="Schema" ID="7bcce823-f794-4208-b855-6611ad6a1813" SourceId="1" SourceUrl="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd1" />
+    <MetadataFile FileName="Email2.xsd" MetadataType="Schema" ID="ca8213c2-7888-4b0e-b599-afe02e255f3f" SourceId="1" SourceUrl="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd3" />
+    <MetadataFile FileName="Email3.xsd" MetadataType="Schema" ID="f783fbbc-9635-44f2-8f4a-d8e1d6fc06d7" SourceId="1" SourceUrl="http://tec-apps/WCFServicioEmail/ServiciosWeb/Email.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

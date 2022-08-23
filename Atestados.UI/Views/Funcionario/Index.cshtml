@@ -1,0 +1,264 @@
+﻿@model Atestados.Objetos.Dtos.PersonaDTO
+
+@using Atestados.Objetos.Dtos;
+@{  ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+@using Atestados.Negocios.Negocios;
+@using System.Web;
+
+<div class="container-fluid">
+    <div class="">
+        <h2>Funcionario</h2>
+        <hr />
+    </div>
+    <div class="">
+        <h4>Documentos sin enviar</h4>
+    </div>
+    <div class="container-fluid">
+        @using (Html.BeginForm("Index", "Funcionario", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.PersonaID)
+            @Html.HiddenFor(model => model.Nombre)
+            @Html.HiddenFor(model => model.PrimerApellido)
+            @Html.HiddenFor(model => model.SegundoApellido)
+            @Html.HiddenFor(model => model.Email)
+            @Html.HiddenFor(model => model.Telefono)
+            @Html.HiddenFor(model => model.TipoUsuario)
+            @Html.HiddenFor(model => model.CategoriaActual)
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:5%">
+                            <input type="checkbox" id="seleccionarTodos" />
+                        </th>
+                        <th scope="col">
+                            Identificador
+                        </th>
+                        <th scope="col">
+                            Rubro
+                        </th>
+                        <th scope="col">
+                            Nombre
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.PorEnviar.Count; i++)
+                    {
+                        <tr>
+                            <td scope="col">
+                                @Html.CheckBoxFor(m => m.PorEnviar[i].MarcarEnviado)
+                            </td>
+                            <td scope="col">
+                                @Html.TextBoxFor(m => m.PorEnviar[i].AtestadoID, new { @readonly = "readonly", @style = "border: none"})
+
+                            </td>
+                            <td scope="col">
+                                @Html.DisplayFor(model => model.PorEnviar[i].Rubro.Nombre)
+                            </td>
+                            <td scope="col">
+                                @Html.DisplayFor(model => model.PorEnviar[i].Nombre)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Editar", Model.getNombreVista(Model.PorEnviar[i].RubroID), new {id = Model.PorEnviar[i].AtestadoID})" class="btn btn-warning btn-sm" action="Editar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </a>
+                                <a href="@Url.Action("Ver", Model.getNombreVista(Model.PorEnviar[i].RubroID), new {id = Model.PorEnviar[i].AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                    </svg>
+                                </a>
+                                <a href="@Url.Action("Borrar", Model.getNombreVista(Model.PorEnviar[i].RubroID), new {id = Model.PorEnviar[i].AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="#000" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="submit" value="Enviar" class="btn btn-outline-primary" id="submit" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="">
+        <hr />
+        <h4>Documentos enviados</h4>
+    </div>
+    <div class="table-wraper scrollbar">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Rubro
+                    </th>
+                    <th scope="col">
+                        Nombre
+                    </th>
+                    <th scope="col">
+                        Evaluación
+                    </th>
+                    <th scope="col">
+                        Visualización
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="enviados">
+                @foreach (AtestadoDTO item in ViewBag.Enviados)
+                {
+                    <tr>
+                        <td scope="col">
+                            @item.Rubro.Nombre
+                        </td>
+                        <td scope="col">
+                            @item.Nombre
+                        </td>
+                        <td id="evaluacion" atestado=@item.AtestadoID></td>
+                        <td>
+                            <a href="@Url.Action("Ver", Model.getNombreVista(item.RubroID), new { id = item.AtestadoID})" class="btn btn-primary btn-sm">Ver</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+@{InformacionAtestado infoAtestado = new InformacionAtestado();}
+        /**/
+@{string host = HttpContext.Current.Request.Url.Host;}
+        /**/
+
+        // notas de los atestados
+        // en el futuro xd
+
+    //var enviados = document.getElementById("enviados");
+
+    //$('#enviados tr').each(function () {
+
+    $(document).ready(function () {
+        $('#enviados tr').each(function () {
+            var e = $(this).find('#evaluacion');
+            var id = e.attr("atestado");
+            //console.log($(this).find('#evaluacion').attr("atestado"));
+            $.ajax({
+                type: 'POST',
+                url: '@Variables.BaseUrl/Funcionario/notaAtestado',
+                async: false,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: JSON.stringify({ AtestadoID: id }),
+                success: function (response) {
+                    if (response != null) {
+                        console.log(e.text());
+                        e.text(response+"%")
+                    }
+
+                }
+            })
+        })
+    })
+
+    var controllers = []
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Artículo"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Capacitación profesional"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Grados académicos"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Idiomas"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("libro"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Obra administrativa de desarrollo"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Obra didáctica"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Ponencia"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"))
+    /**/
+
+    $('#seleccionarTodos').click(function (e) {
+        var table = $(e.target).closest('table');
+        $('td input:checkbox', table).prop('checked', this.checked);
+    });
+
+    var url = "";
+
+
+        $("a").click(e => {
+            var rubro = $(e.target).attr('rubro')
+            var atestado = $(e.target).attr('atestado')
+            var action = $(e.target).attr('action')
+            switch (rubro) {
+                case controllers[0].toString():
+                    url = "/Articulo/" + action + "/" + atestado  // para que funcione en local se debe colocar /Atestados antes | se quita para el deploy
+
+                    break;
+                case controllers[1].toString():
+                    url = "/Capacitacion/" + action + "/" + atestado
+                    break;
+                case controllers[2].toString():
+                    url = "/Certificado/" + action + "/" + atestado
+                    break;
+                case controllers[3].toString():
+                    url = "/Idioma/" + action + "/" + atestado
+                    break;
+                case controllers[4].toString():
+                    url = "/Libro/" + action + "/" + atestado
+                    break;
+                case controllers[5].toString():
+                    url = "/ObraAdministrativa/" + action + "/" + atestado
+                    break;
+                case controllers[6].toString():
+                    url = "/ObraDidactica/" + action + "/" + atestado
+                    break;
+                case controllers[7].toString():
+                    url = "/Ponencia/" + action + "/" + atestado
+                    break;
+                case controllers[8].toString():
+                    url = "/Proyecto/" + action + "/" + atestado
+                    break;
+                default:
+                    url = "/" + action + "/" + atestado
+            }
+
+
+            if (action == "Ver" || action == "Editar") {
+                /**/
+                if ("@host" == "localhost")
+            /**/
+            url = "/Atestados" + url
+        window.location.href = url
+    } else
+        console.log("borrar")
+
+});
+</script>
+

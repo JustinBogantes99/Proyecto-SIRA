@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{193EA016-C5C4-47F3-AE60-F18AB80A6A0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atestados.UIProcess</RootNamespace>
+    <AssemblyName>Atestados.UIProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\AccesoSeguridad.cs" />
+    <Compile Include="Clases\Seguridad.cs" />
+    <Compile Include="Connected Services\WCF_Personal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WCF_Seguridad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WCF_ServicioAtestados\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActivarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarContactoEmergenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarCorreoSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarDireccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarIdSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarNoCarnetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarTelefonoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ActualizarTelefonoSegResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Actualizar_IndicadorAmpliarCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Actualizar_TipoFuncionarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.AgregarContactoEmergenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.AgregarTelefonoSegResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.AgregarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.AutenticarSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.AutenticarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarEstadoSolicitudCuentasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarFuncionarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarInfBasicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarPersonasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarPersonaXNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarPersona_TribunalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.BuscarTelefonoSegResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Buscar_AutorizadosLicenciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Buscar_EstudiantesXPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.CantidadEstudiantesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.CrearCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.CrearCorreoSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.CrearDireccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.CrearTelefonoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.EliminarTelefonoSegResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.EliminarUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.FotografiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.InactivarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.InsertarPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ListaContactosEmergenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ListaCorreosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ListaDireccionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ListaTelefonosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.ListInfAutenticacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Solicitud_ActualEstCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Solicitud_ActualizacionCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.Solicitud_CreacionCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.SoliCreacionCuentasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_MensajeOfArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_MensajeOfListOfTEC_AutorizadosLicencias.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_MensajeOfTEC_Foto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_MensajeOfTEC_Persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_MensajeOfTEC_RPersona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_Mensaje_Accion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\Atestados.UIProcess.WCF_Personal.TEC_Mensaje_Accion1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Personal\WCFPersona.wsdl" />
+    <None Include="Connected Services\WCF_Personal\WCFPersona.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Personal\WCFPersona1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Personal\WCFPersona2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.RolXMenu_ActivarInactivarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.RolXMenu_ActualizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.RolXMenu_AgregarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.RolXMenu_EliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_Activar_InactivarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_ActualizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_AgregarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_ConsultarPermisosRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_ConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_ConsultarRolesAplicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Rol_ConsultarUsuariosRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ActivarCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_Activar_InactivarPuestoXRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarActivacionCuentaLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarAplicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarBitacoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarCorreoElectronicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarEstadisticasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarMovUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarPreguntasUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarPuestoXRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarRespuestasUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarSistemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarTipoActivacionCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarTipoCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarTipoMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarTipoMovimientoBitacoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarTipoMovimientoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarTipoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ConsultarVerficiacioCuentaLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearActivacionCuentaLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearAplicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearCorreoElectronicoSecundarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearPreguntasUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearPuestoXRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearRespuestasUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearSistemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearTipoActivacionCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearTipoCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearTipoMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearTipoMovimientoBitacoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearTipoMovimientoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearTipoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_CrearVerficiacioCuentaLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarAplicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarCorreoElectronicoExternoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarCorreoElectronicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarPreguntaUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarPuestoXRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarRespuestaUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarSistemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarTipoActivacionCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarTipoCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarTipoMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarTipoMovimientoBitacoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarTipoMovimientoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EliminarTipoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_EnvioCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_InsertarBitacoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarAplicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarCorreoElectronicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarCorreoElectronico_WinServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarEstadoCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarOrdenamientoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarPreguntasUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarPuestoXRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarRecibirNotifCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarRespuestasUsuarioSeguridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarSistemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarTipoActivacionCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarTipoCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarTipoMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarTipoMovimientoBitacoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarTipoMovimientoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarTipoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarVerificacionCuentaLinkFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ModificarVerificacionCuentaLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Seg_ValidarAccesoMetodoWebResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_ActivacionCuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Aplicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Bitacora.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Correo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Departamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Estadisticas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_MovimientoUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Permiso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTec_PreguntaSeguridad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTec_RespuestaSeguridad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Rol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Sistema.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoActivacionCuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoCorreo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoMovimientoBitacora.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoMovimientoUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoRol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_TipoUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfListOfTEC_VerificacionCuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfTEC_RespuestaCreacionUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfTEC_RespuestaUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfTEC_Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TEC_MensajeOfTEC_ValidacionPermiso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TipoRol_ActualizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TipoRol_AgregarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TipoRol_ConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.TipoRol_EliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ActInactivarUsuarioRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ActivarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ActualizarIdSegEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ActualizarIdSegFuncionarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_AsociarPuestoXRolAutomaticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_AsociarRolAutomaticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_AsociarRolUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_AutenticarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_AutenticarUsuario_ExclusivoMiCuentaTecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_BloquearUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_CambioContrasenaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarAplicacionesUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarPermisoEspecificoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarPermisosUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarRolesUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarUsuarioADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarUsuarioAutenticadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ConsultarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_CrearUsuarioDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_CrearUsuarioEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_CrearUsuarioFuncionarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_CrearUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_DesBloquearUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_DeshabilitarUsuarioADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_EliminarUsuarioGeneralResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_EliminarUsuarioRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_FechaExpiracionADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_GenerarListNombreUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_GenerarNombreEstudianteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_GenerarNombreUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_HabilitarUsuarioADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_InactivarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ListaUsuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ModificarAtencionLicenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ModificarUsuarioDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ModificarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ModificarUsuarioRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_RelacionADEstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_RelacionADFuncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ValidarFuncADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\Atestados.UIProcess.WCF_Seguridad.Usu_ValidarRelacionADResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\TEC_WCF_Seguridad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Seguridad\WCF_Seguridad.wsdl" />
+    <None Include="Connected Services\WCF_ServicioAtestados\ServiciosAtestados.wsdl" />
+    <None Include="Connected Services\WCF_ServicioAtestados\ServiciosAtestados.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_ServicioAtestados\ServiciosAtestados1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_ServicioAtestados\ServiciosAtestados2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Atestados.Objetos.Clases.Configuracion.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WCF_Personal\" />
+    <WCFMetadataStorage Include="Connected Services\WCF_Seguridad\" />
+    <WCFMetadataStorage Include="Connected Services\WCF_ServicioAtestados\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atestados.Objetos\Atestados.Objetos.csproj">
+      <Project>{26871020-d7d1-4a3b-abef-2605fa3e6fcb}</Project>
+      <Name>Atestados.Objetos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_ServicioAtestados\ServiciosAtestados.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_ServicioAtestados\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_ServicioAtestados\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_ServicioAtestados\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Seguridad\TEC_WCF_Seguridad.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Seguridad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Seguridad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Seguridad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Personal\WCFPersona.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Personal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Personal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCF_Personal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

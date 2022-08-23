@@ -1,0 +1,115 @@
+/*Hoja de estilos para el proyecto.*/
+
+@font-face {
+    font-family: helvetica;
+    src: url("fonts/helvetica.woff") format("woff"), url("fonts/helvetica.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: helvetica-bold;
+    src: url("fonts/helvetica-bold.woff") format("woff"), url("fonts/helvetica-bold.ttf") format("truetype");
+}
+
+* {
+    font-family: helvetica;
+}
+
+.sidebar-tec {
+    background: #002855;
+    min-height: 100vh;
+}
+
+/*Padding para espaciar el cuerpo del navbar.*/
+.nav-padding{
+    padding-top: 5rem;
+}
+
+.white-hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid white;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar-tec {
+    /*height: 5rem;*/
+    background: #002855;
+    /*background: linear-gradient(90deg, #002855, #005085);*/
+}
+
+    .navbar-tec .navbar-brand,
+    .navbar-tec .navbar-text {
+        color: #efefef;
+    }
+
+.img-center {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo {
+    margin-top: 5px;
+    height: 25px;
+    width: auto;
+}
+
+.btn-outline-primary {
+    color: rgba(0,80,133,1);
+    background-color: rgba(255,255,255,1);
+    background-image: none;
+    border-color: rgba(0,80,133,1);
+}
+
+    .btn-outline-primary:hover {
+        color: white;
+        background-color: rgba(0,40,85,1);
+        border-color: rgba(0,40,85,1);
+    }
+
+    .btn-outline-primary:focus,
+    .btn-outline-primary.focus {
+        box-shadow: 0 0 0 .2rem rgba(0,80,133,1);
+    }
+
+    .btn-outline-primary.disabled,
+    .btn-outline-primary:disabled {
+        color: rgba(0,80,133,0.5);
+        background-color: transparent
+    }
+
+    .btn-outline-primary:not(:disabled):not(.disabled):active,
+    .btn-outline-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-primary.dropdown-toggle {
+        color: white;
+        background-color: rgba(0,40,85,1);
+        border-color: rgba(0,80,133,0.5);
+    }
+
+        .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+        .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-outline-primary.dropdown-toggle:focus {
+            box-shadow: 0 0 0 .2rem rgba(0,80,133,0.5);
+        }
+
+.register-link {
+    text-decoration: none;
+}
+
+td {
+    vertical-align: top;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+}

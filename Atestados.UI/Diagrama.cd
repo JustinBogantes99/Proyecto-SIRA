@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Diagrama Controladores y acceso a entidades de EF">
+    <Position X="8.183" Y="0.606" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Diagrama del modelo">
+    <Position X="18.821" Y="1.309" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="Atestados.UI.Controllers.Atestados.ArticuloController">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAGAQIAAEAAAAAAEAAAAwAAABAAEAACAQAAA=</HashCode>
+      <FileName>Controllers\Atestados\ArticuloController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="infoGeneral" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.UI.Controllers.Atestados.CapacitacionController">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAACAQIAAEAAAAAAEAAAAQAAABAAEAACAQAAA=</HashCode>
+      <FileName>Controllers\Atestados\CapacitacionController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="infoAtestado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.UI.Controllers.Atestados.CertificadoController">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAACAQIAAEAAAAAAEAAAAQAAABAAEAACAQAAA=</HashCode>
+      <FileName>Controllers\Atestados\CertificadoController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="infoAtestado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.UI.Controllers.Atestados.IdiomaController">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAACAQIAAEAAAAAAEAAAAQAAABAAEAACAQAAA=</HashCode>
+      <FileName>Controllers\Atestados\IdiomaController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="infoAtestado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.UI.Controllers.Atestados.LibroController">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAGAQIAAEAAAAAAEAAAAwAAABAAEAACAQAAA=</HashCode>
+      <FileName>Controllers\Atestados\LibroController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="infoAtestado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.UI.Controllers.PersonaController">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEACEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\PersonaController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="información" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.AtestadosEntities">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Negocios.Negocios.InformacionGeneral">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Negocios.Negocios.InformacionAtestado">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Archivo">
+    <Position X="23" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Atestado">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="DominioIdioma" />
+      <Property Name="Fecha" />
+      <Property Name="InfoEditorial" />
+      <Property Name="Pais" />
+      <Property Name="Persona" />
+      <Property Name="Rubro" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Archivo" />
+      <Property Name="AtestadoXPersona" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.AtestadoXPersona">
+    <Position X="18.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Atestado" />
+      <Property Name="Persona" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.DominioIdioma">
+    <Position X="21" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Atestado" />
+      <Property Name="Idioma" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Fecha">
+    <Position X="24.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Atestado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Idioma">
+    <Position X="23" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.InfoEditorial">
+    <Position X="25.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Atestado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Pais">
+    <Position X="22.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Persona">
+    <Position X="16.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Rubro">
+    <Position X="18.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Property Name="Atestado" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.TipoRubro">
+    <Position X="15.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Property Name="Rubro" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Atestados.Datos.Modelo.Usuario">
+    <Position X="19" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Persona" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

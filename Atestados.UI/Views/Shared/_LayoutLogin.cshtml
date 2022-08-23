@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/tec-css")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <title>SIRA</title>
+
+</head>
+<body class="bgLogin">
+    <div id="main" class="">
+        <!-- Navegacion -->
+        <nav id="navHeader" class="navbar navbar-dark navbar-tec fixed-top" role="navigation">
+            <div class="container-fluid">
+                <!-- Logo TEC -->
+                <div class="navbar-header px-3">
+                    <a class="navbar-brand img-responsive" href="@Url.Action("Index", "Login")">
+                        <img src="~/Content/img/logotec_blanco.png" alt="Logo ITCR">
+                    </a>
+                </div>
+                <!-- Fin Logo TEC -->
+            </div>
+            <!-- Fin container de navegación -->
+        </nav>
+        <!-- Fin Navegacion-->
+        <!--Cuerpo de Aplicacion-->
+        @RenderBody()
+        <!--Fin Cuerpo de Aplicacion-->
+        <!--Footer-->
+        @RenderPage("~/Views/Shared/Footer.cshtml")
+        <!--Fin Footer-->
+
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript">
+        var rootDir = "";
+        var rootDirImage = "@Url.Content("~/")";
+    </script>
+
+    <script src="~/Scripts/Utilitarios/Mensajes.js"></script>
+    <script src="~/Scripts/Utilitarios/loadingoverlay.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <!--Valores-->
+    <input type="hidden" id="contAutenticarUsuario" value="@Url.Action("ValidarUsuario", "Login")">
+    <input type="hidden" id="contAutenticarUsuario" value="@Url.Action("PaginaInvalida", "Login")">
+    @*@Html.Hidden("RedirectTo", Url.Action("Index", "Home"))*@
+</body>
+</html>

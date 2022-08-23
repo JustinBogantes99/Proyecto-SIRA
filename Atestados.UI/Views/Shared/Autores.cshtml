@@ -1,0 +1,92 @@
+﻿<hr />
+<div class="row table-wraper scrollbar-atestados">
+    <h4>Autores</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Porcentaje
+                </th>
+                <th>
+                    Nota asignada
+                </th>
+                <th>
+                    Nota ponderada
+                </th>
+                <th>
+                    Puntos obtenidos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < ViewBag.Autores.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @ViewBag.Autores[i].Nombre
+                    </td>
+                    <td>
+                        @ViewBag.Autores[i].PrimerApellido
+                    </td>
+                    <td>
+                        @ViewBag.Autores[i].Email
+                    </td>
+                    <td>
+                        @ViewBag.Autores[i].Porcentaje %
+                    </td>
+                    <td>
+                        <span class="nota" name="@ViewBag.Autores[i].PersonaID"></span>
+                    </td>
+                    <td>
+                        @ViewBag.NotasPonderadas[i].ToString("0.00")
+                    </td>
+                    <td>
+                        <!-- Mostrar solo dos decimales -->
+                        @ViewBag.Puntos[i].ToString("0.00")
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    $.ajax({
+        type: 'POST',
+        url: '@Variables.BaseUrl/Atestados/ObtenerEvaluaciones',
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            //console.log(response.evaluaciones);
+            evaluaciones = response.evaluaciones
+            if (evaluaciones.length > 0) {
+                evaluaciones.forEach(function (evaluacion) {
+                    $(".nota").each(function () {
+                        if ($(this).attr('name') == evaluacion.AutorID) {
+                            $(this).append(evaluacion.PorcentajeObtenido);
+                        }
+                    });
+                })
+            } else {
+                console.log("sin evaluaciones")
+                $(".nota").each(function () {
+                    $(this).append("N/A");
+                });
+
+            }
+
+        }
+    })
+
+</script>

@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFPersona" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Expediente.Objetos.Objetos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCFPersona_BuscarPersonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonas" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarPersonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CantidadEstudiantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:CantidadEstudiantes" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CantidadEstudiantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CantidadEstudiantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarFuncionario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarFuncionario" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarFuncionario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarFuncionarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarInfBasica_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarInfBasica" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarInfBasica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarInfBasicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_InsertarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_InsertarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListInfAutenticacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListInfAutenticacion" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListInfAutenticacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListInfAutenticacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AutenticarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AutenticarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AutenticarSeguridad_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AutenticarSeguridad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarSeguridadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Buscar_EstudiantesXPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_EstudiantesXPlan" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Buscar_EstudiantesXPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_EstudiantesXPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarPersonaXNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonaXNombre" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarPersonaXNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonaXNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Actualizar_IndicadorAmpliarCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_IndicadorAmpliarCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Actualizar_IndicadorAmpliarCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_IndicadorAmpliarCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarPersona_Tribunal_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersona_Tribunal" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarPersona_Tribunal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersona_TribunalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Actualizar_TipoFuncionario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_TipoFuncionario" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Actualizar_TipoFuncionario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_TipoFuncionarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Fotografia_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fotografia" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Fotografia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FotografiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AgregarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AgregarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarSeguridad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarSeguridad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSeguridadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearCorreoSeguridad_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCorreoSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearCorreoSeguridad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCorreoSeguridadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarCorreoSeguridad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCorreoSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarCorreoSeguridad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCorreoSeguridadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarIdSeguridad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarIdSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarIdSeguridad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarIdSeguridadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarNoCarnet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNoCarnet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarNoCarnet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNoCarnetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_EliminarUsuarioSeguridad_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_EliminarUsuarioSeguridad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioSeguridadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActivarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActivarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_InactivarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_InactivarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AgregarTelefonoSeg_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarTelefonoSeg" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AgregarTelefonoSeg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarTelefonoSegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarTelefonoSeg_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTelefonoSeg" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarTelefonoSeg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTelefonoSegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_EliminarTelefonoSeg_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTelefonoSeg" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_EliminarTelefonoSeg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTelefonoSegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarTelefonoSeg_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTelefonoSeg" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarTelefonoSeg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTelefonoSegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaCorreos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCorreos" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaCorreos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCorreosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActCorreo_WinServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActCorreo_WinServices" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActCorreo_WinServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActCorreo_WinServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaTelefonos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTelefonos" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaTelefonos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTelefonosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearTelefono_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTelefono" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearTelefono_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTelefonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarTelefono_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTelefono" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarTelefono_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTelefonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaDirecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDirecciones" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaDirecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDireccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearDireccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearDireccion" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_CrearDireccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarDireccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDireccion" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarDireccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaContactosEmergencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaContactosEmergencia" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ListaContactosEmergencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaContactosEmergenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AgregarContactoEmergencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarContactoEmergencia" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_AgregarContactoEmergencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarContactoEmergenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarContactoEmergencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContactoEmergencia" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_ActualizarContactoEmergencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContactoEmergenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Solicitud_CreacionCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitud_CreacionCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Solicitud_CreacionCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitud_CreacionCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Solicitud_ActualizacionCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitud_ActualizacionCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Solicitud_ActualizacionCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitud_ActualizacionCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Solicitud_ActualEstCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitud_ActualEstCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Solicitud_ActualEstCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitud_ActualEstCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_SoliCreacionCuentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:SoliCreacionCuentas" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_SoliCreacionCuentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SoliCreacionCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Buscar_AutorizadosLicencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_AutorizadosLicencias" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_Buscar_AutorizadosLicencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_AutorizadosLicenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarEstadoSolicitudCuentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEstadoSolicitudCuentas" />
+  </wsdl:message>
+  <wsdl:message name="IWCFPersona_BuscarEstadoSolicitudCuentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEstadoSolicitudCuentasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCFPersona">
+    <wsdl:operation name="BuscarPersonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarPersonas" message="tns:IWCFPersona_BuscarPersonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarPersonasResponse" message="tns:IWCFPersona_BuscarPersonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CantidadEstudiantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/CantidadEstudiantes" message="tns:IWCFPersona_CantidadEstudiantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/CantidadEstudiantesResponse" message="tns:IWCFPersona_CantidadEstudiantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarEstudiante" message="tns:IWCFPersona_BuscarEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarEstudianteResponse" message="tns:IWCFPersona_BuscarEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFuncionario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarFuncionario" message="tns:IWCFPersona_BuscarFuncionario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarFuncionarioResponse" message="tns:IWCFPersona_BuscarFuncionario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarInfBasica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarInfBasica" message="tns:IWCFPersona_BuscarInfBasica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarInfBasicaResponse" message="tns:IWCFPersona_BuscarInfBasica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/InsertarPersona" message="tns:IWCFPersona_InsertarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/InsertarPersonaResponse" message="tns:IWCFPersona_InsertarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInfAutenticacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ListInfAutenticacion" message="tns:IWCFPersona_ListInfAutenticacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ListInfAutenticacionResponse" message="tns:IWCFPersona_ListInfAutenticacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/AutenticarUsuario" message="tns:IWCFPersona_AutenticarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/AutenticarUsuarioResponse" message="tns:IWCFPersona_AutenticarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarSeguridad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/AutenticarSeguridad" message="tns:IWCFPersona_AutenticarSeguridad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/AutenticarSeguridadResponse" message="tns:IWCFPersona_AutenticarSeguridad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_EstudiantesXPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Buscar_EstudiantesXPlan" message="tns:IWCFPersona_Buscar_EstudiantesXPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Buscar_EstudiantesXPlanResponse" message="tns:IWCFPersona_Buscar_EstudiantesXPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersonaXNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarPersonaXNombre" message="tns:IWCFPersona_BuscarPersonaXNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarPersonaXNombreResponse" message="tns:IWCFPersona_BuscarPersonaXNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_IndicadorAmpliarCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Actualizar_IndicadorAmpliarCuenta" message="tns:IWCFPersona_Actualizar_IndicadorAmpliarCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Actualizar_IndicadorAmpliarCuentaResponse" message="tns:IWCFPersona_Actualizar_IndicadorAmpliarCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersona_Tribunal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarPersona_Tribunal" message="tns:IWCFPersona_BuscarPersona_Tribunal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarPersona_TribunalResponse" message="tns:IWCFPersona_BuscarPersona_Tribunal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_TipoFuncionario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Actualizar_TipoFuncionario" message="tns:IWCFPersona_Actualizar_TipoFuncionario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Actualizar_TipoFuncionarioResponse" message="tns:IWCFPersona_Actualizar_TipoFuncionario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fotografia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Fotografia" message="tns:IWCFPersona_Fotografia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/FotografiaResponse" message="tns:IWCFPersona_Fotografia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/AgregarUsuario" message="tns:IWCFPersona_AgregarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/AgregarUsuarioResponse" message="tns:IWCFPersona_AgregarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSeguridad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarSeguridad" message="tns:IWCFPersona_ActualizarSeguridad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarSeguridadResponse" message="tns:IWCFPersona_ActualizarSeguridad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCorreoSeguridad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/CrearCorreoSeguridad" message="tns:IWCFPersona_CrearCorreoSeguridad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/CrearCorreoSeguridadResponse" message="tns:IWCFPersona_CrearCorreoSeguridad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCorreoSeguridad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarCorreoSeguridad" message="tns:IWCFPersona_ActualizarCorreoSeguridad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarCorreoSeguridadResponse" message="tns:IWCFPersona_ActualizarCorreoSeguridad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarIdSeguridad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarIdSeguridad" message="tns:IWCFPersona_ActualizarIdSeguridad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarIdSeguridadResponse" message="tns:IWCFPersona_ActualizarIdSeguridad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNoCarnet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarNoCarnet" message="tns:IWCFPersona_ActualizarNoCarnet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarNoCarnetResponse" message="tns:IWCFPersona_ActualizarNoCarnet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarioSeguridad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/EliminarUsuarioSeguridad" message="tns:IWCFPersona_EliminarUsuarioSeguridad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/EliminarUsuarioSeguridadResponse" message="tns:IWCFPersona_EliminarUsuarioSeguridad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActivarUsuario" message="tns:IWCFPersona_ActivarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActivarUsuarioResponse" message="tns:IWCFPersona_ActivarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/InactivarUsuario" message="tns:IWCFPersona_InactivarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/InactivarUsuarioResponse" message="tns:IWCFPersona_InactivarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTelefonoSeg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/AgregarTelefonoSeg" message="tns:IWCFPersona_AgregarTelefonoSeg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/AgregarTelefonoSegResponse" message="tns:IWCFPersona_AgregarTelefonoSeg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTelefonoSeg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarTelefonoSeg" message="tns:IWCFPersona_ActualizarTelefonoSeg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarTelefonoSegResponse" message="tns:IWCFPersona_ActualizarTelefonoSeg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTelefonoSeg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/EliminarTelefonoSeg" message="tns:IWCFPersona_EliminarTelefonoSeg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/EliminarTelefonoSegResponse" message="tns:IWCFPersona_EliminarTelefonoSeg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTelefonoSeg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarTelefonoSeg" message="tns:IWCFPersona_BuscarTelefonoSeg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarTelefonoSegResponse" message="tns:IWCFPersona_BuscarTelefonoSeg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaCorreos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ListaCorreos" message="tns:IWCFPersona_ListaCorreos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ListaCorreosResponse" message="tns:IWCFPersona_ListaCorreos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/CrearCorreo" message="tns:IWCFPersona_CrearCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/CrearCorreoResponse" message="tns:IWCFPersona_CrearCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActCorreo_WinServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActCorreo_WinServices" message="tns:IWCFPersona_ActCorreo_WinServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActCorreo_WinServicesResponse" message="tns:IWCFPersona_ActCorreo_WinServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTelefonos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ListaTelefonos" message="tns:IWCFPersona_ListaTelefonos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ListaTelefonosResponse" message="tns:IWCFPersona_ListaTelefonos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTelefono">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/CrearTelefono" message="tns:IWCFPersona_CrearTelefono_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/CrearTelefonoResponse" message="tns:IWCFPersona_CrearTelefono_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTelefono">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarTelefono" message="tns:IWCFPersona_ActualizarTelefono_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarTelefonoResponse" message="tns:IWCFPersona_ActualizarTelefono_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDirecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ListaDirecciones" message="tns:IWCFPersona_ListaDirecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ListaDireccionesResponse" message="tns:IWCFPersona_ListaDirecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearDireccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/CrearDireccion" message="tns:IWCFPersona_CrearDireccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/CrearDireccionResponse" message="tns:IWCFPersona_CrearDireccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDireccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarDireccion" message="tns:IWCFPersona_ActualizarDireccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarDireccionResponse" message="tns:IWCFPersona_ActualizarDireccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaContactosEmergencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ListaContactosEmergencia" message="tns:IWCFPersona_ListaContactosEmergencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ListaContactosEmergenciaResponse" message="tns:IWCFPersona_ListaContactosEmergencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContactoEmergencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/AgregarContactoEmergencia" message="tns:IWCFPersona_AgregarContactoEmergencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/AgregarContactoEmergenciaResponse" message="tns:IWCFPersona_AgregarContactoEmergencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContactoEmergencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarContactoEmergencia" message="tns:IWCFPersona_ActualizarContactoEmergencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/ActualizarContactoEmergenciaResponse" message="tns:IWCFPersona_ActualizarContactoEmergencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Solicitud_CreacionCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Solicitud_CreacionCuenta" message="tns:IWCFPersona_Solicitud_CreacionCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Solicitud_CreacionCuentaResponse" message="tns:IWCFPersona_Solicitud_CreacionCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Solicitud_ActualizacionCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Solicitud_ActualizacionCuenta" message="tns:IWCFPersona_Solicitud_ActualizacionCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Solicitud_ActualizacionCuentaResponse" message="tns:IWCFPersona_Solicitud_ActualizacionCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Solicitud_ActualEstCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Solicitud_ActualEstCuenta" message="tns:IWCFPersona_Solicitud_ActualEstCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Solicitud_ActualEstCuentaResponse" message="tns:IWCFPersona_Solicitud_ActualEstCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SoliCreacionCuentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/SoliCreacionCuentas" message="tns:IWCFPersona_SoliCreacionCuentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/SoliCreacionCuentasResponse" message="tns:IWCFPersona_SoliCreacionCuentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_AutorizadosLicencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/Buscar_AutorizadosLicencias" message="tns:IWCFPersona_Buscar_AutorizadosLicencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/Buscar_AutorizadosLicenciasResponse" message="tns:IWCFPersona_Buscar_AutorizadosLicencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEstadoSolicitudCuentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFPersona/BuscarEstadoSolicitudCuentas" message="tns:IWCFPersona_BuscarEstadoSolicitudCuentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFPersona/BuscarEstadoSolicitudCuentasResponse" message="tns:IWCFPersona_BuscarEstadoSolicitudCuentas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWCFPersona" type="tns:IWCFPersona">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscarPersonas">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarPersonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadEstudiantes">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/CantidadEstudiantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarFuncionario">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarFuncionario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarInfBasica">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarInfBasica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPersona">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/InsertarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInfAutenticacion">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ListInfAutenticacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/AutenticarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarSeguridad">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/AutenticarSeguridad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_EstudiantesXPlan">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Buscar_EstudiantesXPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersonaXNombre">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarPersonaXNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_IndicadorAmpliarCuenta">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Actualizar_IndicadorAmpliarCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersona_Tribunal">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarPersona_Tribunal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_TipoFuncionario">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Actualizar_TipoFuncionario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fotografia">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Fotografia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/AgregarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSeguridad">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarSeguridad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCorreoSeguridad">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/CrearCorreoSeguridad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCorreoSeguridad">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarCorreoSeguridad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarIdSeguridad">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarIdSeguridad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNoCarnet">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarNoCarnet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarioSeguridad">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/EliminarUsuarioSeguridad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActivarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/InactivarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTelefonoSeg">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/AgregarTelefonoSeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTelefonoSeg">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarTelefonoSeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTelefonoSeg">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/EliminarTelefonoSeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTelefonoSeg">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarTelefonoSeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaCorreos">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ListaCorreos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCorreo">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/CrearCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActCorreo_WinServices">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActCorreo_WinServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTelefonos">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ListaTelefonos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTelefono">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/CrearTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTelefono">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDirecciones">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ListaDirecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearDireccion">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/CrearDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDireccion">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaContactosEmergencia">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ListaContactosEmergencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContactoEmergencia">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/AgregarContactoEmergencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContactoEmergencia">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/ActualizarContactoEmergencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Solicitud_CreacionCuenta">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Solicitud_CreacionCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Solicitud_ActualizacionCuenta">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Solicitud_ActualizacionCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Solicitud_ActualEstCuenta">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Solicitud_ActualEstCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoliCreacionCuentas">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/SoliCreacionCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_AutorizadosLicencias">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/Buscar_AutorizadosLicencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEstadoSolicitudCuentas">
+      <soap:operation soapAction="http://tempuri.org/IWCFPersona/BuscarEstadoSolicitudCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFPersona">
+    <wsdl:port name="BasicHttpBinding_IWCFPersona" binding="tns:BasicHttpBinding_IWCFPersona">
+      <soap:address location="http://tec-apps/ServiciosExpediente/ServiciosWeb/WCFPersona.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
