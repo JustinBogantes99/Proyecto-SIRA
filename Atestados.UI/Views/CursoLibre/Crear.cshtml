@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+<div class="container-fluid">
+    <div class="row">
+        <h2>Curso Libre</h2>
+        <hr />
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    @{InformacionGeneral infoGeneral = new InformacionGeneral();}
+    // Esta variable debe estar en todas las vistas de atestados.
+    var baseUrl = "@Variables.BaseUrl/Atestados";
+    var editMode = false;
+    var hasAutores = true;
+</script>
+@Scripts.Render("~/bundles/atestados_shared")

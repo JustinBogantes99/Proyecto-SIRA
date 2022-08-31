@@ -199,6 +199,7 @@
     <Compile Include="Controllers\Atestados\AtestadoShared.cs" />
     <Compile Include="Controllers\Atestados\CapacitacionController.cs" />
     <Compile Include="Controllers\Atestados\CertificadoController.cs" />
+    <Compile Include="Controllers\Atestados\CursoLibreController.cs" />
     <Compile Include="Controllers\Atestados\IdiomaController.cs" />
     <Compile Include="Controllers\Atestados\LibroController.cs" />
     <Compile Include="Controllers\Atestados\ObraAdministrativaController.cs" />
@@ -435,6 +436,7 @@
     <Content Include="Views\OtrasObrasProf\Crear.cshtml" />
     <Content Include="Views\OtrasObrasProf\Editar.cshtml" />
     <Content Include="Views\OtrasObrasProf\Ver.cshtml" />
+    <Content Include="Views\CursoLibre\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
