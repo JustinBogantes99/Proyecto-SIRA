@@ -437,6 +437,9 @@
     <Content Include="Views\OtrasObrasProf\Editar.cshtml" />
     <Content Include="Views\OtrasObrasProf\Ver.cshtml" />
     <Content Include="Views\CursoLibre\Crear.cshtml" />
+    <Content Include="Views\Shared\BotonVer.cshtml" />
+    <Content Include="Views\Shared\BotonEditar.cshtml" />
+    <Content Include="Views\Shared\BotonBorrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
