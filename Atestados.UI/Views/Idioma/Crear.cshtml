@@ -19,7 +19,7 @@
 
                 <div class="form-horizontal">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
+                    <div class="form-group mb-1">
                         @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-1">
                         @Html.LabelFor(model => model.Enlace, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Enlace, new { htmlAttributes = new { @class = "form-control" } })
@@ -35,16 +35,16 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <b class="control-label col-md-2">Año</b>
+                    <div class="form-group mb-1">
+                        @Html.LabelFor(model => model.Annio, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.TextBoxFor(x => x.Annio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
                             @Html.ValidationMessageFor(model => model.Annio, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Lugar, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="form-group mb-1">
+                        <label for="Lugar" class="control-label col-md-2">Instancia certificadora</label>
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Lugar, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Lugar, "", new { @class = "text-danger" })
@@ -52,9 +52,7 @@
                     </div>
 
                     <div class="form-group">
-                        <b class="control-label col-md-2">
-                            Idioma
-                        </b>
+                        @Html.LabelFor(model => model.IdiomaID, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DropDownList("IdiomaID", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.IdiomaID, "", new { @class = "text-danger" })
@@ -63,7 +61,7 @@
 
                     <div class="form-horizontal">
                         <h4>Dominio de idioma</h4>
-                        <div class="form-group">
+                        <div class="form-group mb-1">
                             @Html.LabelFor(model => model.Escrito, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 A1
@@ -80,7 +78,7 @@
                                 @Html.RadioButtonFor(model => model.Escrito, 6)
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-1">
                             @Html.LabelFor(model => model.Oral, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 A1
@@ -97,7 +95,7 @@
                                 @Html.RadioButtonFor(model => model.Oral, 6)
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-1">
                             @Html.LabelFor(model => model.Auditiva, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 A1
@@ -114,7 +112,7 @@
                                 @Html.RadioButtonFor(model => model.Auditiva, 6)
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-1">
                             @Html.LabelFor(model => model.Lectura, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 A1
@@ -133,7 +131,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-1">
                         @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.TextAreaFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
@@ -141,9 +139,9 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group my-2">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Crear" class="btn btn-default" id="submit" />
+                            <input type="submit" value="Crear" class="btn btn-success" id="submit" />
                         </div>
                     </div>
 
@@ -153,29 +151,19 @@
         <div class="col-lg-4">
             <div class="form-horizontal">
                 <form id="subirArchivo">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <div class="col-md-10">
-                            <input type="file" name="archivo" class="btn btn-default" id="archivo" />
+                            <input type="file" name="archivo" id="archivo" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            <input type="submit" class="btn btn-default" value="Subir Archivo" form="subirArchivo" />
+                            <input type="submit" class="btn btn-primary" value="Subir Archivo" form="subirArchivo" />
                         </div>
                     </div>
                 </form>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>
-                                Nombre
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaArchivos"> </tbody>
-                </table>
+                @Html.Partial("_ArchivosTabla")
             </div>
         </div>
     </div>
@@ -183,10 +171,8 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>
-                        Idiomas agregados
-                    </th>
-                    <th></th>
+                    <th>Idiomas agregados</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -197,9 +183,24 @@
                             @item.Nombre
                         </td>
                         <td>
-                            @Html.ActionLink("Editar", "Editar", new { id = item.AtestadoID }) |
-                            @Html.ActionLink("Ver", "Ver", new { id = item.AtestadoID }) |
-                            @Html.ActionLink("Borrar", "Borrar", new { id = item.AtestadoID })
+                            <a href="@Url.Action("Editar", "Idioma", new { id = item.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                </svg>
+                            </a>
+                            <a href="@Url.Action("Ver","Idioma", new {id = item.AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" class="bi bi-eye" viewBox="0 0 16 16">
+                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                </svg>
+                            </a>
+                            <a href="@Url.Action("Borrar","Idioma", new {id = item.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="#000" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                </svg>
+                            </a>
                         </td>
                     </tr>
                 }
