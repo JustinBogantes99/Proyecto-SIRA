@@ -4,10 +4,24 @@
 }
 
 @* Atestados que faltan por enlacar con el sidebar:
-        <li class="list-group-item" id="Ponencia">@Html.RouteLink("Ponencia", new { action = "Crear", controller = "Ponencia" })</li>
+    <li class="list-group-item" id="Ponencia">@Html.RouteLink("Ponencia", new { action = "Crear", controller = "Ponencia" })</li>
 *@
 
 @*Reminder: @Url.Action("Pagina", "Controlador")*@
+
+<style>
+    /* when menu item is selected */
+    .active {
+        background-color: #011d3c;
+        width: calc(100% + 1.5rem);
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('#menu').find('[href="' + window.location.pathname + '"]').parent().addClass('active')
+    });
+</script>
 
 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 sidebar-tec nav-padding">
     <div class="d-flex flex-column text-start align-items-sm-start px-3 pt-2 text-white">
@@ -17,211 +31,211 @@
                 <a href="@Url.Action("Index", "Funcionario")" class="btn btn-toggle text-start rounded collapsed text-white">
                     <i class="fs-4 bi-eyeglasses"></i> <span class="ms-1 d-none d-sm-inline">Ver atestados</span>
                 </a>
-                <hr class="white-hr hw-100" />
+                <hr class="white-hr hw-100" style="background-color: #002854;"/>
             </li>
             <li><span class="ms-1 d-none d-sm-inline h4">Agregar atestados</span></li>
 
             <li>
-                <button class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#prod-uni-menu" aria-expanded="true">
+                <button id="menu-cat-1" class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#prod-uni-menu" aria-expanded="true">
                     <i class="fs-4 bi-folder"></i> <span class="ms-1 d-none d-sm-inline">1. Producción universitaria</span>
                 </button>
                 <div class="collapse" id="prod-uni-menu" data-bs-parent="#menu">
                     <ul class="nav flex-column ms-1">
                         <li>
                             <a href="@Url.Action("Crear","Libro")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-book"></i> <span class="ms-1 d-none d-sm-inline">a. Libro</span>
+                                &emsp;<i class="fs-4 bi-book"></i> <span class="ms-1 d-none d-sm-inline">Libro</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear","Articulo")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-file-text"></i> <span class="ms-1 d-none d-sm-inline">b. Artículo</span>
+                                &emsp;<i class="fs-4 bi-file-text"></i> <span class="ms-1 d-none d-sm-inline">Artículo</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-code-slash"></i> <span class="ms-1 d-none d-sm-inline">c. Desarrollo de software</span>
+                                &emsp;<i class="fs-4 bi-code-slash"></i> <span class="ms-1 d-none d-sm-inline">Desarrollo de software</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-trophy"></i> <span class="ms-1 d-none d-sm-inline">d. Proyecto de graduación galardonado</span>
+                                &emsp;<i class="fs-4 bi-trophy"></i> <span class="ms-1 d-none d-sm-inline">Proyecto de graduación galardonado</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "ObraDidactica")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-clipboard-check"></i> <span class="ms-1 d-none d-sm-inline">e. Obra didáctica</span>
+                                &emsp;<i class="fs-4 bi-clipboard-check"></i> <span class="ms-1 d-none d-sm-inline">Obra didáctica</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "ObraAdministrativa")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-building"></i> <span class="ms-1 d-none d-sm-inline">f. Obra administrativa de desarrollo</span>
+                                &emsp;<i class="fs-4 bi-building"></i> <span class="ms-1 d-none d-sm-inline">Obra administrativa de desarrollo</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "OtrasObrasProf")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-briefcase"></i> <span class="ms-1 d-none d-sm-inline">g. Otras obras profesionales</span>
+                                &emsp;<i class="fs-4 bi-briefcase"></i> <span class="ms-1 d-none d-sm-inline">Otras obras profesionales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-easel"></i> <span class="ms-1 d-none d-sm-inline">h. Obras artísticas</span>
+                                &emsp;<i class="fs-4 bi-easel"></i> <span class="ms-1 d-none d-sm-inline">Obras artísticas</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
-                <button class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#proy-uni-menu" aria-expanded="true">
+                <button id="menu-cat-2" class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#proy-uni-menu" aria-expanded="true">
                     <i class="fs-4 bi-folder"></i> <span class="ms-1 d-none d-sm-inline">2. Proyección universitaria</span>
                 </button>
                 <div class="collapse" id="proy-uni-menu" data-bs-parent="#menu">
                     <ul class="nav flex-column ms-1">
                         <li>
                             <a href="@Url.Action("Crear","ProyectosInvEx")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-bar-chart"></i> <span class="ms-1 d-none d-sm-inline">a. Proyectos investigación-extensión</span>
+                                &emsp;<i class="fs-4 bi-bar-chart"></i> <span class="ms-1 d-none d-sm-inline">Proyectos investigación-extensión</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "FortalecimientoInvExt")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-calendar3"></i> <span class="ms-1 d-none d-sm-inline">b. Actividades de fortalecimiento investigación-extensión</span>
+                                &emsp;<i class="fs-4 bi-calendar3"></i> <span class="ms-1 d-none d-sm-inline">Actividades de fortalecimiento investigación-extensión</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-file-earmark-post"></i> <span class="ms-1 d-none d-sm-inline">c. Patentes</span>
+                                &emsp;<i class="fs-4 bi-file-earmark-post"></i> <span class="ms-1 d-none d-sm-inline">Patentes</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Capacitacion")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-projector"></i> <span class="ms-1 d-none d-sm-inline">d. Capacitación interna impartida</span>
+                                &emsp;<i class="fs-4 bi-projector"></i> <span class="ms-1 d-none d-sm-inline">Capacitación interna impartida</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-puzzle"></i> <span class="ms-1 d-none d-sm-inline">e. Trabajo docente no remunerado</span>
+                                &emsp;<i class="fs-4 bi-puzzle"></i> <span class="ms-1 d-none d-sm-inline">Trabajo docente no remunerado</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-puzzle-fill"></i> <span class="ms-1 d-none d-sm-inline">f. Trabajo de graduación no remunerado</span>
+                                &emsp;<i class="fs-4 bi-puzzle-fill"></i> <span class="ms-1 d-none d-sm-inline">Trabajo de graduación no remunerado</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-award"></i> <span class="ms-1 d-none d-sm-inline">g. Premios nacionales e internacionales</span>
+                                &emsp;<i class="fs-4 bi-award"></i> <span class="ms-1 d-none d-sm-inline">Premios nacionales e internacionales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-person-badge"></i> <span class="ms-1 d-none d-sm-inline">h. Membresía consejos editoriales</span>
+                                &emsp;<i class="fs-4 bi-person-badge"></i> <span class="ms-1 d-none d-sm-inline">Membresía consejos editoriales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-person-badge-fill"></i> <span class="ms-1 d-none d-sm-inline">i. Membresía ogranismos extrainstitucionales</span>
+                                &emsp;<i class="fs-4 bi-person-badge-fill"></i> <span class="ms-1 d-none d-sm-inline">Membresía ogranismos extrainstitucionales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-kanban"></i> <span class="ms-1 d-none d-sm-inline">j. Organización eventos proyección externa</span>
+                                &emsp;<i class="fs-4 bi-kanban"></i> <span class="ms-1 d-none d-sm-inline">Organización eventos proyección externa</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-kanban-fill"></i> <span class="ms-1 d-none d-sm-inline">k. Participación eventos proyección externa</span>
+                                &emsp;<i class="fs-4 bi-kanban-fill"></i> <span class="ms-1 d-none d-sm-inline">Participación eventos proyección externa</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-layers-half"></i> <span class="ms-1 d-none d-sm-inline">l. Colaboración eventos externos</span>
+                                &emsp;<i class="fs-4 bi-layers-half"></i> <span class="ms-1 d-none d-sm-inline">Colaboración eventos externos</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-bicycle"></i> <span class="ms-1 d-none d-sm-inline">m. Participación eventos deportivos</span>
+                                &emsp;<i class="fs-4 bi-bicycle"></i> <span class="ms-1 d-none d-sm-inline">Participación eventos deportivos</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-newspaper"></i> <span class="ms-1 d-none d-sm-inline">n. Publicaciones medios de comunicación masiva</span>
+                                &emsp;<i class="fs-4 bi-newspaper"></i> <span class="ms-1 d-none d-sm-inline">Publicaciones medios de comunicación masiva</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-bookmark-star"></i> <span class="ms-1 d-none d-sm-inline">ñ. Jurado premios nacionales</span>
+                                &emsp;<i class="fs-4 bi-bookmark-star"></i> <span class="ms-1 d-none d-sm-inline">Jurado premios nacionales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                &emsp;<i class="fs-4 bi-card-checklist"></i> <span class="ms-1 d-none d-sm-inline">o. Centros de formación humanística impartidos</span>
+                                &emsp;<i class="fs-4 bi-card-checklist"></i> <span class="ms-1 d-none d-sm-inline">Centros de formación humanística impartidos</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
-                <button class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#form-uni-menu" aria-expanded="true">
+                <button id="menu-cat-3" class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#form-uni-menu" aria-expanded="true">
                     <i class="fs-4 bi-folder"></i> <span class="ms-1 d-none d-sm-inline">3. Formación universitaria</span>
                 </button>
                 <div class="collapse" id="form-uni-menu" data-bs-parent="#menu">
                     <ul class="nav flex-column ms-1">
                         <li>
                             <a href="@Url.Action("Crear", "Certificado")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-file-earmark-medical"></i> <span class="ms-1 d-none d-sm-inline">a. Grados académicos</span>
+                                <i class="fs-4 bi-file-earmark-medical"></i> <span class="ms-1 d-none d-sm-inline">Grados académicos</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear","Idioma")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-translate"></i> <span class="ms-1 d-none d-sm-inline">b. Idiomas</span>
+                                <i class="fs-4 bi-translate"></i> <span class="ms-1 d-none d-sm-inline">Idiomas</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-terminal"></i> <span class="ms-1 d-none d-sm-inline">c. Conocimiento de software</span>
+                                <i class="fs-4 bi-terminal"></i> <span class="ms-1 d-none d-sm-inline">Conocimiento de software</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-journal-check"></i> <span class="ms-1 d-none d-sm-inline">d. Capacitación profesional recibida</span>
+                                <i class="fs-4 bi-journal-check"></i> <span class="ms-1 d-none d-sm-inline">Capacitación profesional recibida</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
-                <button class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#part-uni-menu" aria-expanded="true">
+                <button id="menu-cat-4" class="btn btn-toggle text-start rounded collapsed text-white" data-bs-toggle="collapse" data-bs-target="#part-uni-menu" aria-expanded="true">
                     <i class="fs-4 bi-folder"></i> <span class="ms-1 d-none d-sm-inline">4. Participación interna oficial</span>
                 </button>
                 <div class="collapse" id="part-uni-menu" data-bs-parent="#menu">
                     <ul class="nav flex-column ms-1">
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-compass"></i> <span class="ms-1 d-none d-sm-inline">a. Director de departamento o rango superior</span>
+                                <i class="fs-4 bi-compass"></i> <span class="ms-1 d-none d-sm-inline">Director de departamento o rango superior</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-megaphone"></i> <span class="ms-1 d-none d-sm-inline">b. Responsable de unidad</span>
+                                <i class="fs-4 bi-megaphone"></i> <span class="ms-1 d-none d-sm-inline">Responsable de unidad</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-person-workspace"></i> <span class="ms-1 d-none d-sm-inline">c. Participación congreso institucional</span>
+                                <i class="fs-4 bi-person-workspace"></i> <span class="ms-1 d-none d-sm-inline">Participación congreso institucional</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-diagram-3"></i> <span class="ms-1 d-none d-sm-inline">d. Miembro de órganos institucionales</span>
+                                <i class="fs-4 bi-diagram-3"></i> <span class="ms-1 d-none d-sm-inline">Miembro de órganos institucionales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-receipt"></i> <span class="ms-1 d-none d-sm-inline">e. Participación en comisiones institucionales</span>
+                                <i class="fs-4 bi-receipt"></i> <span class="ms-1 d-none d-sm-inline">Participación en comisiones institucionales</span>
                             </a>
                         </li>
                         <li>
                             <a href="@Url.Action("Crear", "Atestados")" class="btn btn-toggle text-start rounded collapsed text-white">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">f. Designación labores especiales</span>
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Designación labores especiales</span>
                             </a>
                         </li>
                     </ul>
