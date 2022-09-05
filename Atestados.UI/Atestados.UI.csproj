@@ -440,6 +440,9 @@
     <Content Include="Views\Shared\BotonVer.cshtml" />
     <Content Include="Views\Shared\BotonEditar.cshtml" />
     <Content Include="Views\Shared\BotonBorrar.cshtml" />
+    <Content Include="Views\CursoLibre\Ver.cshtml" />
+    <Content Include="Views\CursoLibre\Borrar.cshtml" />
+    <Content Include="Views\CursoLibre\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

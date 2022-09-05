@@ -1,15 +1,16 @@
 ﻿@model Atestados.Objetos.Dtos.AtestadoDTO
 
 @{
-    ViewBag.Title = "Crear";
+    ViewBag.Title = "Editar";
     Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
 }
 
 @using Atestados.Objetos.Dtos;
 
 <div class="container-fluid">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="row">
-        <h2>Capacitación</h2>
+        <h2>Curso Libre</h2>
         <hr />
     </div>
     <div class="row w-100">
@@ -17,6 +18,7 @@
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.AtestadoID)
                 @Html.HiddenFor(model => model.NumeroAutores)
                 <div class="form-horizontal">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -41,8 +43,8 @@
                             Fecha de inicio
                         </b>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(x => x.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
-                            @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(x => x.Fecha.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.Fecha.FechaInicio, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
@@ -51,8 +53,8 @@
                             Fecha de finalización
                         </b>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(x => x.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
-                            @Html.ValidationMessageFor(model => model.FechaFinal, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(x => x.Fecha.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                            @Html.ValidationMessageFor(model => model.Fecha.FechaFinal, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
@@ -82,9 +84,9 @@
                         </div>
                     </div>
 
-                    <div class="form-group my-2">
+                    <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Crear" class="btn btn-success" id="submit" />
+                            <input type="submit" value="Guardar" class="btn btn-primary" id="submit" />
                         </div>
                     </div>
                 </div>
@@ -93,9 +95,9 @@
         <div class="col-lg-4">
             <div class="form-horizontal">
                 <form id="subirArchivo">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <div class="col-md-10">
-                            <input type="file" name="archivo" class="btn btn-default" id="archivo" />
+                            <input type="file" name="archivo" id="archivo" />
                         </div>
                     </div>
 
@@ -105,46 +107,9 @@
                         </div>
                     </div>
                 </form>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>
-                                Nombre
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaArchivos"> </tbody>
-                </table>
+                @Html.Partial("_ArchivosTabla")
             </div>
         </div>
-    </div>
-    <div class="row table-wraper scrollbar-atestados">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>
-                        Capacitaciones agregados
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (AtestadoDTO item in ViewBag.Atestados)
-                {
-                    <tr>
-                        <td>
-                            @item.Nombre
-                        </td>
-                        <td>
-                            @Html.ActionLink("Editar", "Editar", new { id = item.AtestadoID }) |
-                            @Html.ActionLink("Ver", "Ver", new { id = item.AtestadoID }) |
-                            @Html.ActionLink("Borrar", "Borrar", new { id = item.AtestadoID })
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
     </div>
 </div>
 
