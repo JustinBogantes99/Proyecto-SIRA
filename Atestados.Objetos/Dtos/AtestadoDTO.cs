@@ -31,6 +31,7 @@ namespace Atestados.Objetos.Dtos
         [StringLength(250)]
         public string Enlace { get; set; }
         public int RubroID { get; set; }
+        [DisplayName("País")]
         public int PaisID { get; set; }
         public int PersonaID { get; set; }
         [StringLength(100)]
