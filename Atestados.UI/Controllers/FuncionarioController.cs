@@ -67,6 +67,9 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Obra didáctica"), "ObraDidactica"},
                     { infoAtestado.ObtenerIDdeRubro("Ponencia"), "Ponencia"},
                     { infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"), "Proyecto"},
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"),"Docente" },
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"),"Galardonado" },
+
                 };
             return persona;
         }
@@ -94,6 +97,8 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Obra didáctica"), "ObraDidactica"},
                     { infoAtestado.ObtenerIDdeRubro("Ponencia"), "Ponencia"},
                     { infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"), "Proyecto"},
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"),"Docente" },
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"),"Galardonado" },
                 };
 
             return View(funcionario);

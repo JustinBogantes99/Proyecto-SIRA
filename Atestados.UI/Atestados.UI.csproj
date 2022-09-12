@@ -205,6 +205,8 @@
     <Compile Include="Controllers\Atestados\ObraDidacticaController.cs" />
     <Compile Include="Controllers\Atestados\OtrasObrasProfController.cs" />
     <Compile Include="Controllers\Atestados\PonenciaController.cs" />
+    <Compile Include="Controllers\Atestados\ProyectoGradGalarController.cs" />
+    <Compile Include="Controllers\Atestados\ProyectoInvDocenteController.cs" />
     <Compile Include="Controllers\Atestados\ProyectosInvExController.cs" />
     <Compile Include="Controllers\ComisionController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
@@ -435,6 +437,15 @@
     <Content Include="Views\OtrasObrasProf\Crear.cshtml" />
     <Content Include="Views\OtrasObrasProf\Editar.cshtml" />
     <Content Include="Views\OtrasObrasProf\Ver.cshtml" />
+    <Content Include="Views\ProyectoGradGalar\Crear.cshtml" />
+    <Content Include="Views\ProyectoGradGalar\Borrar.cshtml" />
+    <Content Include="Views\ProyectoGradGalar\Ver.cshtml" />
+    <Content Include="Views\ProyectoGradGalar\Editar.cshtml" />
+    <Content Include="Views\ProyectoGradGalar\Editar2.cshtml" />
+    <Content Include="Views\ProyectoInvDocente\Borrar.cshtml" />
+    <Content Include="Views\ProyectoInvDocente\Crear.cshtml" />
+    <Content Include="Views\ProyectoInvDocente\Editar.cshtml" />
+    <Content Include="Views\ProyectoInvDocente\Ver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

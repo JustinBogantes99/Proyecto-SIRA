@@ -65,6 +65,8 @@
     <Compile Include="Clases\oRespuesta.cs" />
     <Compile Include="Dtos\ArchivoDTO.cs" />
     <Compile Include="Dtos\AtestadoDTO.cs" />
+    <Compile Include="Dtos\Atestados\ProyectoGalarDTO.cs" />
+    <Compile Include="Dtos\Atestados\ProyectosInnDocDTO.cs" />
     <Compile Include="Dtos\Atestados\PuntosXRubroDTO.cs" />
     <Compile Include="Dtos\Atestados\EnviadoDTO.cs" />
     <Compile Include="Dtos\Atestados\IdiomaCertificadoDTO.cs" />
