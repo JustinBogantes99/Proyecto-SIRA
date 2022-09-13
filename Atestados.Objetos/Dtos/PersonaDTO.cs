@@ -38,12 +38,16 @@ namespace Atestados.Objetos.Dtos
                     return "Libro";
                 case 2:
                     return "Articulo";
+                case 3:
+                    return "DesarrolloSoftware";
                 case 5:
                     return "ObraDidactica";
                 case 6:
                     return "ObraAdministrativa";
                 case 7:
                     return "OtrasObrasProf";
+                case 8:
+                    return "ObraArtistica";
                 case 9:
                     return "ProyectosInvEx";
                 case 34:
