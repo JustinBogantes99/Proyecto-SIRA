@@ -441,7 +441,6 @@
     <Content Include="Views\ProyectoGradGalar\Borrar.cshtml" />
     <Content Include="Views\ProyectoGradGalar\Ver.cshtml" />
     <Content Include="Views\ProyectoGradGalar\Editar.cshtml" />
-    <Content Include="Views\ProyectoGradGalar\Editar2.cshtml" />
     <Content Include="Views\ProyectoInvDocente\Borrar.cshtml" />
     <Content Include="Views\ProyectoInvDocente\Crear.cshtml" />
     <Content Include="Views\ProyectoInvDocente\Editar.cshtml" />

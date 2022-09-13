@@ -10,6 +10,11 @@ namespace Atestados.Objetos.Dtos.Atestados
 {
     public class ProyectoGalarDTO
     {
+        public bool AutoresCheck { get; set; }
+        public bool AutoresEq { get; set; }
+        private string Rubro = "Proyectos de graduación galardonados";
+        public int NumeroAutores { get; set; }
+        [StringLength(1000)]
         public int AtestadoID { get; set; }
         [StringLength(250)]
         [Required(ErrorMessage = "Este es un campo requerido")]
@@ -20,12 +25,9 @@ namespace Atestados.Objetos.Dtos.Atestados
         [StringLength(100)]
         [RegularExpression(@"^(\d{4}-\d{4}-\d{4})$|^(\d{7})$", ErrorMessage = "No es un código válido. Formato: ####-####-#### o #######")]
         [Required(ErrorMessage = "Este es un campo requerido")]
-        public string Codigo { get; set; }
-        [StringLength(250)]
-        [Url]
-        public string Enlace { get; set; }
         public int RubroID { get; set; }
         public int PaisID { get; set; }
+        public FechaDTO Fecha { get; set; }
         public int PersonaID { get; set; }
         [Required(ErrorMessage = "Este es un campo requerido")]
         [DataType(DataType.Date)]
