@@ -132,6 +132,7 @@ namespace Atestados.UI.Controllers.Atestados
 
             // Cargar y poner los datos adicionales del formulario en la vista.
             ViewBag.PaisID = new SelectList(db.Pais, "PaisID", "Nombre", atestado.PaisID);
+            ViewBag.AtestadoID = new SelectList(db.Fecha, "FechaID", "FechaID", atestado.AtestadoID);
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersonaPorTipo(infoAtestado.ObtenerIDdeRubro(Rubro), (int)Session["UsuarioID"]);
             // Guardar el estado de los archivos previos a su edición.
             archivosOld = new List<ArchivoDTO>();
@@ -164,11 +165,12 @@ namespace Atestados.UI.Controllers.Atestados
         // POST: FortalecimientoInvExt/Editar/:id
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "Lugar,CantidadHoras,Archivos,Codigo,AtestadoID,AtestadoXPersona,Editorial,Enlace,HoraCreacion,Nombre,NumeroAutores,Observaciones,PaisID,Persona,PersonaID,RubroID,Website,Fecha,DominioIdioma,Persona,Rubro,Pais,InfoEditorial,Archivo")] AtestadoDTO atestado)
+        public ActionResult Editar([Bind(Include = "AtestadoID,Nombre,NumeroAutores,Codigo,Observaciones,HoraCreacion,Enviado,FechaInicio,FechaFinal,Fecha,Descargado,CantidadHoras,Lugar,CatalogoTipo,Enlace,PaisID,PersonaID,RubroID,AutoresEq,AutoresCheck")] AtestadoDTO atestado)
         {
             if (!atestado.AutoresCheck)
                 ModelState.AddModelError("AutoresCheck", "La actividad debe tener al menos un autor.");
-            else if (ModelState.IsValid)
+            else
+            if (ModelState.IsValid)
             {
                 List<ArchivoDTO> archivos = (List<ArchivoDTO>)Session["Archivos"];
                 List<AutorDTO> autores = (List<AutorDTO>)Session["Autores"];
@@ -181,6 +183,7 @@ namespace Atestados.UI.Controllers.Atestados
                 atestado.HoraCreacion = DateTime.Now;
                 atestado.Archivos = infoAtestado.CargarArchivosDeAtestado(atestado.AtestadoID);
                 atestado.AtestadoXPersona = AutoMapper.Mapper.Map<List<AtestadoXPersona>, List<AtestadoXPersonaDTO>>(infoAtestado.CargarAtestadoXPersonasdeAtestado(atestado.AtestadoID));
+                
                 atestado.NumeroAutores = autores.Count();
                 Atestado atestado_mapped = AutoMapper.Mapper.Map<AtestadoDTO, Atestado>(atestado);
                 infoAtestado.EditarAtestado(atestado_mapped);
