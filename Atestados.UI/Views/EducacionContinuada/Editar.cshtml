@@ -10,7 +10,7 @@
 <div class="container-fluid">
     @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="row">
-        <h2>Editar Curso Libre</h2>
+        <h2>Editar Curso de Educación Continuada</h2>
         <hr />
     </div>
     <div class="row w-100">
@@ -129,7 +129,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Cursos libres agregados</th>
+                    <th>Cursos de Educación Continuada agregados</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -141,13 +141,13 @@
                             @item.Nombre
                         </td>
                         <td>
-                            <a href="@Url.Action("Editar", "CursoLibre", new { id = item.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                            <a href="@Url.Action("Editar", "EducacionContinuada", new { id = item.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
                                 @Html.Partial("BotonEditar")
                             </a>
-                            <a href="@Url.Action("Ver","CursoLibre", new {id = item.AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
+                            <a href="@Url.Action("Ver","EducacionContinuada", new {id = item.AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
                                 @Html.Partial("BotonVer")
                             </a>
-                            <a href="@Url.Action("Borrar","CursoLibre", new {id = item.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                            <a href="@Url.Action("Borrar","EducacionContinuada", new {id = item.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
                                 @Html.Partial("BotonBorrar")
                             </a>
                         </td>
@@ -210,3 +210,4 @@
     var hasAutores = true;
 </script>
 @Scripts.Render("~/bundles/atestados_shared")
+

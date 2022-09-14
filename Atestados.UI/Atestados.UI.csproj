@@ -200,6 +200,7 @@
     <Compile Include="Controllers\Atestados\CapacitacionController.cs" />
     <Compile Include="Controllers\Atestados\CertificadoController.cs" />
     <Compile Include="Controllers\Atestados\CursoLibreController.cs" />
+    <Compile Include="Controllers\Atestados\EducacionContinuadaController.cs" />
     <Compile Include="Controllers\Atestados\IdiomaController.cs" />
     <Compile Include="Controllers\Atestados\LibroController.cs" />
     <Compile Include="Controllers\Atestados\ObraAdministrativaController.cs" />
@@ -443,6 +444,10 @@
     <Content Include="Views\CursoLibre\Ver.cshtml" />
     <Content Include="Views\CursoLibre\Borrar.cshtml" />
     <Content Include="Views\CursoLibre\Editar.cshtml" />
+    <Content Include="Views\EducacionContinuada\Crear.cshtml" />
+    <Content Include="Views\EducacionContinuada\Ver.cshtml" />
+    <Content Include="Views\EducacionContinuada\Editar.cshtml" />
+    <Content Include="Views\EducacionContinuada\Borrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

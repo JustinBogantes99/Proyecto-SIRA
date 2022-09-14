@@ -14,21 +14,21 @@ using Newtonsoft.Json;
 
 namespace Atestados.UI.Controllers.Atestados
 {
-    public class CursoLibreController : Controller
+    public class EducacionContinuadaController : Controller
     {
         private AtestadosEntities db = new AtestadosEntities();
         private InformacionAtestado infoAtestado = new InformacionAtestado();
         private InformacionGeneral infoGeneral = new InformacionGeneral();
-        private readonly string Rubro = "Cursos libres";
+        private readonly string Rubro = "Cursos de educación continuada";
         public static List<ArchivoDTO> archivosOld = null;
 
-        // GET: CursoLibre
+        // GET: EducacionContinuada
         public ActionResult Index()
         {
             return View(infoAtestado.CargarAtestadosDeTipo(infoAtestado.ObtenerIDdeRubro(Rubro)));
         }
 
-        // GET: CursoLibre/Ver
+        // GET: EducacionContinuada/Ver
         public ActionResult Ver(int? id)
         {
             UsuarioDTO usuario = (UsuarioDTO)Session["Usuario"];
@@ -52,30 +52,30 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // GET: CursoLibre/Crear
+        // GET: EducacionContinuada/Crear
         public ActionResult Crear()
         {
-            AtestadoDTO cursoLibre = new AtestadoDTO();
-            cursoLibre.FechaFinal = DateTime.Now;
-            cursoLibre.FechaInicio = DateTime.Now;
-            cursoLibre.NumeroAutores = 1;
+            AtestadoDTO educacionContinuada = new AtestadoDTO();
+            educacionContinuada.FechaFinal = DateTime.Now;
+            educacionContinuada.FechaInicio = DateTime.Now;
+            educacionContinuada.NumeroAutores = 1;
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersonaPorTipo(infoAtestado.ObtenerIDdeRubro(Rubro), (int)Session["UsuarioID"]);
 
             // Limpiar las listas de archivos y autores por si tienen basura.
             Session["Autores"] = new List<AutorDTO>();
             Session["Archivos"] = new List<ArchivoDTO>();
 
-            return View(cursoLibre);
+            return View(educacionContinuada);
         }
 
-        // POST: CursoLibre/Crear
+        // POST: EducacionContinuada/Crear
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Crear([Bind(Include = "Fecha,Archivos,AtestadoID,AtestadoXPersona,Enlace,HoraCreacion,Nombre,CantidadHoras,Observaciones,Persona,PersonaID,RubroID,FechaInicio,FechaFinal,Lugar,NumeroAutores,AutoresEq,AutoresCheck")] AtestadoDTO atestado)
         {
             // Check manual para determinar si hay al menos un autor ingresado.
             if (!atestado.AutoresCheck)
-                ModelState.AddModelError("AutoresCheck", "El curso libre debe tener al menos un autor.");
+                ModelState.AddModelError("AutoresCheck", "El curso de educación continuada debe tener al menos un autor.");
             else
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // GET: CursoLibre/Borrar
+        // GET: EducacionContinuada/Borrar
         public ActionResult Borrar(int? id)
         {
             if (id == null)
@@ -123,7 +123,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // POST: CursoLibre/Borrar
+        // POST: EducacionContinuada/Borrar
         [HttpPost, ActionName("Borrar")]
         [ValidateAntiForgeryToken]
         public ActionResult Borrar(int id)
@@ -132,7 +132,7 @@ namespace Atestados.UI.Controllers.Atestados
             return RedirectToAction("Crear");
         }
 
-        // GET: CursoLibre/Editar
+        // GET: EducacionContinuada/Editar
         public ActionResult Editar(int? id)
         {
             if (id == null)
@@ -181,7 +181,7 @@ namespace Atestados.UI.Controllers.Atestados
             Session["Autores"] = autores;
         }
 
-        // POST: CursoLibre/Editar
+        // POST: EducacionContinuada/Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Editar([Bind(Include = "Lugar,Archivos,CantidadHoras,AtestadoID,AtestadoXPersona,Enlace,HoraCreacion,Nombre,NumeroAutores,Observaciones,PaisID,Persona,PersonaID,RubroID,Website,Fecha,DominioIdioma,Persona,Rubro,Pais,InfoEditorial,Archivo,AutoresEq,AutoresCheck")] AtestadoDTO atestado)
