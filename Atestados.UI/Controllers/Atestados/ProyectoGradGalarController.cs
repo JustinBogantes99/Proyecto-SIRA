@@ -146,9 +146,6 @@ namespace Atestados.UI.Controllers.Atestados
                 atestado.PersonaID = (int)Session["UsuarioID"];
                 atestado.RubroID = infoAtestado.ObtenerIDdeRubro(Rubro);
                 atestado.PaisID = infoAtestado.ObtenerIDdePais("costa rica"); // Costa Rica
-                atestado.Fecha.FechaID = atestado.AtestadoID;
-                atestado.Fecha.FechaInicio = DateTime.Now;
-                infoAtestado.EditarFecha(AutoMapper.Mapper.Map<FechaDTO, Fecha>(atestado.Fecha));
                 atestado.HoraCreacion = DateTime.Now;
                 atestado.Archivos = infoAtestado.CargarArchivosDeAtestado(atestado.AtestadoID);
                 atestado.AtestadoXPersona = AutoMapper.Mapper.Map<List<AtestadoXPersona>, List<AtestadoXPersonaDTO>>(infoAtestado.CargarAtestadoXPersonasdeAtestado(atestado.AtestadoID));
