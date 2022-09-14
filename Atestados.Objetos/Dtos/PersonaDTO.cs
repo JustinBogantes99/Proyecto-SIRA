@@ -46,6 +46,10 @@ namespace Atestados.Objetos.Dtos
                     return "OtrasObrasProf";
                 case 9:
                     return "ProyectosInvEx";
+                case 12:
+                    return "EducacionContinuada";
+                case 14:
+                    return "CursoLibre"
                 case 34:
                     return "Idioma";
                 default:
