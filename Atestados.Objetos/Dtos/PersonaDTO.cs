@@ -40,6 +40,8 @@ namespace Atestados.Objetos.Dtos
                     return "Articulo";
                 case 3:
                     return "DesarrolloSoftware";
+                case 4:
+                    return "ProyectoGradGalar";
                 case 5:
                     return "ObraDidactica";
                 case 6:
@@ -50,12 +52,17 @@ namespace Atestados.Objetos.Dtos
                     return "ObraArtistica";
                 case 9:
                     return "ProyectosInvEx";
+                case 10:
+                    return "FortalecimientoInvExt";
                 case 12:
                     return "EducacionContinuada";
                 case 14:
-                    return "CursoLibre"
+                    return "CursoLibre";
+                case 26:
+                    return "ProyectoInvDocente";
                 case 34:
                     return "Idioma";
+                
                 default:
                     return "Atestados";
             }

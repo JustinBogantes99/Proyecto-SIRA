@@ -71,8 +71,9 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Desarrollo de software"), "DesarrolloSoftware"},
                     { infoAtestado.ObtenerIDdeRubro("Cursos de educación continuada"), "EducacionContinuada"},
                     { infoAtestado.ObtenerIDdeRubro("Cursos libres"), "CursoLibre"},
-                    { infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"),"Docente" },
-                    { infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"),"Galardonado" },
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"),"ProyectoInvDocente" },
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"),"ProyectoGradGalar" },
+                    { infoAtestado.ObtenerIDdeRubro("Actividades para el fortalecimiento de la investigación y la extensión"),"FortalecimientoInvExt" },
 
                 };
             return persona;
@@ -105,8 +106,9 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Desarrollo de software"), "DesarrolloSoftware"},
                     { infoAtestado.ObtenerIDdeRubro("Cursos de educación continuada"), "EducacionContinuada"},
                     { infoAtestado.ObtenerIDdeRubro("Cursos libres"), "CursoLibre"},
-                    { infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"),"Docente" },
-                    { infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"),"Galardonado" },
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"),"ProyectoInvDocente" },
+                    { infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"),"ProyectoGradGalar" },
+                    { infoAtestado.ObtenerIDdeRubro("Actividades para el fortalecimiento de la investigación y la extensión"),"FortalecimientoInvExt" },
                 };
 
             return View(funcionario);
