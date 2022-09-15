@@ -96,6 +96,8 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Obra didáctica"), "ObraDidactica"},
                     { infoAtestado.ObtenerIDdeRubro("Ponencia"), "Ponencia"},
                     { infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"), "Proyecto"},
+                    { infoAtestado.ObtenerIDdeRubro("Cursos de educación continuada"), "EducacionContinuada"},
+                    { infoAtestado.ObtenerIDdeRubro("Cursos libres"), "CursoLibre"},
                 };
 
             return View(funcionario);
