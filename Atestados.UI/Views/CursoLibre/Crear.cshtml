@@ -1,4 +1,4 @@
-﻿@model Atestados.Objetos.Dtos.LibroDTO
+@model Atestados.Objetos.Dtos.AtestadoDTO
 
 @{
     ViewBag.Title = "Crear";
@@ -9,8 +9,9 @@
 @using Atestados.Objetos.Dtos;
 
 <div class="container-fluid">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="row">
-        <h2>Libro</h2>
+        <h2>Curso Libre</h2>
         <hr />
     </div>
 
@@ -19,82 +20,90 @@
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.NumeroAutores)
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="form-horizontal">
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group mb-1">
-                        <label for="Nombre" class="control-label col-md-2">Título</label>
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-1">
-                        <label for="Enlace" class="control-label col-md-2">ISBN</label>
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Enlace, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Enlace, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-1">
-                        @Html.LabelFor(model => model.Editorial, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Editorial, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Editorial, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-1">
-                        @Html.LabelFor(model => model.Annio, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(x => x.Annio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
-                            @Html.ValidationMessageFor(model => model.Annio, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-1">
-                        @Html.LabelFor(model => model.Website, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-1">
-                        @Html.LabelFor(model => model.PaisID, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("PaisID", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.PaisID, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-1">
-                        @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextAreaFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group mb-1">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAutores">
-                            Modificar autores
-                        </button>
-                        @Html.ValidationMessageFor(model => model.AutoresCheck, "", new { @class = "text-danger" })
-                    </div>
-                    <div hidden>
-                        @*Checkbox oculto porque si está dentro del modal, no devuelve el estado correctamente.*@
-                        @Html.CheckBoxFor(model => model.AutoresEq)
-                        @Html.CheckBoxFor(model => model.AutoresCheck)
-                    </div>
-
-                    <div class="form-group my-2">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Crear" class="btn btn-success" id="submit" />
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Enlace, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Enlace, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Enlace, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <b class="control-label col-md-2">
+                        Fecha de inicio
+                    </b>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                        @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <b class="control-label col-md-2">
+                        Fecha de finalización
+                    </b>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                        @Html.ValidationMessageFor(model => model.FechaFinal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <b class="control-label col-md-2">
+                        Cantidad de horas
+                    </b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CantidadHoras, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CantidadHoras, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Lugar, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Lugar, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Lugar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group mb-1">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAutores">
+                        Modificar autores
+                    </button>
+                    @Html.ValidationMessageFor(model => model.AutoresCheck, "", new { @class = "text-danger" })
+                </div>
+                <div hidden>
+                    @*Checkbox oculto porque si está dentro del modal, no devuelve el estado correctamente.*@
+                    @Html.CheckBoxFor(model => model.AutoresEq)
+                    @Html.CheckBoxFor(model => model.AutoresCheck)
+                </div>
+
+                <div class="form-group my-2">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Crear" class="btn btn-success" id="submit" />
+                    </div>
+                </div>
+            </div>
             }
         </div>
         <div class="col-lg-4">
@@ -120,7 +129,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Libros agregados</th>
+                    <th>Cursos libres agregados</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -132,13 +141,13 @@
                             @item.Nombre
                         </td>
                         <td>
-                            <a href="@Url.Action("Editar", "Libro", new { id = item.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                            <a href="@Url.Action("Editar", "CursoLibre", new { id = item.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
                                 @Html.Partial("BotonEditar")
                             </a>
-                            <a href="@Url.Action("Ver","Libro", new {id = item.AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
+                            <a href="@Url.Action("Ver","CursoLibre", new {id = item.AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
                                 @Html.Partial("BotonVer")
                             </a>
-                            <a href="@Url.Action("Borrar","Libro", new {id = item.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                            <a href="@Url.Action("Borrar","CursoLibre", new {id = item.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
                                 @Html.Partial("BotonBorrar")
                             </a>
                         </td>

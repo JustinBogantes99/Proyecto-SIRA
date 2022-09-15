@@ -69,6 +69,8 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"), "Proyecto"},
                     { infoAtestado.ObtenerIDdeRubro("Obras artísticas"), "ObraArtistica"},
                     { infoAtestado.ObtenerIDdeRubro("Desarrollo de software"), "DesarrolloSoftware"},
+                    { infoAtestado.ObtenerIDdeRubro("Cursos de educación continuada"), "EducacionContinuada"},
+                    { infoAtestado.ObtenerIDdeRubro("Cursos libres"), "CursoLibre"},
                 };
             return persona;
         }
@@ -98,6 +100,8 @@ namespace Atestados.UI.Controllers
                     { infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"), "Proyecto"},
                     { infoAtestado.ObtenerIDdeRubro("Obras artísticas"), "ObraArtistica"},
                     { infoAtestado.ObtenerIDdeRubro("Desarrollo de software"), "DesarrolloSoftware"},
+                    { infoAtestado.ObtenerIDdeRubro("Cursos de educación continuada"), "EducacionContinuada"},
+                    { infoAtestado.ObtenerIDdeRubro("Cursos libres"), "CursoLibre"},
                 };
 
             return View(funcionario);

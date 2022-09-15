@@ -199,6 +199,8 @@
     <Compile Include="Controllers\Atestados\AtestadoShared.cs" />
     <Compile Include="Controllers\Atestados\CapacitacionController.cs" />
     <Compile Include="Controllers\Atestados\CertificadoController.cs" />
+    <Compile Include="Controllers\Atestados\CursoLibreController.cs" />
+    <Compile Include="Controllers\Atestados\EducacionContinuadaController.cs" />
     <Compile Include="Controllers\Atestados\IdiomaController.cs" />
     <Compile Include="Controllers\Atestados\ObraArtistitaController.cs" />
     <Compile Include="Controllers\Atestados\LibroController.cs" />
@@ -445,6 +447,17 @@
     <Content Include="Views\DesarrolloSoftware\Borrar.cshtml" />
     <Content Include="Views\DesarrolloSoftware\Ver.cshtml" />
     <Content Include="Views\DesarrolloSoftware\Editar.cshtml" />
+    <Content Include="Views\Shared\BotonVer.cshtml" />
+    <Content Include="Views\Shared\BotonEditar.cshtml" />
+    <Content Include="Views\Shared\BotonBorrar.cshtml" />
+    <Content Include="Views\CursoLibre\Crear.cshtml" />
+    <Content Include="Views\CursoLibre\Ver.cshtml" />
+    <Content Include="Views\CursoLibre\Borrar.cshtml" />
+    <Content Include="Views\CursoLibre\Editar.cshtml" />
+    <Content Include="Views\EducacionContinuada\Crear.cshtml" />
+    <Content Include="Views\EducacionContinuada\Ver.cshtml" />
+    <Content Include="Views\EducacionContinuada\Editar.cshtml" />
+    <Content Include="Views\EducacionContinuada\Borrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

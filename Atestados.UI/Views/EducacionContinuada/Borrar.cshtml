@@ -1,32 +1,22 @@
-﻿@model Atestados.Objetos.Dtos.AtestadoDTO
+﻿@model Atestados.Datos.Modelo.Atestado
 
 @{
-    ViewBag.Title = "Ver";
+    ViewBag.Title = "Borrar";
     Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
 }
-
-@using Atestados.Objetos.Dtos;
 
 <div class="container-fluid">
     @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="row">
-        <h2>Capacitación</h2>
+        <p></p>
+        <h2>Curso de Educación Continuada</h2>
+        <h3>¿Está seguro/a que desea borrar este atestado?</h3>
         <hr />
     </div>
     <div class="row w-100">
         <div class="col-lg-6">
             <!-- columna izquierda -->
             <dl class="dl-horizontal">
-                <dt>
-                    Funcionario
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Persona.Nombre)
-                    @Html.DisplayFor(model => model.Persona.PrimerApellido)
-                    @Html.DisplayFor(model => model.Persona.SegundoApellido)
-                </dd>
-
                 <dt>
                     @Html.DisplayNameFor(model => model.Nombre)
                 </dt>
@@ -48,7 +38,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.FechaInicio)
+                    @Html.DisplayFor(model => model.Fecha.FechaInicio)
                 </dd>
 
                 <dt>
@@ -98,7 +88,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Archivos)
+                        @foreach (var item in Model.Archivo)
                         {
                             <tr>
                                 <td>
@@ -109,13 +99,54 @@
                     </tbody>
                 </table>
             </div>
+            <div class="row table-wraper scrollbar-atestados">
+                <h4>Autores</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Apellidos
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Porcentaje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.Autores)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Nombre
+                                </td>
+                                <td>
+                                    @item.PrimerApellido @item.SegundoApellido
+                                </td>
+                                <td>
+                                    @item.Email
+                                </td>
+                                <td>
+                                    @item.Porcentaje
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <p>
-            @Html.ActionLink("Editar", "Editar", new { id = Model.AtestadoID }) |
-            @Html.ActionLink("Regresar", "Crear")
-        </p>
-    </div>
-</div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" />
+        </div>
+    }
+</div>

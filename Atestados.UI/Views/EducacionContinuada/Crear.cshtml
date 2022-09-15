@@ -5,13 +5,16 @@
     Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
 }
 
+@using Atestados.Negocios.Negocios;
 @using Atestados.Objetos.Dtos;
 
 <div class="container-fluid">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="row">
-        <h2>Capacitación</h2>
+        <h2>Curso de educación continuada</h2>
         <hr />
     </div>
+
     <div class="row w-100">
         <div class="col-lg-6">
             @using (Html.BeginForm())
@@ -20,6 +23,7 @@
                 @Html.HiddenFor(model => model.NumeroAutores)
                 <div class="form-horizontal">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -41,7 +45,7 @@
                             Fecha de inicio
                         </b>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(x => x.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                            @Html.TextBoxFor(model => model.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
                             @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -51,7 +55,7 @@
                             Fecha de finalización
                         </b>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(x => x.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                            @Html.TextBoxFor(model => model.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
                             @Html.ValidationMessageFor(model => model.FechaFinal, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -82,6 +86,18 @@
                         </div>
                     </div>
 
+                    <div class="form-group mb-1">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAutores">
+                            Modificar autores
+                        </button>
+                        @Html.ValidationMessageFor(model => model.AutoresCheck, "", new { @class = "text-danger" })
+                    </div>
+                    <div hidden>
+                        @*Checkbox oculto porque si está dentro del modal, no devuelve el estado correctamente.*@
+                        @Html.CheckBoxFor(model => model.AutoresEq)
+                        @Html.CheckBoxFor(model => model.AutoresCheck)
+                    </div>
+
                     <div class="form-group my-2">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Crear" class="btn btn-success" id="submit" />
@@ -93,9 +109,9 @@
         <div class="col-lg-4">
             <div class="form-horizontal">
                 <form id="subirArchivo">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <div class="col-md-10">
-                            <input type="file" name="archivo" class="btn btn-default" id="archivo" />
+                            <input type="file" name="archivo" id="archivo" />
                         </div>
                     </div>
 
@@ -105,17 +121,7 @@
                         </div>
                     </div>
                 </form>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>
-                                Nombre
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaArchivos"> </tbody>
-                </table>
+                @Html.Partial("_ArchivosTabla")
             </div>
         </div>
     </div>
@@ -123,10 +129,8 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>
-                        Capacitaciones agregados
-                    </th>
-                    <th></th>
+                    <th>Cursos de educación continuada agregados</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -137,9 +141,15 @@
                             @item.Nombre
                         </td>
                         <td>
-                            @Html.ActionLink("Editar", "Editar", new { id = item.AtestadoID }) |
-                            @Html.ActionLink("Ver", "Ver", new { id = item.AtestadoID }) |
-                            @Html.ActionLink("Borrar", "Borrar", new { id = item.AtestadoID })
+                            <a href="@Url.Action("Editar", "EducacionContinuada", new { id = item.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                                @Html.Partial("BotonEditar")
+                            </a>
+                            <a href="@Url.Action("Ver","EducacionContinuada", new {id = item.AtestadoID})" class="btn btn-primary btn-sm" title="Ver">
+                                @Html.Partial("BotonVer")
+                            </a>
+                            <a href="@Url.Action("Borrar","EducacionContinuada", new {id = item.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                                @Html.Partial("BotonBorrar")
+                            </a>
                         </td>
                     </tr>
                 }
@@ -148,28 +158,59 @@
     </div>
 </div>
 
+@*Modal de autores.*@
+<div id="modalAutores" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">Modificar autores</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("_AutoresTabla")
+                <h3>Autor externo al Tec</h3>
+                <table class="table">
+                    <tr>
+                        <td><input class="form-control" type="text" placeholder="Nombre" id="nombre" /></td>
+                        <td><input class="form-control" type="text" placeholder="Primer apellido" id="apellido1" /></td>
+                        <td><input class="form-control" type="text" placeholder="Segundo apellido" id="apellido2" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="email" placeholder="Correo electrónico" id="email" /></td>
+                        <td><input class="form-control" type="number" placeholder="Porcentaje" id="porcentaje" /></td>
+                        <td><button type="button" class="btn btn-primary" id="autorAgregar">Agregar</button></td>
+                    </tr>
+                </table>
+                <h3>Autor interno del Tec</h3>
+                <table class="table">
+                    <tr>
+                        <td><input class="form-control" type="email" placeholder="Correo electrónico" id="email_funcionario" runat="server" /></td>
+                        <td><input class="form-control" type="number" placeholder="Porcentaje" id="porcentaje_funcionario" /></td>
+                        <td><button type="button" class="btn btn-primary" id="funcionarioAgregar">Agregar</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="me-auto">
+                    <input class="form-check-input" type="checkbox" value="" id="hiddenCheck" name="hiddenCheck" />
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Porcentaje equitativo
+                    </label>
+                </div>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
-    $('#subirArchivo').submit(function (e) {
-        e.preventDefault();
-        var data = new FormData(this);
-        if (jQuery('#archivo').val().length != '') {
-            $('#archivo').val('');
-            $.ajax({
-                url: '@Variables.BaseUrl/Capacitacion/Cargar',
-                data: data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: 'POST',
-                success: function (data) {
-                    var archivo = JSON.parse(data.archivoJson)
-                    if (data != null) {
-                        $("#tablaArchivos").append('<tr><td>' + archivo.Nombre + '</td><td><a>Descargar</a> | <a>Borrar</a></td></tr>')
-                    }
-                }
-            })
-        }
-    })
-
+    @{InformacionGeneral infoGeneral = new InformacionGeneral();}
+    // Esta variable debe estar en todas las vistas de atestados.
+    var baseUrl = "@Variables.BaseUrl/Atestados";
+    var editMode = false;
+    var hasAutores = true;
 </script>
+@Scripts.Render("~/bundles/atestados_shared")
+
+
