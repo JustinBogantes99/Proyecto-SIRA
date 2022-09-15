@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
     @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
-    <div class="row">
+    <div class="mt-4">
         <h2>Capacitación</h2>
         <hr />
     </div>
@@ -113,8 +113,12 @@
     </div>
     <div class="row">
         <p>
-            @Html.ActionLink("Editar", "Editar", new { id = Model.AtestadoID }) |
-            @Html.ActionLink("Regresar", "Crear")
+            <a href="@Url.Action("Editar", "Capacitacion", new { id = Model.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                @Html.Partial("BotonEditar")
+            </a>
+            <a href="@Url.Action("Borrar", "Capacitacion", new {id = Model.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                @Html.Partial("BotonBorrar")
+            </a>
         </p>
     </div>
 </div>

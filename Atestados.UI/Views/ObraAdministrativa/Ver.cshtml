@@ -100,7 +100,14 @@
         </div>
     </div>
     <div class="row">
-        @Html.Partial("Links", Model)
+        <p>
+            <a href="@Url.Action("Editar", "ObraAdministrativa", new { id = Model.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                @Html.Partial("BotonEditar")
+            </a>
+            <a href="@Url.Action("Borrar", "ObraAdministrativa", new {id = Model.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                @Html.Partial("BotonBorrar")
+            </a>
+        </p>
     </div>
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

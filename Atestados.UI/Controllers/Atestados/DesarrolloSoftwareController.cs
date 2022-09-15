@@ -186,7 +186,6 @@ namespace Atestados.UI.Controllers.Atestados
                 atestado.RubroID = infoAtestado.ObtenerIDdeRubro(Rubro);
                 atestado.PaisID = infoAtestado.ObtenerIDdePais("costa rica");
                 atestado.Fecha.FechaID = atestado.AtestadoID;
-                atestado.Fecha.FechaInicio = DateTime.Now;
                 infoAtestado.EditarFecha(AutoMapper.Mapper.Map<FechaDTO, Fecha>(atestado.Fecha));
                 atestado.HoraCreacion = DateTime.Now;
                 atestado.Archivos = infoAtestado.CargarArchivosDeAtestado(atestado.AtestadoID);

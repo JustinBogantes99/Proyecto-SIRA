@@ -126,7 +126,14 @@
     </div>
 
     <div class="row">
-        @Html.Partial("Links", Model)
+        <p>
+            <a href="@Url.Action("Editar", "Libro", new { id = Model.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                @Html.Partial("BotonEditar")
+            </a>
+            <a href="@Url.Action("Borrar", "Libro", new {id = Model.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                @Html.Partial("BotonBorrar")
+            </a>
+        </p>
     </div>
 
 </div>

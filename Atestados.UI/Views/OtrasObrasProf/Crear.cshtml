@@ -9,7 +9,8 @@
 @using Atestados.Objetos.Dtos;
 
 <div class="container-fluid">
-    <div class="row">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+    <div class="mt-4">
         <h2>Otra obra profesional</h2>
         <hr />
     </div>
@@ -49,7 +50,7 @@
                     <div class="form-group mb-1">
                         <label class="control-label col-md-2">Tipo de obra</label>
                         <div class="col-md-10">
-                            @Html.DropDownListFor(model => model.CatalogoTipo, (IEnumerable<SelectListItem>)ViewBag.TiposObras, new { @class = "form-control" } )
+                            @Html.DropDownListFor(model => model.CatalogoTipo, (IEnumerable<SelectListItem>)ViewBag.TiposObras, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.CatalogoTipo, "", new { @class = "text-danger" })
                         </div>
                     </div>
