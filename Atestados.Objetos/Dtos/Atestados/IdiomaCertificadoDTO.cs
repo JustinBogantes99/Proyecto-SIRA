@@ -30,6 +30,7 @@ namespace Atestados.Objetos.Dtos
         [DisplayName("Instancia certificadora")]
         public string Lugar { get; set; }
 
+        [DisplayName("Idioma")]
         public int IdiomaID { get; set; }
         public int Lectura { get; set; }
         public int Escrito { get; set; }
