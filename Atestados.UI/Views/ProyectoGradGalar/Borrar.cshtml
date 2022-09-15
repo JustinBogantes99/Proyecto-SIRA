@@ -1,0 +1,80 @@
+﻿@model Atestados.Datos.Modelo.Atestado
+
+@{
+    ViewBag.Title = "Borrar";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+<div class="container-fluid">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+    <div class="row">
+        <p></p>
+        <h2>Proyectos de graduación galardonados</h2>
+        <h3>¿Está seguro/a que desea borrar este atestado?</h3>
+        <hr />
+    </div>
+    <div class="row w-100">
+        <div class="col-lg-6">
+            <!-- columna izquierda -->
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt>
+                    Funcionario
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Persona.Nombre)
+                    @Html.DisplayFor(model => model.Persona.PrimerApellido)
+                    @Html.DisplayFor(model => model.Persona.SegundoApellido)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="col-lg-4">
+            <!-- columna derecha -->
+            <div class="row table-wraper scrollbar-atestados">
+                <h4>Archivos</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Archivo)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Nombre
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" />
+        </div>
+    }
+</div>

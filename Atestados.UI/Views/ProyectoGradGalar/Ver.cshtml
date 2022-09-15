@@ -1,0 +1,98 @@
+﻿@model Atestados.Objetos.Dtos.AtestadoDTO
+
+@{
+    ViewBag.Title = "Ver";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+<div class="container-fluid">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+    <div class="mt-4">
+        <h2>Ver un Proyecto de Graduación Galardonado</h2>
+    </div>
+    <hr />
+    <div class="row w-100">
+        <div class="col-lg-6">
+            <!-- columna izquierda -->
+            <dl class="dl-horizontal">
+                <dt>
+                    Funcionario
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Persona.Nombre)
+                    @Html.DisplayFor(model => model.Persona.PrimerApellido)
+                    @Html.DisplayFor(model => model.Persona.SegundoApellido)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="col-lg-4">
+            <!-- columna derecha -->
+            <div class="row table-wraper scrollbar-atestados">
+                <h4>Archivos</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Archivos)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Nombre
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var id = @Model.AtestadoID;
+
+    $.ajax({
+        type: 'POST',
+        url: '@Variables.BaseUrl/Funcionario/notaAtestado',
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: JSON.stringify({ AtestadoID: id }),
+        success: function (response) {
+            if (response != null) {
+                $("#nota").append('<p>' + response +'</p>')
+            }
+
+        }
+    })
+
+</script>
+
