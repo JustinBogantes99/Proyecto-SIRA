@@ -192,6 +192,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\RubricaController.cs" />
     <Compile Include="Controllers\Atestados\AtestadosController.cs" />
     <Compile Include="Controllers\Atestados\ArticuloController.cs" />
     <Compile Include="Controllers\Atestados\AtestadoShared.cs" />
@@ -473,6 +474,7 @@
     <Content Include="Views\FortalecimientoInvExt\Borrar.cshtml" />
     <Content Include="Views\FortalecimientoInvExt\Editar.cshtml" />
     <Content Include="Views\FortalecimientoInvExt\Ver.cshtml" />
+    <Content Include="Views\Rubrica\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
