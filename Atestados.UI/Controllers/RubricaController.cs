@@ -46,6 +46,8 @@ namespace Atestados.UI.Controllers.Atestados
         // GET: Articulo/Crear
         public ActionResult Crear()
         {
+            RubricaDTO rubrica = new RubricaDTO();
+
             AtestadoDTO atestado = new AtestadoDTO();
             atestado.FechaFinal = DateTime.Now;
             atestado.FechaInicio = DateTime.Now;
@@ -57,7 +59,10 @@ namespace Atestados.UI.Controllers.Atestados
             // Limpiar las listas de archivos y autores por si tienen basura.
             Session["Archivos"] = new List<ArchivoDTO>();
 
-            return View(atestado);
+            //CREAR UNA LISTA DE COLUMNAS Y LIMPIARLA SI TIENE BASURA ///CAMBIAR RubricaDTO por el real IMPORTANTE////////////////////////////////////////////////////////////////////////////
+            Session["Criterios"] = new List<RubricaDTO>();
+
+            return View(rubrica);
         }
 
         // POST: Articulo/Crear
@@ -228,6 +233,19 @@ namespace Atestados.UI.Controllers.Atestados
         {
             infoAtestado.BorrarAtestado(id);
             return RedirectToAction("Crear");
+        }
+
+        [HttpPost]
+        public ActionResult nuevoCriterio()
+        {
+            RubricaDTO cr = new RubricaDTO();
+            cr.Nombre = "Prueba1";
+
+            List<RubricaDTO> criterios = (List<RubricaDTO>)Session["Criterios"];
+            criterios.Add(cr);
+            Session["Criterios"] = criterios;
+
+            return PartialView("_CriteriosRubrica");
         }
     }
 }

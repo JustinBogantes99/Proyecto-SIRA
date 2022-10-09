@@ -334,6 +334,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile3.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -475,6 +476,7 @@
     <Content Include="Views\FortalecimientoInvExt\Editar.cshtml" />
     <Content Include="Views\FortalecimientoInvExt\Ver.cshtml" />
     <Content Include="Views\Rubrica\Crear.cshtml" />
+    <Content Include="Views\Shared\_CriteriosRubrica.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

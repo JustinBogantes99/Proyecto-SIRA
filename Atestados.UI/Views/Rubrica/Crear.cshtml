@@ -1,4 +1,4 @@
-﻿@model Atestados.Objetos.Dtos.AtestadoDTO
+﻿@model Atestados.Objetos.Dtos.RubricaDTO
 
 @{
     ViewBag.Title = "Crear";
@@ -14,40 +14,79 @@
         <h2>Gestionar Rúbricas</h2>
         <hr />
     </div>
-    <div class="row w-100">
+    <div class="row">
         <div class="col-lg-6">
-            <div class="col-lg-6">
+            <div class="container">
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
 
-                    <div class="form-horizontal">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group pt-2">
+                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group pt-2">
+                        @Html.LabelFor(model => model.Rubro, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("RubroID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.AtestadoID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h2>Añadir Criterios de Evaluación</h2>
+                        <hr />
+                    </div>
+
+                    <div class="form-group pt-2">
+                        @Html.LabelFor(model => model.CriterioNombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CriterioNombre, new { htmlAttributes = new { placeholder = "Nombre del Criterio", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CriterioNombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group pt-2">
+                        @Html.LabelFor(model => model.CriterioPuntaje, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CriterioPuntaje, new { htmlAttributes = new { placeholder = "Puntaje", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CriterioPuntaje, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row pt-4">
+                        <div class="form-group pt-1">
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                                <input type="submit" class="btn btn-primary" value="Agregar Criterio" form="nuevoCriterio" />
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Rubro, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="form-group pt-1">
                             <div class="col-md-10">
-                                @Html.DropDownList("RubroID", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.RubroID, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group my-2">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Crear" class="btn btn-success" id="submit" />
+                                <input type="submit" class="btn btn-primary" value="Agregar Criterio Múltiple" form="subirArchivo" />
                             </div>
                         </div>
                     </div>
+
+                    @Html.Partial("_CriteriosRubrica")
+
+                    <div class="form-group my-2">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Crear" class="btn btn-success" id="submit" />
+                        </div>
+                    </div>
+
+                </div>
                 }
+
             </div>
-        </div>
     </div>
 </div>
 
