@@ -57,6 +57,16 @@
           <Property Name="Auditiva" Type="int" Nullable="false" />
           <Property Name="Oral" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Evaluacion">
+          <Key>
+            <PropertyRef Name="EvaluacionID" />
+          </Key>
+          <Property Name="EvaluacionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AtestadoID" Type="int" Nullable="false" />
+          <Property Name="RubricaID" Type="int" Nullable="false" />
+          <Property Name="Puntaje" Type="int" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
         <EntityType Name="EvaluaciónXAtestado">
           <Key>
             <PropertyRef Name="AtestadoID" />
@@ -114,6 +124,26 @@
           <Property Name="esActivo" Type="bit" Nullable="false" />
           <Property Name="TiempoServido" Type="int" />
         </EntityType>
+        <EntityType Name="Requisito">
+          <Key>
+            <PropertyRef Name="RequisitoID" />
+          </Key>
+          <Property Name="RequisitoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="RubricaID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rubrica">
+          <Key>
+            <PropertyRef Name="RubricaID" />
+          </Key>
+          <Property Name="RubricaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoPuntajeID" Type="int" Nullable="false" />
+          <Property Name="ValorPuntaje" Type="float" />
+          <Property Name="DescripcionPuntaje" Type="nvarchar" MaxLength="1000" />
+          <Property Name="EsManual" Type="bit" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="RubroID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Rubro">
           <Key>
             <PropertyRef Name="RubroID" />
@@ -123,15 +153,14 @@
           <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
           <Property Name="TipoRubro" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="SeleccionPuntaje">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="SeleccionPuntajeID" />
           </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
+          <Property Name="SeleccionPuntajeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Puntaje" Type="float" Nullable="false" />
+          <Property Name="RubricaID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoCategoria">
           <Key>
@@ -141,6 +170,13 @@
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Academicos" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Administrativos" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoPuntaje">
+          <Key>
+            <PropertyRef Name="TipoPuntajeID" />
+          </Key>
+          <Property Name="TipoPuntajeID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoRubro">
           <Key>
@@ -165,7 +201,35 @@
           <Property Name="Contrasena" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="esActivo" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Atestado__PaisID__534D60F1">
+        <Association Name="Evaluacion_Atestado_fk">
+          <End Role="Atestado" Type="Self.Atestado" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Evaluacion" Type="Self.Evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atestado">
+              <PropertyRef Name="AtestadoID" />
+            </Principal>
+            <Dependent Role="Evaluacion">
+              <PropertyRef Name="AtestadoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Evaluacion_Rubrica_fk">
+          <End Role="Rubrica" Type="Self.Rubrica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Evaluacion" Type="Self.Evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubrica">
+              <PropertyRef Name="RubricaID" />
+            </Principal>
+            <Dependent Role="Evaluacion">
+              <PropertyRef Name="RubricaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Atestado__PaisID__5441852A">
           <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
           <End Role="Atestado" Type="Self.Atestado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -189,7 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Atestado__RubroI__5535A963">
+        <Association Name="FK__Atestado__RubroI__5629CD9C">
           <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
           <End Role="Atestado" Type="Self.Atestado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +265,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DominioId__Idiom__5812160E">
+        <Association Name="FK__DominioId__Idiom__59063A47">
           <End Role="Idioma" Type="Self.Idioma" Multiplicity="0..1" />
           <End Role="DominioIdioma" Type="Self.DominioIdioma" Multiplicity="*" />
           <ReferentialConstraint>
@@ -381,24 +445,90 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Requisito_Rubrica_fk">
+          <End Role="Rubrica" Type="Self.Rubrica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Requisito" Type="Self.Requisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubrica">
+              <PropertyRef Name="RubricaID" />
+            </Principal>
+            <Dependent Role="Requisito">
+              <PropertyRef Name="RubricaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rubrica_Rubro_fk">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rubrica" Type="Self.Rubrica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="RubroID" />
+            </Principal>
+            <Dependent Role="Rubrica">
+              <PropertyRef Name="RubroID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rubrica_TipoPuntaje_fk">
+          <End Role="TipoPuntaje" Type="Self.TipoPuntaje" Multiplicity="1" />
+          <End Role="Rubrica" Type="Self.Rubrica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPuntaje">
+              <PropertyRef Name="TipoPuntajeID" />
+            </Principal>
+            <Dependent Role="Rubrica">
+              <PropertyRef Name="TipoPuntajeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SeleccionPuntaje_Rubrica_fk">
+          <End Role="Rubrica" Type="Self.Rubrica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SeleccionPuntaje" Type="Self.SeleccionPuntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubrica">
+              <PropertyRef Name="RubricaID" />
+            </Principal>
+            <Dependent Role="SeleccionPuntaje">
+              <PropertyRef Name="RubricaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="AtestadosModelStoreContainer">
           <EntitySet Name="Archivo" EntityType="Self.Archivo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Atestado" EntityType="Self.Atestado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AtestadoXPersona" EntityType="Self.AtestadoXPersona" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DominioIdioma" EntityType="Self.DominioIdioma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evaluacion" EntityType="Self.Evaluacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EvaluaciónXAtestado" EntityType="Self.EvaluaciónXAtestado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fecha" EntityType="Self.Fecha" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Idioma" EntityType="Self.Idioma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InfoEditorial" EntityType="Self.InfoEditorial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requisito" EntityType="Self.Requisito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rubrica" EntityType="Self.Rubrica" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rubro" EntityType="Self.Rubro" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeleccionPuntaje" EntityType="Self.SeleccionPuntaje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoCategoria" EntityType="Self.TipoCategoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoPuntaje" EntityType="Self.TipoPuntaje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoRubro" EntityType="Self.TipoRubro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Atestado__PaisID__534D60F1" Association="Self.FK__Atestado__PaisID__534D60F1">
+          <AssociationSet Name="Evaluacion_Atestado_fk" Association="Self.Evaluacion_Atestado_fk">
+            <End Role="Atestado" EntitySet="Atestado" />
+            <End Role="Evaluacion" EntitySet="Evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="Evaluacion_Rubrica_fk" Association="Self.Evaluacion_Rubrica_fk">
+            <End Role="Rubrica" EntitySet="Rubrica" />
+            <End Role="Evaluacion" EntitySet="Evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Atestado__PaisID__5441852A" Association="Self.FK__Atestado__PaisID__5441852A">
             <End Role="Pais" EntitySet="Pais" />
             <End Role="Atestado" EntitySet="Atestado" />
           </AssociationSet>
@@ -406,11 +536,11 @@
             <End Role="Persona" EntitySet="Persona" />
             <End Role="Atestado" EntitySet="Atestado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Atestado__RubroI__5535A963" Association="Self.FK__Atestado__RubroI__5535A963">
+          <AssociationSet Name="FK__Atestado__RubroI__5629CD9C" Association="Self.FK__Atestado__RubroI__5629CD9C">
             <End Role="Rubro" EntitySet="Rubro" />
             <End Role="Atestado" EntitySet="Atestado" />
           </AssociationSet>
-          <AssociationSet Name="FK__DominioId__Idiom__5812160E" Association="Self.FK__DominioId__Idiom__5812160E">
+          <AssociationSet Name="FK__DominioId__Idiom__59063A47" Association="Self.FK__DominioId__Idiom__59063A47">
             <End Role="Idioma" EntitySet="Idioma" />
             <End Role="DominioIdioma" EntitySet="DominioIdioma" />
           </AssociationSet>
@@ -466,6 +596,22 @@
             <End Role="TipoRubro" EntitySet="TipoRubro" />
             <End Role="Rubro" EntitySet="Rubro" />
           </AssociationSet>
+          <AssociationSet Name="Requisito_Rubrica_fk" Association="Self.Requisito_Rubrica_fk">
+            <End Role="Rubrica" EntitySet="Rubrica" />
+            <End Role="Requisito" EntitySet="Requisito" />
+          </AssociationSet>
+          <AssociationSet Name="Rubrica_Rubro_fk" Association="Self.Rubrica_Rubro_fk">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Rubrica" EntitySet="Rubrica" />
+          </AssociationSet>
+          <AssociationSet Name="Rubrica_TipoPuntaje_fk" Association="Self.Rubrica_TipoPuntaje_fk">
+            <End Role="TipoPuntaje" EntitySet="TipoPuntaje" />
+            <End Role="Rubrica" EntitySet="Rubrica" />
+          </AssociationSet>
+          <AssociationSet Name="SeleccionPuntaje_Rubrica_fk" Association="Self.SeleccionPuntaje_Rubrica_fk">
+            <End Role="Rubrica" EntitySet="Rubrica" />
+            <End Role="SeleccionPuntaje" EntitySet="SeleccionPuntaje" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -511,6 +657,7 @@
           <NavigationProperty Name="Fecha" Relationship="Self.FK_Fecha_AtestadoID" FromRole="Atestado" ToRole="Fecha" />
           <NavigationProperty Name="InfoEditorial" Relationship="Self.FK_InfoEditorial_AtestadoID" FromRole="Atestado" ToRole="InfoEditorial" />
           <NavigationProperty Name="EvaluaciónXAtestado" Relationship="AtestadosModel.FK_EvaluaciónXAtestado_Atestado" FromRole="Atestado" ToRole="EvaluaciónXAtestado" />
+          <NavigationProperty Name="Evaluacion" Relationship="AtestadosModel.Evaluacion_Atestado_fk" FromRole="Atestado" ToRole="Evaluacion" />
         </EntityType>
         <EntityType Name="AtestadoXPersona">
           <Key>
@@ -603,6 +750,7 @@
           <Property Name="TipoRubro" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Atestado" Relationship="Self.FK__Atestado__RubroI__440B1D61" FromRole="Rubro" ToRole="Atestado" />
           <NavigationProperty Name="TipoRubro1" Relationship="Self.Fk_TipoRubro" FromRole="Rubro" ToRole="TipoRubro" />
+          <NavigationProperty Name="Rubrica" Relationship="AtestadosModel.Rubrica_Rubro_fk" FromRole="Rubro" ToRole="Rubrica" />
         </EntityType>
         <EntityType Name="TipoRubro">
           <Key>
@@ -863,6 +1011,35 @@
             <End Role="Persona" EntitySet="Persona" />
             <End Role="EvaluaciónXAtestado" EntitySet="EvaluaciónXAtestado" />
           </AssociationSet>
+          <EntitySet Name="Evaluacion" EntityType="AtestadosModel.Evaluacion" />
+          <EntitySet Name="Requisito" EntityType="AtestadosModel.Requisito" />
+          <EntitySet Name="Rubrica" EntityType="AtestadosModel.Rubrica" />
+          <EntitySet Name="SeleccionPuntaje" EntityType="AtestadosModel.SeleccionPuntaje" />
+          <EntitySet Name="TipoPuntaje" EntityType="AtestadosModel.TipoPuntaje" />
+          <AssociationSet Name="Evaluacion_Atestado_fk" Association="AtestadosModel.Evaluacion_Atestado_fk">
+            <End Role="Atestado" EntitySet="Atestado" />
+            <End Role="Evaluacion" EntitySet="Evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="Evaluacion_Rubrica_fk" Association="AtestadosModel.Evaluacion_Rubrica_fk">
+            <End Role="Rubrica" EntitySet="Rubrica" />
+            <End Role="Evaluacion" EntitySet="Evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="Requisito_Rubrica_fk" Association="AtestadosModel.Requisito_Rubrica_fk">
+            <End Role="Rubrica" EntitySet="Rubrica" />
+            <End Role="Requisito" EntitySet="Requisito" />
+          </AssociationSet>
+          <AssociationSet Name="Rubrica_Rubro_fk" Association="AtestadosModel.Rubrica_Rubro_fk">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Rubrica" EntitySet="Rubrica" />
+          </AssociationSet>
+          <AssociationSet Name="Rubrica_TipoPuntaje_fk" Association="AtestadosModel.Rubrica_TipoPuntaje_fk">
+            <End Role="TipoPuntaje" EntitySet="TipoPuntaje" />
+            <End Role="Rubrica" EntitySet="Rubrica" />
+          </AssociationSet>
+          <AssociationSet Name="SeleccionPuntaje_Rubrica_fk" Association="AtestadosModel.SeleccionPuntaje_Rubrica_fk">
+            <End Role="Rubrica" EntitySet="Rubrica" />
+            <End Role="SeleccionPuntaje" EntitySet="SeleccionPuntaje" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="TipoCategoria">
           <Key>
@@ -964,6 +1141,144 @@
             </Principal>
             <Dependent Role="EvaluaciónXAtestado">
               <PropertyRef Name="AutorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Evaluacion">
+          <Key>
+            <PropertyRef Name="EvaluacionID" />
+          </Key>
+          <Property Name="EvaluacionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AtestadoID" Type="Int32" Nullable="false" />
+          <Property Name="RubricaID" Type="Int32" Nullable="false" />
+          <Property Name="Puntaje" Type="Int32" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Atestado" Relationship="AtestadosModel.Evaluacion_Atestado_fk" FromRole="Evaluacion" ToRole="Atestado" />
+          <NavigationProperty Name="Rubrica" Relationship="AtestadosModel.Evaluacion_Rubrica_fk" FromRole="Evaluacion" ToRole="Rubrica" />
+        </EntityType>
+        <EntityType Name="Requisito">
+          <Key>
+            <PropertyRef Name="RequisitoID" />
+          </Key>
+          <Property Name="RequisitoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RubricaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rubrica" Relationship="AtestadosModel.Requisito_Rubrica_fk" FromRole="Requisito" ToRole="Rubrica" />
+        </EntityType>
+        <EntityType Name="Rubrica">
+          <Key>
+            <PropertyRef Name="RubricaID" />
+          </Key>
+          <Property Name="RubricaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPuntajeID" Type="Int32" Nullable="false" />
+          <Property Name="ValorPuntaje" Type="Double" />
+          <Property Name="DescripcionPuntaje" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="EsManual" Type="Boolean" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RubroID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Evaluacion" Relationship="AtestadosModel.Evaluacion_Rubrica_fk" FromRole="Rubrica" ToRole="Evaluacion" />
+          <NavigationProperty Name="Requisito" Relationship="AtestadosModel.Requisito_Rubrica_fk" FromRole="Rubrica" ToRole="Requisito" />
+          <NavigationProperty Name="Rubro" Relationship="AtestadosModel.Rubrica_Rubro_fk" FromRole="Rubrica" ToRole="Rubro" />
+          <NavigationProperty Name="TipoPuntaje" Relationship="AtestadosModel.Rubrica_TipoPuntaje_fk" FromRole="Rubrica" ToRole="TipoPuntaje" />
+          <NavigationProperty Name="SeleccionPuntaje" Relationship="AtestadosModel.SeleccionPuntaje_Rubrica_fk" FromRole="Rubrica" ToRole="SeleccionPuntaje" />
+        </EntityType>
+        <EntityType Name="SeleccionPuntaje">
+          <Key>
+            <PropertyRef Name="SeleccionPuntajeID" />
+          </Key>
+          <Property Name="SeleccionPuntajeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Puntaje" Type="Double" Nullable="false" />
+          <Property Name="RubricaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rubrica" Relationship="AtestadosModel.SeleccionPuntaje_Rubrica_fk" FromRole="SeleccionPuntaje" ToRole="Rubrica" />
+        </EntityType>
+        <EntityType Name="TipoPuntaje">
+          <Key>
+            <PropertyRef Name="TipoPuntajeID" />
+          </Key>
+          <Property Name="TipoPuntajeID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Rubrica" Relationship="AtestadosModel.Rubrica_TipoPuntaje_fk" FromRole="TipoPuntaje" ToRole="Rubrica" />
+        </EntityType>
+        <Association Name="Evaluacion_Atestado_fk">
+          <End Type="AtestadosModel.Atestado" Role="Atestado" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AtestadosModel.Evaluacion" Role="Evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atestado">
+              <PropertyRef Name="AtestadoID" />
+            </Principal>
+            <Dependent Role="Evaluacion">
+              <PropertyRef Name="AtestadoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Evaluacion_Rubrica_fk">
+          <End Type="AtestadosModel.Rubrica" Role="Rubrica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AtestadosModel.Evaluacion" Role="Evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubrica">
+              <PropertyRef Name="RubricaID" />
+            </Principal>
+            <Dependent Role="Evaluacion">
+              <PropertyRef Name="RubricaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Requisito_Rubrica_fk">
+          <End Type="AtestadosModel.Rubrica" Role="Rubrica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AtestadosModel.Requisito" Role="Requisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubrica">
+              <PropertyRef Name="RubricaID" />
+            </Principal>
+            <Dependent Role="Requisito">
+              <PropertyRef Name="RubricaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rubrica_Rubro_fk">
+          <End Type="AtestadosModel.Rubro" Role="Rubro" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AtestadosModel.Rubrica" Role="Rubrica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="RubroID" />
+            </Principal>
+            <Dependent Role="Rubrica">
+              <PropertyRef Name="RubroID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rubrica_TipoPuntaje_fk">
+          <End Type="AtestadosModel.TipoPuntaje" Role="TipoPuntaje" Multiplicity="1" />
+          <End Type="AtestadosModel.Rubrica" Role="Rubrica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPuntaje">
+              <PropertyRef Name="TipoPuntajeID" />
+            </Principal>
+            <Dependent Role="Rubrica">
+              <PropertyRef Name="TipoPuntajeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SeleccionPuntaje_Rubrica_fk">
+          <End Type="AtestadosModel.Rubrica" Role="Rubrica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AtestadosModel.SeleccionPuntaje" Role="SeleccionPuntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubrica">
+              <PropertyRef Name="RubricaID" />
+            </Principal>
+            <Dependent Role="SeleccionPuntaje">
+              <PropertyRef Name="RubricaID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1135,14 +1450,54 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="AtestadosModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+          <EntitySetMapping Name="Evaluacion">
+            <EntityTypeMapping TypeName="AtestadosModel.Evaluacion">
+              <MappingFragment StoreEntitySet="Evaluacion">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Puntaje" ColumnName="Puntaje" />
+                <ScalarProperty Name="RubricaID" ColumnName="RubricaID" />
+                <ScalarProperty Name="AtestadoID" ColumnName="AtestadoID" />
+                <ScalarProperty Name="EvaluacionID" ColumnName="EvaluacionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requisito">
+            <EntityTypeMapping TypeName="AtestadosModel.Requisito">
+              <MappingFragment StoreEntitySet="Requisito">
+                <ScalarProperty Name="RubricaID" ColumnName="RubricaID" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="RequisitoID" ColumnName="RequisitoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rubrica">
+            <EntityTypeMapping TypeName="AtestadosModel.Rubrica">
+              <MappingFragment StoreEntitySet="Rubrica">
+                <ScalarProperty Name="RubroID" ColumnName="RubroID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="EsManual" ColumnName="EsManual" />
+                <ScalarProperty Name="DescripcionPuntaje" ColumnName="DescripcionPuntaje" />
+                <ScalarProperty Name="ValorPuntaje" ColumnName="ValorPuntaje" />
+                <ScalarProperty Name="TipoPuntajeID" ColumnName="TipoPuntajeID" />
+                <ScalarProperty Name="RubricaID" ColumnName="RubricaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeleccionPuntaje">
+            <EntityTypeMapping TypeName="AtestadosModel.SeleccionPuntaje">
+              <MappingFragment StoreEntitySet="SeleccionPuntaje">
+                <ScalarProperty Name="RubricaID" ColumnName="RubricaID" />
+                <ScalarProperty Name="Puntaje" ColumnName="Puntaje" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="SeleccionPuntajeID" ColumnName="SeleccionPuntajeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPuntaje">
+            <EntityTypeMapping TypeName="AtestadosModel.TipoPuntaje">
+              <MappingFragment StoreEntitySet="TipoPuntaje">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="TipoPuntajeID" ColumnName="TipoPuntajeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
