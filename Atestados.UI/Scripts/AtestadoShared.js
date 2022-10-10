@@ -41,7 +41,8 @@ function isEmail(e) {
 function validPercentage(percentage) {
     return (per - percentage) >= 0 && percentage >= 0;
 }
-
+//Agregar Criterios
+//$('#criterioAgregar').click(function () { });
 // Agregar funcionarios como autores al libro.
 $('#funcionarioAgregar').click(function () {
     var usuario = new Object();

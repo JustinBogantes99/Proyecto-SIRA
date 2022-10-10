@@ -60,6 +60,7 @@
     background-color: rgba(255,255,255,1);
     background-image: none;
     border-color: rgba(0,80,133,1);
+    min-width: 250px;
 }
 
     .btn-outline-primary:hover {
