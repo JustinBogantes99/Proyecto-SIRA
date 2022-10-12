@@ -36,7 +36,6 @@
         <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona" />
         <AssociationConnector Association="AtestadosModel.FK_Persona_TipoCategoria" />
         <AssociationConnector Association="AtestadosModel.FK_Persona_TipoUsuario" />
-        <EntityTypeShape EntityType="AtestadosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona1" />
         <EntityTypeShape EntityType="AtestadosModel.Evaluacion" Width="1.5" PointX="12.125" PointY="4.75" />
         <EntityTypeShape EntityType="AtestadosModel.Requisito" Width="1.5" PointX="14.125" PointY="16.75" />

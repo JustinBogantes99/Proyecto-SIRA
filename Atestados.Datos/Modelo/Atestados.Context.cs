@@ -40,7 +40,6 @@ namespace Atestados.Datos.Modelo
         public virtual DbSet<TipoCategoria> TipoCategoria { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
         public virtual DbSet<EvaluaciónXAtestado> EvaluaciónXAtestado { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Evaluacion> Evaluacion { get; set; }
         public virtual DbSet<Requisito> Requisito { get; set; }
         public virtual DbSet<Rubrica> Rubrica { get; set; }

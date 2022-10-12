@@ -1006,7 +1006,6 @@
             <End Role="TipoUsuario" EntitySet="TipoUsuario" />
             <End Role="Persona" EntitySet="Persona" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="AtestadosModel.sysdiagrams" />
           <AssociationSet Name="FK_EvaluaciónXAtestado_Persona1" Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona1">
             <End Role="Persona" EntitySet="Persona" />
             <End Role="EvaluaciónXAtestado" EntitySet="EvaluaciónXAtestado" />
@@ -1122,16 +1121,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <Association Name="FK_EvaluaciónXAtestado_Persona1">
           <End Type="AtestadosModel.Persona" Role="Persona" Multiplicity="1" />
           <End Type="AtestadosModel.EvaluaciónXAtestado" Role="EvaluaciónXAtestado" Multiplicity="*" />
