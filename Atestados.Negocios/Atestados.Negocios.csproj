@@ -68,6 +68,7 @@
     <Compile Include="Negocios\Catalogos.cs" />
     <Compile Include="Negocios\InformacionAtestado.cs" />
     <Compile Include="Negocios\InformacionGeneral.cs" />
+    <Compile Include="Negocios\InformacionRubrica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
