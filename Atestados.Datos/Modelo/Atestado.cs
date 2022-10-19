@@ -20,6 +20,7 @@ namespace Atestados.Datos.Modelo
             this.Archivo = new HashSet<Archivo>();
             this.AtestadoXPersona = new HashSet<AtestadoXPersona>();
             this.EvaluaciónXAtestado = new HashSet<EvaluaciónXAtestado>();
+            this.Evaluacion = new HashSet<Evaluacion>();
         }
     
         public int AtestadoID { get; set; }
@@ -50,5 +51,7 @@ namespace Atestados.Datos.Modelo
         public virtual InfoEditorial InfoEditorial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EvaluaciónXAtestado> EvaluaciónXAtestado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Evaluacion> Evaluacion { get; set; }
     }
 }
