@@ -20,6 +20,8 @@ namespace Atestados.UI.Controllers.Atestados
         private AtestadosEntities db = new AtestadosEntities();
         private InformacionAtestado infoAtestado = new InformacionAtestado();
         private InformacionGeneral infoGeneral = new InformacionGeneral();
+        private Catalogos catalogos = new Catalogos();
+        private InformacionRubrica infoRubrica = new InformacionRubrica();
         private readonly string Rubro = "Artículo";
         public static List<ArchivoDTO> archivosOld = null;
 
@@ -54,6 +56,7 @@ namespace Atestados.UI.Controllers.Atestados
             atestado.NumeroAutores = 1;
             ViewBag.PaisID = new SelectList(db.Pais, "PaisID", "Nombre", infoAtestado.ObtenerIDdePais("costa rica"));
             ViewBag.RubroID = new SelectList(db.Rubro, "RubroID", "Nombre");
+            ViewBag.TipoPuntajeID = new SelectList(db.TipoPuntaje, "TipoPuntajeID", "Nombre");
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersona((int)Session["UsuarioID"]);
 
             // Limpiar las listas de archivos y autores por si tienen basura.
@@ -75,7 +78,7 @@ namespace Atestados.UI.Controllers.Atestados
             else
             if (ModelState.IsValid)
             {
-                List<AutorDTO> autores = (List <AutorDTO>)Session["Autores"];
+                List<AutorDTO> autores = (List<AutorDTO>)Session["Autores"];
                 List<ArchivoDTO> archivos = (List<ArchivoDTO>)Session["Archivos"];
 
                 // Obtener el id del usuario que está agregando el atestado.
@@ -177,20 +180,20 @@ namespace Atestados.UI.Controllers.Atestados
 
                 atestado.PersonaID = (int)Session["UsuarioID"];
                 atestado.RubroID = infoAtestado.ObtenerIDdeRubro(Rubro);
-                atestado.Fecha.FechaID = atestado.AtestadoID;    
+                atestado.Fecha.FechaID = atestado.AtestadoID;
                 atestado.Fecha.FechaInicio = DateTime.Now;
                 infoAtestado.EditarFecha(AutoMapper.Mapper.Map<FechaDTO, Fecha>(atestado.Fecha));
                 atestado.HoraCreacion = DateTime.Now;
                 atestado.InfoEditorial.InfoEditorialID = atestado.AtestadoID;
                 infoAtestado.EditarInfoEditorial(AutoMapper.Mapper.Map<InfoEditorialDTO, InfoEditorial>(atestado.InfoEditorial));
-                atestado.Archivos = infoAtestado.CargarArchivosDeAtestado(atestado.AtestadoID); 
+                atestado.Archivos = infoAtestado.CargarArchivosDeAtestado(atestado.AtestadoID);
                 atestado.AtestadoXPersona = AutoMapper.Mapper.Map<List<AtestadoXPersona>, List<AtestadoXPersonaDTO>>(infoAtestado.CargarAtestadoXPersonasdeAtestado(atestado.AtestadoID));
                 atestado.NumeroAutores = autores.Count();
                 Atestado atestado_mapped = AutoMapper.Mapper.Map<AtestadoDTO, Atestado>(atestado);
                 infoAtestado.EditarAtestado(atestado_mapped);
 
                 // Agregar archivos
-                AtestadoShared.obj.editarArchivos(archivosOld ,archivos, infoAtestado, atestado_mapped);
+                AtestadoShared.obj.editarArchivos(archivosOld, archivos, infoAtestado, atestado_mapped);
 
                 // Agregar autores
                 AtestadoShared.obj.editarAutores(autores, infoGeneral, infoAtestado, atestado.AutoresEq, atestado_mapped);
@@ -236,15 +239,20 @@ namespace Atestados.UI.Controllers.Atestados
         }
 
         [HttpPost]
-        public ActionResult nuevoCriterio()
+        public ActionResult nuevoRequisito(RequisitoDTO requisitoData)
         {
-            RubricaDTO cr = new RubricaDTO();
-            cr.Nombre = "Prueba1";
-
-            List<RubricaDTO> criterios = (List<RubricaDTO>)Session["Criterios"];
+            RequisitoDTO cr = new RequisitoDTO();
+            cr.Nombre = requisitoData.Nombre;
+            cr.Descripcion = requisitoData.Descripcion;
+            List<RequisitoDTO> criterios = (List<RequisitoDTO>)Session["Criterios"];
             criterios.Add(cr);
             Session["Criterios"] = criterios;
+            return PartialView("_CriteriosRubrica");
+        }
 
+        [HttpPost]
+        public ActionResult agregarCriterio()
+        {
             return PartialView("_CriteriosRubrica");
         }
     }

@@ -11,7 +11,7 @@ namespace Atestados.Objetos.Dtos
     public class RubricaDTO
     {
         public int RubricaID { get; set; }
-        public int TipoPuntajeID { get; set; }
+        public TipoPuntaje _TipoPuntaje { get; set; }
         public int ValorPuntaje { get; set; }
         public string DescripcionPuntaje { get; set; } //CONSULTAR
         public int EsManual { get; set; } //CONSULTAR

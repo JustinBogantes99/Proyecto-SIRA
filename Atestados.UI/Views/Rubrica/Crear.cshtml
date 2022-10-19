@@ -40,30 +40,36 @@
                         </div>
                     </div>
 
+                    <div class="form-group pt-2">
+                        @Html.LabelFor(model => model._TipoPuntaje, "Tipo puntaje", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("TipoPuntajeID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model._TipoPuntaje, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
                     <div class="mt-4">
-                        <h2>Añadir Criterios de Evaluación</h2>
+                        <h2>Añadir Requisitos de Evaluación</h2>
                         <hr />
                     </div>
 
-                    <div class="row pt-4">
+                    <div class="form-group pt-1">
                         <div class="form-group pt-1">
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary" value="Agregar Criterio" form="nuevoCriterio" data-bs-toggle="modal" data-bs-target="#modalRubrica"/>
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-primary" value="Agregar Requisito" form="nuevoCriterio" data-bs-toggle="modal" data-bs-target="#modalRubrica" />
                             </div>
                         </div>
 
                         <div class="form-group pt-1">
-                            <div class="col-md-10">
-                                <input type="submit" class="btn btn-primary" value="Agregar Criterio Múltiple" form="subirArchivo" data-bs-toggle="modal" data-bs-target="#modalRubricaMultiple"/>
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-primary" value="Agregar Requisito Múltiple" form="nuevoCriterioMulti" data-bs-toggle="modal" data-bs-target="#modalRubricaMultiple" />
                             </div>
                         </div>
                     </div>
 
-                    @Html.Partial("_CriteriosRubrica")
-
                     <div class="form-group my-2">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Crear" class="btn btn-success" id="submit" />
+                            <input  value="Crear Requisito" class="btn btn-success"/>
                         </div>
                     </div>
 
@@ -83,30 +89,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                @Html.Partial("_CriteriosRubrica")
-                <h3>Nuevo Criterio</h3>
+                <h3>Nuevo Requisito</h3>
                 <table class="table">
                     <tr>
                         <td>
-                            <div class="form-group pt-2">
-                                @Html.LabelFor(model => model.CriterioNombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CriterioNombre, new { htmlAttributes = new { placeholder = "Nombre del Criterio", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CriterioNombre, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group pt-2">
-                                @Html.LabelFor(model => model.CriterioPuntaje, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CriterioPuntaje, new { htmlAttributes = new { placeholder = "Puntaje", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CriterioPuntaje, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group pt-2">
-                                <button type="button" class="btn btn-primary">Agregar</button>
-
-                            </div>
-                        </td>
+                            <td><input class="form-control" type="text" placeholder="Nombre del Criterio" id="criterio" runat="server" /></td>
+                            <td><input class="form-control" type="number" placeholder="Puntaje" id="porcentaje" /></td>
+                            <td><button type="button" class="btn btn-primary" id="CriterioAgregar">Agregar</button></td>
+                       </td>
                     </tr>
                 </table>
             </div>
@@ -123,36 +113,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                @Html.Partial("_CriteriosRubrica")
+                @Html.Partial("_CriterioRubricaMultiple")
                 <h3>Nuevo Criterio Múltiple</h3>
                 <table class="table">
                     <tr>
                         <td>
-                            <div class="form-group pt-2">
-                                @Html.LabelFor(model => model.CriterioNombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CriterioNombre, new { htmlAttributes = new { placeholder = "Nombre del Criterio", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CriterioNombre, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group pt-2">
-                                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CriterioNombre, new { htmlAttributes = new { placeholder = "Nombre de la columna", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CriterioNombre, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group pt-2">
-                                @Html.LabelFor(model => model.CriterioPuntaje, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CriterioPuntaje, new { htmlAttributes = new { placeholder = "valor de columna", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CriterioPuntaje, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group pt-2">
-                                <button type="button" class="btn btn-primary">Agregar</button>
-
-                            </div>
+                        <td><input class="form-control" type="text" placeholder="Nombre del Criterio" id="nombreCriterio" runat="server" /></td>
+                        <td><input class="form-control" type="text" placeholder="Nombre de la columna" id="Col" /></td>
+                        <td><input class="form-control" type="number" placeholder="valor de columna" id="porcentaje" /></td>
+                        <td><button type="button" class="btn btn-primary" id="CriterioAgregar">Agregar</button></td>
                         </td>
                     </tr>
                 </table>

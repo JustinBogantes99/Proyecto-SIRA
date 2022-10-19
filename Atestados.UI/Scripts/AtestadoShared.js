@@ -41,8 +41,7 @@ function isEmail(e) {
 function validPercentage(percentage) {
     return (per - percentage) >= 0 && percentage >= 0;
 }
-//Agregar Criterios
-//$('#criterioAgregar').click(function () { });
+
 // Agregar funcionarios como autores al libro.
 $('#funcionarioAgregar').click(function () {
     var usuario = new Object();
@@ -190,6 +189,56 @@ $('#autorAgregar').click(function () {
     }
     clearAuthorForm();
 })
+
+//Agregar Criterios
+$('#CriterioAgregar').click(function () {
+    // Crear el objeto del autor con la información ingresada.
+    var criterio = new Object();
+    criterio.Nombre = $('#nombreCriterio').val();
+    criterio.accion = $('#accion').val();
+    criterio.Porcentaje = $('#porcentaje').val()
+    per = per - parseInt(criterio.Porcentaje);
+    $.ajax({
+        type: 'POST',
+        url: `${baseUrl}/nuevoCriterio`,
+           async: false,
+           contentType: 'application/json; charset=utf-8',
+           dataType: 'html',
+           data: JSON.stringify(criterio),
+           success: function (result) {
+               $("#_CriteriosRubrica").html(result);
+           }
+        });
+    clearAuthorFormRubrica();
+})
+
+//Agregar Criterios
+$('#CriterioAgregarMultiple').click(function () {
+    // Crear el objeto del autor con la información ingresada.
+    var criterio = new Object();
+    criterio.Nombre = $('#nombreCriterio').val();
+    criterio.NombreCol = $('#col').val();
+    criterio.accion = $('#accion').val();
+    criterio.Porcentaje = $('#porcentaje').val()
+    per = per - parseInt(criterio.Porcentaje);
+    $.ajax({
+        type: 'POST',
+        url: `${baseUrl}/nuevoCriterio`,
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'html',
+        data: JSON.stringify(criterio),
+        success: function (result) {
+            $("#_CriteriosRubrica").html(result);
+        }
+    });
+    clearAuthorFormRubrica();
+})
+function clearAuthorFormRubrica() {
+    $('#nombre').val('');
+    $('#porcentaje').val();
+    $('#col').val('');
+}
 
 // Quitar texto de todos los campos del formulario de autores.
 function clearAuthorForm() {

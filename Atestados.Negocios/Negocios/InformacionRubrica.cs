@@ -12,7 +12,7 @@ using Atestados.Utilitarios.Puntos;
 
 namespace Atestados.Negocios.Negocios
 {
-    internal class InformacionRubrica
+    public class InformacionRubrica
     {
         private readonly AtestadosEntities db = new AtestadosEntities();
 

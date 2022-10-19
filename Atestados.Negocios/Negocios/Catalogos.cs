@@ -14,16 +14,16 @@ namespace Atestados.Negocios.Negocios
         private AtestadosEntities db = new AtestadosEntities();
 
         #region TipoPuntaje
-        public List<TipoPuntaje> CargarTipoDePuntajes()
+        public List<Datos.Modelo.TipoPuntaje> CargarTipoDePuntajes()
         {
-            List<TipoPuntaje> listaTipoPuntaje = db.TipoPuntaje.ToList();
+            List<Datos.Modelo.TipoPuntaje> listaTipoPuntaje = db.TipoPuntaje.ToList();
 
             return listaTipoPuntaje;
         }
 
-        public TipoPuntaje CargarTipoPuntaje(int? id)
+        public Datos.Modelo.TipoPuntaje CargarTipoPuntaje(int? id)
         {
-            TipoPuntaje puntaje = db.TipoPuntaje.Find(id);
+            Datos.Modelo.TipoPuntaje puntaje = db.TipoPuntaje.Find(id);
 
             if (puntaje == null)
                 return null;
