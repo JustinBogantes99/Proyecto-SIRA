@@ -12,7 +12,7 @@ using Atestados.Utilitarios.Puntos;
 
 namespace Atestados.Negocios.Negocios
 {
-    public class InformacionRubrica
+    internal class InformacionRubrica
     {
         private readonly AtestadosEntities db = new AtestadosEntities();
 
@@ -73,9 +73,9 @@ namespace Atestados.Negocios.Negocios
             db.SaveChanges();
         }
 
-        public void GuardarSeleccionPuntaje(Requisito seleccionPuntaje)
+        public void GuardarSeleccionPuntaje(SeleccionPuntaje seleccionPuntaje)
         {
-            db.Requisito.Add(seleccionPuntaje);
+            db.SeleccionPuntaje.Add(seleccionPuntaje);
             db.SaveChanges();
         }
 
@@ -87,6 +87,33 @@ namespace Atestados.Negocios.Negocios
         public void BorrarSeleccionPuntajesDeRubrica(int? id)
         {
             db.SeleccionPuntaje.RemoveRange(db.SeleccionPuntaje.Where(s => s.RubricaID == id));
+            db.SaveChanges();
+        }
+
+        #endregion
+
+        #region Rubrica
+
+        public Rubrica CargarRubrica(int? id)
+        {
+            return db.Rubrica.Find(id);
+        }
+
+        public void BorrarRubrica(int? id)
+        {
+            db.Rubrica.RemoveRange(db.Rubrica.Where(r => r.RubricaID == id));
+            db.SaveChanges();
+        }
+
+        public void EditarRubrica(Rubrica rubrica)
+        {
+            db.Entry(rubrica).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void GuardarRubrica(Rubrica rubrica)
+        {
+            db.Rubrica.Add(rubrica);
             db.SaveChanges();
         }
 
