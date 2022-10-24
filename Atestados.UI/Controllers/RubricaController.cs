@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using Atestados.Datos.Modelo;
 using Atestados.Negocios.Negocios;
 using Atestados.Objetos.Dtos;
+using Atestados.Objetos;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
@@ -242,13 +243,21 @@ namespace Atestados.UI.Controllers.Atestados
         [HttpPost]
         public ActionResult NuevoRequisito(RequisitoDTO requisitoData)
         {
-            RequisitoDTO cr = new RequisitoDTO();
-            cr.Nombre = requisitoData.Nombre;
-            Console.WriteLine(cr.Nombre);
-            List<RequisitoDTO> criterios = (List<RequisitoDTO>)Session["Criterios"];
-            criterios.Add(cr);
-            Session["Criterios"] = criterios;
+            List<RequisitoDTO> requisitos = (List<RequisitoDTO>)Session["Criterios"];
+            requisitos.Add(requisitoData);
+            Session["Criterios"] = requisitos;
             return PartialView("_CriteriosRubrica");
+        }
+
+        [HttpPost]
+        public ActionResult ObtenerTipoPuntaje(TipoPuntajeDTO tipo)
+        {
+            if (tipo.TipoPuntajeID == 1)
+                return PartialView("_ValorFijo");
+            else if (tipo.TipoPuntajeID == 2)
+                return PartialView("_Seleccion");
+            else
+                return PartialView("_Producto");
         }
 
         [HttpPost]

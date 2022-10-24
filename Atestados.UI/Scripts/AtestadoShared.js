@@ -148,7 +148,8 @@ $('#autorAgregar').click(function () {
     autor.porcEquitativo = false;
     autor.Porcentaje = $('#porcentaje').val()
     autor.numAutor = ++autorCont;
-
+    console.log(autor.Nombre)
+    console.log(this.baseURI)
     // Si está marcada la opción de porcentaje equitativo.
     if (autor != null && isEmail(autor.Email) && checkbox.checked) {
         autor.porcEquitativo = true;
@@ -190,28 +191,7 @@ $('#autorAgregar').click(function () {
     clearAuthorForm();
 })
 
-//Agregar Criterios
-$('#CriterioAgregar').click(function () {
-    // Crear el objeto del requisito con la información ingresada.
-    var criterio = new Object();
-    criterio.Nombre = $('#nombreCriterio').val();
-    //criterio.accion = $('#accion').val();
-    //criterio.Porcentaje = $('#porcentaje').val()
-    //per = per - parseInt(criterio.Porcentaje);
-    //Console.WriteLine(criterio.Nombre);
-    $.ajax({
-        type: 'POST',
-        url: `${baseUrl}/NuevoRequisito`,
-           async: false,
-           contentType: 'application/json; charset=utf-8',
-           dataType: 'html',
-           data: JSON.stringify(criterio),
-           success: function (result) {
-               $("#_CriteriosRubrica").html(result);
-           }
-        });
-    clearAuthorFormRubrica();
-})
+
 
 $('#mostarDatosSeleccion').click(function () {
     var tipoPuntaje = new Object();
@@ -227,7 +207,6 @@ $('#mostarDatosSeleccion').click(function () {
             $("#_CriteriosRubrica").html(result);
         }
     });
-    clearAuthorFormRubrica();
 })
 
 

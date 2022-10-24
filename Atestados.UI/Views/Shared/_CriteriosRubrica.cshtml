@@ -1,19 +1,18 @@
 ﻿@using Atestados.Negocios.Negocios;
 @using Atestados.Objetos.Dtos;
 
-<div id="criteriosDiv">
+<div id="requisitosRubrica">
     <table class="table table-striped mt-3">
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Manual</th>
             </tr>
         </thead>
         <tbody id="tablaCriterio">
             @foreach (RequisitoDTO item in Session["Criterios"] as List<RequisitoDTO>)
             {
                 <tr>
-                    <td class="numArch"> @item.Nombre</td>
+                    <td> @item.Nombre</td>
                     <td>
                         <button class="btn btn-danger btn-sm rm-archivo" title="Borrar">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="#fff" class="bi bi-trash" viewBox="0 0 16 16">

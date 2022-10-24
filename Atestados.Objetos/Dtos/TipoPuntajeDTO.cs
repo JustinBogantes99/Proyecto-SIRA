@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atestados.Objetos.Dtos
 {
-    public class TipoPuntaje
+    public class TipoPuntajeDTO
     {
         public int TipoPuntajeID { get; set; }
         public string Nombre { get; set; }
