@@ -11,11 +11,11 @@
             </tr>
         </thead>
         <tbody id="tablaCriterios">
-            @foreach (RubricaDTO item in Session["Criterios"] as List<RubricaDTO>)
-            {
+            @foreach (RequisitoDTO item in Session["Criterios"] as List<RequisitoDTO>)
+            { 
                 <tr>
                     <td class="numArch">@item.Nombre</td>
-                    <td>@item.ValorPuntaje</td>
+                    @**<td>@item.ValorPuntaje</td>*@
                     <td>
                         <button class="btn btn-danger btn-sm rm-archivo" title="Borrar">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="#fff" class="bi bi-trash" viewBox="0 0 16 16">

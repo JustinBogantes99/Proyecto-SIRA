@@ -1,0 +1,32 @@
+﻿@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+<div id="Seleccion">
+    <h3>Seleccion</h3>
+    <table class="table">
+        <tr>
+            <td>
+                <input class="form-control" type="text" placeholder="Nombre del Requisito" id="nombreCriterio" />
+            </td>
+            <td>
+                <input class="form-control" type="text" placeholder="Descripcíon puntaje" id="nombreCriterio" />
+            </td>
+            <td><input class="form-control" type="number" placeholder="Valor" id="valor" /></td>
+            <td>
+                <label class="form-check-label" for="flexCheckDefault">
+                    Manual
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="manualCheck" name="manualCheck" />
+            </td>
+            <td>
+                <label class="form-check-label" for="flexCheckDefault">
+                    Automatico
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="AutoCheck" name="AutoCheck" />
+            </td>
+        </tr>
+    </table>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" class="btn btn-primary" value="Agregar Requisito" form="nuevoCriterio" id="CriterioAgregar" />
+    </div>
+</div>

@@ -619,6 +619,29 @@ namespace Atestados.UI.Controllers
             return PartialView("_ArchivosTabla");
         }
 
+        [HttpPost]
+        public ActionResult NuevoRequisito(RequisitoDTO requisitoData)
+        {
+            RequisitoDTO cr = new RequisitoDTO();
+            cr.Nombre = requisitoData.Nombre;
+            Console.WriteLine(cr.Nombre);
+            List<RequisitoDTO> criterios = (List<RequisitoDTO>)Session["Criterios"];
+            criterios.Add(cr);
+            Session["Criterios"] = criterios;
+            return PartialView("_CriteriosRubrica");
+        }
+
+        [HttpPost]
+        public ActionResult MostarDatosSelect(Objetos.Dtos.TipoPuntaje puntaje)
+        {
+            RequisitoDTO cr = new RequisitoDTO();
+            if (puntaje.Nombre == "Seleccion")
+                return PartialView("_Seleccion");
+            else if (puntaje.Nombre == "Producto")
+                return PartialView("_Producto");
+            else
+                return PartialView("_ValorFijo");
+        }
 
         #endregion
 

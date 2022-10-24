@@ -192,15 +192,16 @@ $('#autorAgregar').click(function () {
 
 //Agregar Criterios
 $('#CriterioAgregar').click(function () {
-    // Crear el objeto del autor con la información ingresada.
+    // Crear el objeto del requisito con la información ingresada.
     var criterio = new Object();
     criterio.Nombre = $('#nombreCriterio').val();
-    criterio.accion = $('#accion').val();
-    criterio.Porcentaje = $('#porcentaje').val()
-    per = per - parseInt(criterio.Porcentaje);
+    //criterio.accion = $('#accion').val();
+    //criterio.Porcentaje = $('#porcentaje').val()
+    //per = per - parseInt(criterio.Porcentaje);
+    //Console.WriteLine(criterio.Nombre);
     $.ajax({
         type: 'POST',
-        url: `${baseUrl}/nuevoCriterio`,
+        url: `${baseUrl}/NuevoRequisito`,
            async: false,
            contentType: 'application/json; charset=utf-8',
            dataType: 'html',
@@ -211,6 +212,24 @@ $('#CriterioAgregar').click(function () {
         });
     clearAuthorFormRubrica();
 })
+
+$('#mostarDatosSeleccion').click(function () {
+    var tipoPuntaje = new Object();
+    tipoPuntaje.Nombre = $('#TipoPuntaje').val();
+    $.ajax({
+        type: 'POST',
+        url: `${baseUrl}/MostarDatosSelect`,
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'html',
+        data: JSON.stringify(criterio),
+        success: function (result) {
+            $("#_CriteriosRubrica").html(result);
+        }
+    });
+    clearAuthorFormRubrica();
+})
+
 
 //Agregar Criterios
 $('#CriterioAgregarMultiple').click(function () {
@@ -234,10 +253,9 @@ $('#CriterioAgregarMultiple').click(function () {
     });
     clearAuthorFormRubrica();
 })
+
 function clearAuthorFormRubrica() {
-    $('#nombre').val('');
-    $('#porcentaje').val();
-    $('#col').val('');
+    $('#nombreCriterio').val('');
 }
 
 // Quitar texto de todos los campos del formulario de autores.
