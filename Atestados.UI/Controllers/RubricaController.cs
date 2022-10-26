@@ -70,49 +70,32 @@ namespace Atestados.UI.Controllers.Atestados
             return View(rubrica);
         }
 
-        // POST: Articulo/Crear
+        // POST: Rubrica/Crear
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Crear([Bind(Include = "Annio,Archivos,AtestadoID,AtestadoXPersona,Editorial,Enlace,HoraCreacion,Nombre,NumeroAutores,Observaciones,PaisID,Persona,PersonaID,RubroID,Website,AutoresEq,AutoresCheck")] LibroDTO atestado)
+        public ActionResult Crear(RubricaDTO rubrica)
         {
-            if (!atestado.AutoresCheck)
-                ModelState.AddModelError("AutoresCheck", "El libro debe tener al menos un autor.");
-            else
             if (ModelState.IsValid)
             {
-                List<AutorDTO> autores = (List<AutorDTO>)Session["Autores"];
-                List<ArchivoDTO> archivos = (List<ArchivoDTO>)Session["Archivos"];
+                // Falta validar entre los 3 tipos de puntaje, de momento lo interpreta como si fuera ValorFijo siempre
+                List<RequisitoDTO> requisitos = (List<RequisitoDTO>)Session["Criterios"];
+                Rubrica rubrica_mapped = AutoMapper.Mapper.Map<RubricaDTO, Rubrica>(rubrica);
+                infoRubrica.GuardarRubrica(rubrica_mapped);
 
-                // Obtener el id del usuario que está agregando el atestado.
-                atestado.PersonaID = (int)Session["UsuarioID"];
-                atestado.RubroID = infoAtestado.ObtenerIDdeRubro(Rubro);
-                atestado.NumeroAutores = autores.Count();
-                // Mappear el atestado una vez que está completo.
-                // Esta operación es muy frágil, y podría llevar a errores de llaves en la BD.
-                Atestado atestado_mapped = AutoMapper.Mapper.Map<LibroDTO, Atestado>(atestado);
-                infoAtestado.GuardarAtestado(atestado_mapped);
-                // Obtener y guardar información adicional del atestado.
-                atestado.AtestadoID = atestado_mapped.AtestadoID;
-                InfoEditorial infoEditorial = AutoMapper.Mapper.Map<LibroDTO, InfoEditorial>(atestado);
-                infoAtestado.GuardarInfoEditorial(infoEditorial);
-                Fecha fecha = AutoMapper.Mapper.Map<LibroDTO, Fecha>(atestado);
-                infoAtestado.GuardarFecha(fecha);
+                int RubricaID = rubrica_mapped.RubricaID;
 
-                // Agregar archivos
-                AtestadoShared.obj.guardarArchivos(archivos, infoAtestado, atestado_mapped);
+                foreach(RequisitoDTO requisito in requisitos)
+                {
+                    Requisito requisito_mapped = AutoMapper.Mapper.Map<RequisitoDTO, Requisito>(requisito);
+                    requisito_mapped.RubricaID = RubricaID;
+                    infoRubrica.GuardarRequisito(requisito_mapped);
+                }
 
-                // Agregar autores
-                AtestadoShared.obj.guardarAutores(autores, infoGeneral, infoAtestado, atestado.AutoresEq, atestado_mapped);
-
-                // Limpiar las variables de sesión que contienen a los archivos y autores.
-                Session["Archivos"] = new List<ArchivoDTO>();
-                Session["Autores"] = new List<AutorDTO>();
+                Session["Criterios"] = new List<ArchivoDTO>();
 
                 return RedirectToAction("Crear");
             }
-            ViewBag.PaisID = new SelectList(db.Pais, "PaisID", "Nombre", infoAtestado.ObtenerIDdePais("costa rica"));
-            ViewBag.Atestados = infoAtestado.CargarAtestadosDePersonaPorTipo(infoAtestado.ObtenerIDdeRubro(Rubro), (int)Session["UsuarioID"]);
-            return View(atestado);
+            return View(rubrica);
         }
 
         // GET: Articulo/Editar

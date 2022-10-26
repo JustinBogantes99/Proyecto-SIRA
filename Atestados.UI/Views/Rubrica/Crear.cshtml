@@ -22,115 +22,127 @@
                 {
                     @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <div class="form-group pt-2">
-                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                        <div class="form-group pt-2">
+                            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group pt-2">
-                        @Html.LabelFor(model => model.Rubro, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("RubroID", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.AtestadoID, "", new { @class = "text-danger" })
+                        <div class="form-group pt-2">
+                            @Html.LabelFor(model => model.Rubro, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("RubroID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.AtestadoID, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group pt-2">
-                        @Html.LabelFor(model => model.TipoPuntaje, "Tipo puntaje", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("TipoPuntajeID", null, htmlAttributes: new { @class = "form-control", AutoPostBack = "true", id = "tipoPuntaje", runat = "server" })
-                            @Html.ValidationMessageFor(model => model.TipoPuntaje, "", new { @class = "text-danger" })
+                        <div class="form-group pt-2">
+                            @Html.LabelFor(model => model.TipoPuntaje, "Tipo puntaje", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("TipoPuntajeID", null, htmlAttributes: new { @class = "form-control", AutoPostBack = "true", id = "tipoPuntaje", runat = "server" })
+                                @Html.ValidationMessageFor(model => model.TipoPuntaje, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-                    </div>
 
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Manual
-                    </label>
-                    <input class="form-check-input" type="checkbox" value="" id="manualCheck" name="manualCheck" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Manual
+                        </label>
+                        <input class="form-check-input" type="checkbox" value="" id="manualCheck" name="manualCheck" />
 
-                    @Html.Partial("_ValorFijo")
-
-                    <div class="mt-4">
-                        <h2>Añadir Requisitos de Evaluación</h2>
-                        <hr />
-                    </div>
-
-                    @Html.Partial("_CriteriosRubrica")
-
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" placeholder="Nombre del Criterio" id="nombreRequisito" runat="server" />
+                        <div id="partialValorFijo" hidden>
+                            @Html.Partial("_ValorFijo", Model)
                         </div>
-                        <div>
-                            <button type="button" class="btn btn-primary" id="RequisitoAgregar">Agregar</button>
-                        </div>
-                    </div>
 
-                    <div class="form-group my-2">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input value="Crear Rubrica" class="btn btn-success" />
+                        <div id="partialSeleccion" hidden>
+                            @Html.Partial("_Seleccion", Model)
                         </div>
-                    </div>
 
-                </div>
+                        <div id="partialProducto" hidden>
+                            @Html.Partial("_Producto", Model)
+                        </div>
+
+                        <div class="mt-4">
+                            <h2>Añadir Requisitos de Evaluación</h2>
+                            <hr />
+                        </div>
+
+                        @Html.Partial("_CriteriosRubrica")
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" placeholder="Nombre del Criterio" id="nombreRequisito" runat="server" />
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary" id="RequisitoAgregar">Agregar</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group my-2">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Crear Rubrica" class="btn btn-success" id="submit" />
+                            </div>
+                        </div>
+
+                    </div>
                 }
-                
+
             </div>
         </div>
     </div>
+</div>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
     @{InformacionGeneral infoGeneral = new InformacionGeneral();}
     // Esta variable debe estar en todas las vistas de atestados.
     var baseUrl = "@Variables.BaseUrl/Rubrica";
     var editMode = false;
     var hasAutores = false;
-    </script>
+</script>
 
-    <script type="text/javascript">
-        //Agregar requisitoos
-        $('#RequisitoAgregar').click(function () {
-            var criterio = new Object();
-            criterio.Nombre = $('#nombreRequisito').val();
-            console.log(criterio.Nombre)
-            $.ajax({
-                type: 'POST',
-                url: `${baseUrl}/NuevoRequisito`,
-                async: false,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'html',
-                data: JSON.stringify(criterio),
-                success: function (result) {
-                    $("#requisitosRubrica").html(result);
-                }
-            });
-            $('#nombreRequisito').val('');
+<script type="text/javascript">
+    //Agregar requisitoos
+    $('#RequisitoAgregar').click(function () {
+        var criterio = new Object();
+        criterio.Nombre = $('#nombreRequisito').val();
+        console.log(criterio.Nombre)
+        $.ajax({
+            type: 'POST',
+            url: `${baseUrl}/NuevoRequisito`,
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(criterio),
+            success: function (result) {
+                $("#requisitosRubrica").html(result);
+            }
         });
-    </script>
-    <script type="text/javascript">
-        $('#tipoPuntaje').change(function () {
-            var TipoPuntaje = new Object();
-            TipoPuntaje.TipoPuntajeID = $('#tipoPuntaje').val();
-            $.ajax({
-                type: 'POST',
-                url: `${baseUrl}/ObtenerTipoPuntaje`,
-                async: false,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'html',
-                data: JSON.stringify(TipoPuntaje),
-                success: function (result) {
-                    $("#TipoPuntajeView").html(result);
-                }
-            });
-        });
-    </script>
-    @Scripts.Render("~/bundles/atestados_shared")
+        $('#nombreRequisito').val('');
+    });
+</script>
+
+<script type="text/javascript">
+    $('#tipoPuntaje').change(function () {
+        var tipoPuntaje = $('#tipoPuntaje').val();
+
+        $('partialValorFijo').attr('hidden');
+        $('partialSeleccion').attr('hidden');
+        $('partialProducto').attr('hidden');
+
+        if (tipoPuntaje == 1) {
+            $('partialValorFijo').removeAttr('hidden');
+        } else if (tipoPuntaje == 2) {
+            $('partialSeleccion').removeAttr('hidden');
+        } else {
+            $('partialProducto').removeAttr('hidden');
+        }
+    });
+</script>
+@Scripts.Render("~/bundles/atestados_shared")
 
 
