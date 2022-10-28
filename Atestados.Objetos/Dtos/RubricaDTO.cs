@@ -5,24 +5,23 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Atestados.Datos.Modelo;
 namespace Atestados.Objetos.Dtos
 {
     public class RubricaDTO
     {
         public int RubricaID { get; set; }
-        public TipoPuntajeDTO TipoPuntaje { get; set; }
-        public int ValorPuntaje { get; set; }
+        public int TipoPuntajeID { get; set; }
+        public Nullable<double> ValorPuntaje { get; set; }
         public string DescripcionPuntaje { get; set; } //CONSULTAR
-        public int EsManual { get; set; } //CONSULTAR
+        public bool EsManual { get; set; } //CONSULTAR
         public DateTime Fecha { get; set; }
-        public int AtestadoID { get; set; }
-        public RubroDTO Rubro { get; set; }
-        public string Nombre { get; set; }
-        [DisplayName("Nombre del Criterio")]
-        public string CriterioNombre { get; set; }
-        [DisplayName("Valor del Criterio")]
-        public int CriterioPuntaje { get; set; }
+        public int RubroID { get; set; }
+        public Rubro Rubro { get; set; }
+        public TipoPuntaje TipoPuntaje { get; set; }
+        public List<Evaluacion> Evaluacion { get; set; }
+        public List<Requisito> Requisito { get; set; }
+        public List<SeleccionPuntaje> SeleccionPuntaje { get; set; }
         public RubricaDTO() { }
     }
 }

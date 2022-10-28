@@ -5,14 +5,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Atestados.Datos.Modelo;
 
 namespace Atestados.Objetos.Dtos
 {
     public class RequisitoDTO
     {
-        public int TipoRubroID { get; set; }
-        public string Nombre { get; set; }
+        public int RequisitoID { get; set; }
         public string Descripcion { get; set; }
+        public int RubricaID { get; set; }
+        public Rubrica Rubrica { get; set; }
     }
 }

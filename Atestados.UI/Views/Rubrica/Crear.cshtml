@@ -26,35 +26,22 @@
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                         <div class="form-group pt-2">
-                            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group pt-2">
-                            @Html.LabelFor(model => model.Rubro, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.RubroID, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.DropDownList("RubroID", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.AtestadoID, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.RubroID, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group pt-2">
-                            @Html.LabelFor(model => model.TipoPuntaje, "Tipo puntaje", htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.TipoPuntajeID, "Tipo puntaje", htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.DropDownList("TipoPuntajeID", null, htmlAttributes: new { @class = "form-control", AutoPostBack = "true", id = "tipoPuntaje", runat = "server" })
-                                @Html.ValidationMessageFor(model => model.TipoPuntaje, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.TipoPuntajeID, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Manual
-                        </label>
-                        <input class="form-check-input" type="checkbox" value="" id="manualCheck" name="manualCheck" />
-
-                        <div id="partialValorFijo" hidden>
+                        <div id="partialValorFijo">
                             @Html.Partial("_ValorFijo", Model)
                         </div>
 
@@ -75,7 +62,7 @@
 
                         <div class="form-group">
                             <div class="col-md-10">
-                                <input class="form-control" type="text" placeholder="Nombre del Criterio" id="nombreRequisito" runat="server" />
+                                <input class="form-control" type="text" placeholder="Nombre del requisito" id="nombreRequisito" runat="server" />
                             </div>
                             <div>
                                 <button type="button" class="btn btn-primary" id="RequisitoAgregar">Agregar</button>
@@ -109,8 +96,7 @@
     //Agregar requisitoos
     $('#RequisitoAgregar').click(function () {
         var criterio = new Object();
-        criterio.Nombre = $('#nombreRequisito').val();
-        console.log(criterio.Nombre)
+        criterio.Descripcion = $('#nombreRequisito').val();
         $.ajax({
             type: 'POST',
             url: `${baseUrl}/NuevoRequisito`,
@@ -129,17 +115,17 @@
 <script type="text/javascript">
     $('#tipoPuntaje').change(function () {
         var tipoPuntaje = $('#tipoPuntaje').val();
-
-        $('partialValorFijo').attr('hidden');
-        $('partialSeleccion').attr('hidden');
-        $('partialProducto').attr('hidden');
-
+        
+        $('#partialValorFijo').attr('hidden',true);
+        $('#partialSeleccion').attr('hidden',true);
+        $('#partialProducto').attr('hidden',true);
+        
         if (tipoPuntaje == 1) {
-            $('partialValorFijo').removeAttr('hidden');
+            $('#partialValorFijo').removeAttr('hidden');
         } else if (tipoPuntaje == 2) {
-            $('partialSeleccion').removeAttr('hidden');
+            $('#partialSeleccion').removeAttr('hidden');
         } else {
-            $('partialProducto').removeAttr('hidden');
+            $('#partialProducto').removeAttr('hidden');
         }
     });
 </script>
