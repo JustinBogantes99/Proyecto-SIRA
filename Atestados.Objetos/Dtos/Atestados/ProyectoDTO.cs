@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Atestados.Objetos.Dtos
         public int AtestadoID { get; set; }
         [StringLength(250)]
         [Required(ErrorMessage = "Este es un campo requerido")]
+        [DisplayName("Nombre*")] 
         public string Nombre { get; set; }
         [StringLength(1000)]
         public string Observaciones { get; set; }

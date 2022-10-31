@@ -40,7 +40,7 @@
 
                     <div class="form-group">
                         <b class="control-label col-md-2">
-                            Fecha de inicio
+                            Fecha de inicio*
                         </b>
                         <div class="col-md-10">
                             @Html.TextBoxFor(x => x.Fecha.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
@@ -50,7 +50,7 @@
 
                     <div class="form-group">
                         <b class="control-label col-md-2">
-                            Fecha de finalización
+                            Fecha de finalizacion*
                         </b>
                         <div class="col-md-10">
                             @Html.TextBoxFor(x => x.Fecha.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
@@ -60,7 +60,7 @@
 
                     <div class="form-group">
                         <b class="control-label col-md-2">
-                            Cantidad de horas
+                            Cantidad de horas*
                         </b>
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.CantidadHoras, new { htmlAttributes = new { @class = "form-control" } })

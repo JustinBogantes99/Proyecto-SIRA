@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group mb-1">
-                    <label class="control-label col-md-2">Fecha de inicio</label>
+                    <label class="control-label col-md-2">Fecha de inicio*</label>
                     <div class="col-md-10">
                         @Html.TextBoxFor(x => x.Fecha.FechaInicio, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
                         @Html.ValidationMessageFor(model => model.Fecha.FechaInicio, "", new { @class = "text-danger" })
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="form-group mb-1">
-                    <label class="control-label">Fecha de finalización</label>
+                    <label class="control-label">Fecha de finalización*</label>
                     <div class="col-md-10">
                         @Html.TextBoxFor(x => x.Fecha.FechaFinal, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
                         @Html.ValidationMessageFor(model => model.Fecha.FechaFinal, "", new { @class = "text-danger" })

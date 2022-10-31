@@ -15,6 +15,7 @@ namespace Atestados.Objetos.Dtos
         public int AtestadoID { get; set; }
         [Required]
         [StringLength(250)]
+        [DisplayName("Nombre*")]
         public string Nombre { get; set; }
         [DisplayName("Número de autores")]
         public int NumeroAutores { get; set; }
@@ -31,7 +32,7 @@ namespace Atestados.Objetos.Dtos
         [StringLength(250)]
         public string Enlace { get; set; }
         public int RubroID { get; set; }
-        [DisplayName("País")]
+        [DisplayName("País*")]
         public int PaisID { get; set; }
         public int PersonaID { get; set; }
         [StringLength(100)]
@@ -48,6 +49,7 @@ namespace Atestados.Objetos.Dtos
         public RubroDTO Rubro { get; set; }
         public List<AtestadoXPersonaDTO> AtestadoXPersona { get; set; }
         public DominioIdiomaDTO DominioIdioma { get; set; }
+        [DisplayName("Fecha*")]
         public FechaDTO Fecha { get; set; }
         public InfoEditorialDTO InfoEditorial { get; set; }
         public bool MarcarEnviado { get; set; }
