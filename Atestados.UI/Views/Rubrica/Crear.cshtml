@@ -1,0 +1,134 @@
+﻿@model Atestados.Objetos.Dtos.RubricaDTO
+@*implements mostrarSelect*@
+
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+}
+
+@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+<div class="container-fluid">
+    @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+    <div class="mt-4">
+        <h2>Gestionar Rúbricas</h2>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="container">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group pt-2">
+                            @Html.LabelFor(model => model.RubroID, "Atestado", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("RubroID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.RubroID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group pt-2">
+                            @Html.LabelFor(model => model.TipoPuntajeID, "Tipo puntaje", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("TipoPuntajeID", null, htmlAttributes: new { @class = "form-control", AutoPostBack = "true", id = "tipoPuntaje", runat = "server" })
+                                @Html.ValidationMessageFor(model => model.TipoPuntajeID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div id="partialValorFijo">
+                            @Html.Partial("_ValorFijo", Model)
+                        </div>
+
+                        <div id="partialSeleccion" hidden>
+                            @Html.Partial("_Seleccion", Model)
+                        </div>
+
+                        <div id="partialProducto" hidden>
+                            @Html.Partial("_Producto", Model)
+                        </div>
+
+                        <div class="mt-4">
+                            <h2>Añadir Requisitos de Evaluación</h2>
+                            <hr />
+                        </div>
+
+                        @Html.Partial("_CriteriosRubrica")
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" placeholder="Nombre del requisito" id="nombreRequisito" runat="server" />
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary" id="RequisitoAgregar">Agregar</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group my-2">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Crear Rubrica" class="btn btn-success" id="submit" />
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    @{InformacionGeneral infoGeneral = new InformacionGeneral();}
+    // Esta variable debe estar en todas las vistas de atestados.
+    var baseUrl = "@Variables.BaseUrl/Rubrica";
+    var editMode = false;
+    var hasAutores = false;
+</script>
+
+<script type="text/javascript">
+    //Agregar requisitoos
+    $('#RequisitoAgregar').click(function () {
+        var criterio = new Object();
+        criterio.Descripcion = $('#nombreRequisito').val();
+        $.ajax({
+            type: 'POST',
+            url: `${baseUrl}/NuevoRequisito`,
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(criterio),
+            success: function (result) {
+                $("#requisitosRubrica").html(result);
+            }
+        });
+        $('#nombreRequisito').val('');
+    });
+</script>
+
+<script type="text/javascript">
+    $('#tipoPuntaje').change(function () {
+        var tipoPuntaje = $('#tipoPuntaje').val();
+        
+        $('#partialValorFijo').attr('hidden',true);
+        $('#partialSeleccion').attr('hidden',true);
+        $('#partialProducto').attr('hidden',true);
+        
+        if (tipoPuntaje == 1) {
+            $('#partialValorFijo').removeAttr('hidden');
+        } else if (tipoPuntaje == 2) {
+            $('#partialSeleccion').removeAttr('hidden');
+        } else {
+            $('#partialProducto').removeAttr('hidden');
+        }
+    });
+</script>
+@Scripts.Render("~/bundles/atestados_shared")
+
+

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9c0f799d84184178bc7cdff85495df9b" Name="Diagram1">
+      <Diagram DiagramId="9c0f799d84184178bc7cdff85495df9b" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="AtestadosModel.Archivo" Width="1.5" PointX="9.125" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="AtestadosModel.Atestado" Width="1.5" PointX="6.875" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="AtestadosModel.AtestadoXPersona" Width="1.5" PointX="9.125" PointY="9.625" IsExpanded="true" />
@@ -36,8 +36,18 @@
         <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona" />
         <AssociationConnector Association="AtestadosModel.FK_Persona_TipoCategoria" />
         <AssociationConnector Association="AtestadosModel.FK_Persona_TipoUsuario" />
-        <EntityTypeShape EntityType="AtestadosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="AtestadosModel.FK_EvaluaciónXAtestado_Persona1" />
+        <EntityTypeShape EntityType="AtestadosModel.Evaluacion" Width="1.5" PointX="12.125" PointY="4.75" />
+        <EntityTypeShape EntityType="AtestadosModel.Requisito" Width="1.5" PointX="14.125" PointY="16.75" />
+        <EntityTypeShape EntityType="AtestadosModel.Rubrica" Width="1.5" PointX="11.875" PointY="16.375" />
+        <EntityTypeShape EntityType="AtestadosModel.SeleccionPuntaje" Width="1.5" PointX="14.125" PointY="19.375" />
+        <EntityTypeShape EntityType="AtestadosModel.TipoPuntaje" Width="1.5" PointX="9.625" PointY="21.25" />
+        <AssociationConnector Association="AtestadosModel.Evaluacion_Atestado_fk" />
+        <AssociationConnector Association="AtestadosModel.Evaluacion_Rubrica_fk" />
+        <AssociationConnector Association="AtestadosModel.Requisito_Rubrica_fk" />
+        <AssociationConnector Association="AtestadosModel.Rubrica_Rubro_fk" />
+        <AssociationConnector Association="AtestadosModel.Rubrica_TipoPuntaje_fk" />
+        <AssociationConnector Association="AtestadosModel.SeleccionPuntaje_Rubrica_fk" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

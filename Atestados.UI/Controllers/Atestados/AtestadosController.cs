@@ -618,8 +618,6 @@ namespace Atestados.UI.Controllers
 
             return PartialView("_ArchivosTabla");
         }
-
-
         #endregion
 
     }

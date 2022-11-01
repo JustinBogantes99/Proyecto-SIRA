@@ -148,7 +148,8 @@ $('#autorAgregar').click(function () {
     autor.porcEquitativo = false;
     autor.Porcentaje = $('#porcentaje').val()
     autor.numAutor = ++autorCont;
-
+    console.log(autor.Nombre)
+    console.log(this.baseURI)
     // Si está marcada la opción de porcentaje equitativo.
     if (autor != null && isEmail(autor.Email) && checkbox.checked) {
         autor.porcEquitativo = true;
@@ -189,6 +190,52 @@ $('#autorAgregar').click(function () {
     }
     clearAuthorForm();
 })
+
+
+
+$('#mostarDatosSeleccion').click(function () {
+    var tipoPuntaje = new Object();
+    tipoPuntaje.Nombre = $('#TipoPuntaje').val();
+    $.ajax({
+        type: 'POST',
+        url: `${baseUrl}/MostarDatosSelect`,
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'html',
+        data: JSON.stringify(criterio),
+        success: function (result) {
+            $("#_CriteriosRubrica").html(result);
+        }
+    });
+})
+
+
+//Agregar Criterios
+$('#CriterioAgregarMultiple').click(function () {
+    // Crear el objeto del autor con la información ingresada.
+    var criterio = new Object();
+    criterio.Nombre = $('#nombreCriterio').val();
+    criterio.NombreCol = $('#col').val();
+    criterio.accion = $('#accion').val();
+    criterio.Porcentaje = $('#porcentaje').val()
+    per = per - parseInt(criterio.Porcentaje);
+    $.ajax({
+        type: 'POST',
+        url: `${baseUrl}/nuevoCriterio`,
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'html',
+        data: JSON.stringify(criterio),
+        success: function (result) {
+            $("#_CriteriosRubrica").html(result);
+        }
+    });
+    clearAuthorFormRubrica();
+})
+
+function clearAuthorFormRubrica() {
+    $('#nombreCriterio').val('');
+}
 
 // Quitar texto de todos los campos del formulario de autores.
 function clearAuthorForm() {

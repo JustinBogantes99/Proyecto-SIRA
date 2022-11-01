@@ -12,12 +12,15 @@ namespace Atestados.Datos.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Evaluacion
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int EvaluacionID { get; set; }
+        public int AtestadoID { get; set; }
+        public int RubricaID { get; set; }
+        public int Puntaje { get; set; }
+        public string Observaciones { get; set; }
+    
+        public virtual Atestado Atestado { get; set; }
+        public virtual Rubrica Rubrica { get; set; }
     }
 }

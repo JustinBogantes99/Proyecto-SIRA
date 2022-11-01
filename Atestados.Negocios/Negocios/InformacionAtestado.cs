@@ -29,6 +29,15 @@ namespace Atestados.Negocios.Negocios
             return db.Rubro.Where(r => r.RubroID == id).FirstOrDefault().Nombre;
         }
 
+        /*
+        public int ObtenerIDdeTipoPuntaje()
+        {
+            List<TipoPuntaje> listaRubros =  db.TipoPuntaje.Include(a => a.Nombre).ToList();
+            List<TipoPuntaje> listaRubrosDTO = AutoMapper.Mapper.Map<List<TipoPuntaje>, List<TipoPuntaje>>(listaRubros);
+            return listaRubrosDTO;
+            
+        }*/
+
         public List<AtestadoDTO> CargarAtestadosDePersonaEnviados(int personaID, int v)
         {
             List<Atestado> listaAtestado = db.Atestado.Where(a => a.PersonaID == personaID && a.Enviado == v).ToList();

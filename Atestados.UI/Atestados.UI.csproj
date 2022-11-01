@@ -192,6 +192,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\RubricaController.cs" />
     <Compile Include="Controllers\Atestados\AtestadosController.cs" />
     <Compile Include="Controllers\Atestados\ArticuloController.cs" />
     <Compile Include="Controllers\Atestados\AtestadoShared.cs" />
@@ -333,6 +334,7 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile3.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -473,6 +475,12 @@
     <Content Include="Views\FortalecimientoInvExt\Borrar.cshtml" />
     <Content Include="Views\FortalecimientoInvExt\Editar.cshtml" />
     <Content Include="Views\FortalecimientoInvExt\Ver.cshtml" />
+    <Content Include="Views\Rubrica\Crear.cshtml" />
+    <Content Include="Views\Shared\_CriteriosRubrica.cshtml" />
+    <Content Include="Views\Shared\_CriterioRubricaMultiple.cshtml" />
+    <Content Include="Views\Shared\_Producto.cshtml" />
+    <Content Include="Views\Shared\_ValorFijo.cshtml" />
+    <Content Include="Views\Shared\_Seleccion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
