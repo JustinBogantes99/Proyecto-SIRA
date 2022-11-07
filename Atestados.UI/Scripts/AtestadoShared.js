@@ -1,17 +1,18 @@
 ﻿// Este archivo contiene todos los métodos JS y AJAX para agregar y eliminar
 // autores y archivos cuando se está realizando CRUD a un atestado.
 
-var archCont = 0;
+var archCont = 1;
 
 // Declarar las variables utilizadas por el modal de autores solo si es necesario.
 if (hasAutores) {
-    var autorCont = 0;
-    var per = 100;
+    var autorCont = 1;
+    var per = 0;
     var modal = document.getElementById('modalAutores');
     var checkbox = document.getElementById('AutoresEq');
     var hiddenCheck = document.getElementById('hiddenCheck');
     var autoresCheck = document.getElementById('AutoresCheck');
-
+    // Marcar el requerimiento de al menos un autor como cumplido.
+    autoresCheck.checked = true;
     /*
      * Si el checkbox de porcentaje equitativo se activa, este valor no se le pasa
      * al controlador correctamente por estar dentro del modal. Por lo tanto, se
@@ -291,6 +292,8 @@ $('#autoresTabla').on('click', '.remove', function () {
             }
     });
     }
+
+    --autorCont;
 });
 
 // Subir el archivo.
