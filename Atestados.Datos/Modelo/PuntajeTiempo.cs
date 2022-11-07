@@ -12,15 +12,15 @@ namespace Atestados.Datos.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class TipoPuntaje
+    public partial class PuntajeTiempo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoPuntaje()
+        public PuntajeTiempo()
         {
             this.Rubrica = new HashSet<Rubrica>();
         }
     
-        public int TipoPuntajeID { get; set; }
+        public int PuntajeTiempoID { get; set; }
         public string Nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

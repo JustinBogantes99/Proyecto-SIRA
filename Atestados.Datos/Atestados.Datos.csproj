@@ -122,6 +122,9 @@
     <Compile Include="Modelo\Persona.cs">
       <DependentUpon>Atestados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\PuntajeTiempo.cs">
+      <DependentUpon>Atestados.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Requisito.cs">
       <DependentUpon>Atestados.tt</DependentUpon>
     </Compile>
