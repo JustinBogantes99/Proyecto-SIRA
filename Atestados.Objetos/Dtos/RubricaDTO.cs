@@ -13,8 +13,7 @@ namespace Atestados.Objetos.Dtos
         public int RubricaID { get; set; }
         public int TipoPuntajeID { get; set; }
         public Nullable<double> ValorPuntaje { get; set; }
-        public string DescripcionPuntaje { get; set; } //CONSULTAR
-        public bool EsManual { get; set; } //CONSULTAR
+        public string DescripcionPuntaje { get; set; }
         public DateTime Fecha { get; set; }
         public int RubroID { get; set; }
         public Rubro Rubro { get; set; }

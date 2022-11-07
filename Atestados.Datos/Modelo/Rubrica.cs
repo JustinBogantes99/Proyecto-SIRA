@@ -26,12 +26,13 @@ namespace Atestados.Datos.Modelo
         public int TipoPuntajeID { get; set; }
         public Nullable<double> ValorPuntaje { get; set; }
         public string DescripcionPuntaje { get; set; }
-        public bool EsManual { get; set; }
         public System.DateTime Fecha { get; set; }
         public int RubroID { get; set; }
+        public Nullable<int> PuntajeTiempoID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Evaluacion> Evaluacion { get; set; }
+        public virtual PuntajeTiempo PuntajeTiempo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Requisito> Requisito { get; set; }
         public virtual Rubro Rubro { get; set; }

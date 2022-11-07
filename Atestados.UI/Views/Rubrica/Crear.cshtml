@@ -12,7 +12,7 @@
 <div class="container-fluid">
     @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="mt-4">
-        <h2>Gestionar Rúbricas</h2>
+        <h2>Crear Lista de Validación Automática</h2>
         <hr />
     </div>
     <div class="row">
@@ -49,8 +49,8 @@
                             @Html.Partial("_Seleccion", Model)
                         </div>
 
-                        <div id="partialProducto" hidden>
-                            @Html.Partial("_Producto", Model)
+                        <div id="partialTiempo" hidden>
+                            @Html.Partial("_Tiempo", Model)
                         </div>
 
                         <div class="mt-4">
@@ -115,17 +115,17 @@
 <script type="text/javascript">
     $('#tipoPuntaje').change(function () {
         var tipoPuntaje = $('#tipoPuntaje').val();
-        
-        $('#partialValorFijo').attr('hidden',true);
-        $('#partialSeleccion').attr('hidden',true);
-        $('#partialProducto').attr('hidden',true);
-        
+
+        $('#partialValorFijo').attr('hidden', true);
+        $('#partialSeleccion').attr('hidden', true);
+        $('#partialTiempo').attr('hidden', true);
+
         if (tipoPuntaje == 1) {
             $('#partialValorFijo').removeAttr('hidden');
         } else if (tipoPuntaje == 2) {
             $('#partialSeleccion').removeAttr('hidden');
         } else {
-            $('#partialProducto').removeAttr('hidden');
+            $('#partialTiempo').removeAttr('hidden');
         }
     });
 </script>

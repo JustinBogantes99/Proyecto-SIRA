@@ -16,9 +16,9 @@ namespace Atestados.Datos.Modelo
     {
         public int AtestadoID { get; set; }
         public int PersonaID { get; set; }
+        public int AutorID { get; set; }
         public double PorcentajeObtenido { get; set; }
         public string Observaciones { get; set; }
-        public int AutorID { get; set; }
     
         public virtual Atestado Atestado { get; set; }
         public virtual Persona Persona { get; set; }

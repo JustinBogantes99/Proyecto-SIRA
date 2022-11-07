@@ -12,24 +12,18 @@ namespace Atestados.Datos.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Rubro
+    public partial class PuntajeTiempo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Rubro()
+        public PuntajeTiempo()
         {
-            this.Atestado = new HashSet<Atestado>();
             this.Rubrica = new HashSet<Rubrica>();
         }
     
-        public int RubroID { get; set; }
+        public int PuntajeTiempoID { get; set; }
         public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public int TipoRubro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Atestado> Atestado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rubrica> Rubrica { get; set; }
-        public virtual TipoRubro TipoRubro1 { get; set; }
     }
 }

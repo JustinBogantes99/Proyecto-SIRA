@@ -78,7 +78,6 @@ namespace Atestados.UI.Controllers.Atestados
             if (ModelState.IsValid)
             {
                 // Falta validar entre los 3 tipos de puntaje, de momento lo interpreta como si fuera ValorFijo siempre
-                rubrica.EsManual = false;
                 rubrica.Fecha = DateTime.Now;
                 List<RequisitoDTO> requisitos = (List<RequisitoDTO>)Session["Criterios"];
                 Rubrica rubrica_mapped = AutoMapper.Mapper.Map<RubricaDTO, Rubrica>(rubrica);

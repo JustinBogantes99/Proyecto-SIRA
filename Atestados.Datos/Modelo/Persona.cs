@@ -38,12 +38,12 @@ namespace Atestados.Datos.Modelo
         public virtual ICollection<Atestado> Atestado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AtestadoXPersona> AtestadoXPersona { get; set; }
-        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EvaluaciónXAtestado> EvaluaciónXAtestado { get; set; }
-        public virtual TipoCategoria TipoCategoria { get; set; }
-        public virtual TipoUsuario TipoUsuario1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EvaluaciónXAtestado> EvaluaciónXAtestado1 { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual TipoCategoria TipoCategoria { get; set; }
+        public virtual TipoUsuario TipoUsuario1 { get; set; }
     }
 }
