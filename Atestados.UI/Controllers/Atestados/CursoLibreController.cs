@@ -61,8 +61,21 @@ namespace Atestados.UI.Controllers.Atestados
             cursoLibre.NumeroAutores = 1;
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersonaPorTipo(infoAtestado.ObtenerIDdeRubro(Rubro), (int)Session["UsuarioID"]);
 
+            //Agregar Usuario como autor
+            UsuarioDTO usuario = (UsuarioDTO)Session["Usuario"];
+            AutorDTO autorUsuario = new AutorDTO();
+            autorUsuario.Nombre = usuario.Nombre;
+            autorUsuario.PrimerApellido = usuario.PrimerApellido;
+            autorUsuario.SegundoApellido = usuario.SegundoApellido;
+            autorUsuario.Email = usuario.Email;
+            autorUsuario.PersonaID = usuario.UsuarioID;
+            autorUsuario.Porcentaje = 100;
+            autorUsuario.esFuncionario = true;
+            autorUsuario.porcEquitativo = false;
+            autorUsuario.numAutor = 1;
+
             // Limpiar las listas de archivos y autores por si tienen basura.
-            Session["Autores"] = new List<AutorDTO>();
+            Session["Autores"] = new List<AutorDTO> { autorUsuario };
             Session["Archivos"] = new List<ArchivoDTO>();
 
             return View(cursoLibre);
