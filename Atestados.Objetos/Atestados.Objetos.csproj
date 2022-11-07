@@ -66,6 +66,7 @@
     <Compile Include="Dtos\ArchivoDTO.cs" />
     <Compile Include="Dtos\AtestadoDTO.cs" />
     <Compile Include="Dtos\RequisitoDTO.cs" />
+    <Compile Include="Dtos\SeleccionPuntajeDTO.cs" />
     <Compile Include="Dtos\TipoPuntajeDTO.cs" />
     <Compile Include="Dtos\RubricaDTO.cs" />
     <Compile Include="Dtos\Atestados\ProyectoGalarDTO.cs" />

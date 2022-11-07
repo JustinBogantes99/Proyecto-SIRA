@@ -12,7 +12,7 @@
 <div class="container-fluid">
     @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
     <div class="mt-4">
-        <h2>Crear Lista de Validación Automática</h2>
+        <h2>Crear Revisor de Validación Automática</h2>
         <hr />
     </div>
     <div class="row">
@@ -86,7 +86,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
     @{InformacionGeneral infoGeneral = new InformacionGeneral();}
-    // Esta variable debe estar en todas las vistas de atestados.
     var baseUrl = "@Variables.BaseUrl/Rubrica";
     var editMode = false;
     var hasAutores = false;
@@ -127,6 +126,26 @@
         } else {
             $('#partialTiempo').removeAttr('hidden');
         }
+    });
+</script>
+
+<script type="text/javascript">
+    $('#SeleccionPuntajeAgregar').click(function () {
+        var seleccionPuntaje = new Object();
+        seleccionPuntaje.Descripcion = $('#descripcionSeleccion').val();
+        seleccionPuntaje.Puntaje = $('#puntajeSeleccion').val();
+        $.ajax({
+            type: 'POST',
+            url: `${baseUrl}/NuevoSeleccionPuntaje`,
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(seleccionPuntaje),
+            success: function (result) {
+                $("#seleccionTabla").html(result);
+            }
+        });
+        $('#nombreRequisito').val('');
     });
 </script>
 @Scripts.Render("~/bundles/atestados_shared")

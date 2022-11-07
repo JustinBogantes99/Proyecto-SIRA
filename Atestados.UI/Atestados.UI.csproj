@@ -478,9 +478,10 @@
     <Content Include="Views\Rubrica\Crear.cshtml" />
     <Content Include="Views\Shared\_CriteriosRubrica.cshtml" />
     <Content Include="Views\Shared\_CriterioRubricaMultiple.cshtml" />
-    <Content Include="Views\Shared\_Producto.cshtml" />
     <Content Include="Views\Shared\_ValorFijo.cshtml" />
     <Content Include="Views\Shared\_Seleccion.cshtml" />
+    <Content Include="Views\Shared\_SeleccionTabla.cshtml" />
+    <Content Include="Views\Shared\_Tiempo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
