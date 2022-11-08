@@ -31,7 +31,7 @@ namespace Atestados.UI.Controllers.Atestados
 
             ViewBag.RubroID = new SelectList(db.Rubro, "RubroID", "Nombre");
             ViewBag.TipoPuntajeID = new SelectList(db.TipoPuntaje, "TipoPuntajeID", "Nombre");
-            ViewBag.PuntajeTiempoID = new SelectList(db.PuntajeTiempo, "PuntajeTiempoID", "Nombre")
+            ViewBag.PuntajeTiempoID = new SelectList(db.PuntajeTiempo, "PuntajeTiempoID", "Nombre");
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersona((int)Session["UsuarioID"]);
 
             // Limpiar las listas de archivos y autores por si tienen basura.
@@ -100,7 +100,7 @@ namespace Atestados.UI.Controllers.Atestados
         {
             List<SeleccionPuntajeDTO> seleccionPuntajes = (List<SeleccionPuntajeDTO>)Session["SeleccionPuntajes"];
             seleccionPuntajes.Add(seleccionPuntajeData);
-            Session["Criterios"] = seleccionPuntajes;
+            Session["SeleccionPuntajes"] = seleccionPuntajes;
             return PartialView("_SeleccionTabla");
         }
     }
