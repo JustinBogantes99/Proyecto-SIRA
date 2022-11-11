@@ -482,6 +482,7 @@
     <Content Include="Views\Shared\_Seleccion.cshtml" />
     <Content Include="Views\Shared\_SeleccionTabla.cshtml" />
     <Content Include="Views\Shared\_Tiempo.cshtml" />
+    <Content Include="Views\revisor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
