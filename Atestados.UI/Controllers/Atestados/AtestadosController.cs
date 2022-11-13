@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Atestados.Datos.Modelo;
 using Atestados.Negocios.Negocios;
 using Atestados.Objetos.Dtos;
@@ -22,6 +23,22 @@ namespace Atestados.UI.Controllers
         private InformacionAtestado infoAtestado = new InformacionAtestado();
         private InformacionGeneral infoGeneral = new InformacionGeneral();
         public static List<ArchivoDTO> archivosOld = null;
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
 
         // GET: Atestados
         public ActionResult Index()
@@ -167,7 +184,7 @@ namespace Atestados.UI.Controllers
             return View(atestado);
         }
 
-        // GET: Libro/Borrar
+        // GET: Atestados/Borrar
         public ActionResult Borrar(int? id)
         {
             if (id == null)
@@ -182,7 +199,7 @@ namespace Atestados.UI.Controllers
             return View(atestado);
         }
 
-        // POST: Libro/Borrar
+        // POST: Atestados/Borrar
         [HttpPost, ActionName("Borrar")]
         [ValidateAntiForgeryToken]
         public ActionResult Borrar(int id)
@@ -372,22 +389,6 @@ namespace Atestados.UI.Controllers
             }
 
             Session["puntosAutores"] = puntos;
-
-            //Object[] autores = (Object[])Session["autoresAtestado"];
-
-            //Object[] newautores; 
-            /*
-            foreach (Object autor in autores)
-            {
-                foreach (EvaluacionXAtestadoDTO e in json)
-                {
-                    if (e.PersonaID == autor.)
-                }
-                autor.PorcentajeObtenido
-            }
-            */
-            //List<EvaluacionXAtestadoDTO> puntos = new List<EvaluacionXAtestadoDTO>();
-
         }
 
 

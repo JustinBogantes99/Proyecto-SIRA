@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers.Atestados
 {
@@ -19,6 +20,22 @@ namespace Atestados.UI.Controllers.Atestados
         private InformacionGeneral infoGeneral = new InformacionGeneral();
         private string Rubro = "Proyectos de investigación y extensión"; // esta como otras obras profesionales
         public static List<ArchivoDTO> archivosOld = null;
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
 
         // GET: ProyectosInvEx
         public ActionResult Index()

@@ -11,6 +11,7 @@ using System.Web.Mvc;
 using IronXL;
 using System.Text;
 using AutoMapper;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers
 {
@@ -19,6 +20,22 @@ namespace Atestados.UI.Controllers
         private readonly InformacionAtestado infoAtestado = new InformacionAtestado();
         private readonly InformacionGeneral infoGeneral = new InformacionGeneral();
         private AtestadosEntities db = new AtestadosEntities();
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
 
         public ActionResult Index()
         {

@@ -13,6 +13,7 @@ using Atestados.Objetos.Dtos;
 using Atestados.Objetos;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers.Atestados
 {
@@ -26,13 +27,29 @@ namespace Atestados.UI.Controllers.Atestados
         private readonly string Rubro = "Artículo";
         public static List<ArchivoDTO> archivosOld = null;
 
-        // GET: Articulos
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
+
+        // GET: Rubrica
         public ActionResult Index()
         {
             return View(infoAtestado.CargarAtestadosDeTipo(infoAtestado.ObtenerIDdeRubro(Rubro)));
         }
 
-        // GET: Articulo/Ver
+        // GET: Rubrica/Ver
         public ActionResult Ver(int? id)
         {
             if (id == null)
@@ -46,7 +63,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // GET: Articulo/Crear
+        // GET: Rubrica/Crear
         public ActionResult Crear()
         {
             RubricaDTO rubrica = new RubricaDTO();
@@ -99,7 +116,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(rubrica);
         }
 
-        // GET: Articulo/Editar
+        // GET: Rubrica/Editar
         public ActionResult Editar(int? id)
         {
             if (id == null)
@@ -151,7 +168,7 @@ namespace Atestados.UI.Controllers.Atestados
             Session["Autores"] = autores;
         }
 
-        // POST: Articulo/Editar
+        // POST: Rubrica/Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Editar([Bind(Include = "Lugar,CantidadHoras,Archivos,AtestadoID,AtestadoXPersona,Editorial,Enlace,HoraCreacion,Nombre,NumeroAutores,Observaciones,PaisID,Persona,PersonaID,RubroID,Website,Fecha,DominioIdioma,Persona,Rubro,Pais,InfoEditorial,Archivo,AutoresEq,AutoresCheck")] AtestadoDTO atestado)
@@ -199,7 +216,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // GET: Libro/Borrar
+        // GET: Rubrica/Borrar
         public ActionResult Borrar(int? id)
         {
             if (id == null)
@@ -215,7 +232,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // POST: Libro/Borrar
+        // POST: Rubrica/Borrar
         [HttpPost, ActionName("Borrar")]
         [ValidateAntiForgeryToken]
         public ActionResult Borrar(int id)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Atestados.Datos.Modelo;
 using Atestados.Negocios.Negocios;
 using Atestados.Objetos.Dtos;
@@ -21,13 +22,29 @@ namespace Atestados.UI.Controllers.Atestados
 
         private readonly string Rubro = "Capacitación profesional";
 
-        // GET: Libros
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
+
+        // GET: Capacitaciones
         public ActionResult Index()
         {
             return View(infoAtestado.CargarAtestadosDeTipo(infoAtestado.ObtenerIDdeRubro(Rubro)));
         }
 
-        // GET: Capactitacion/Ver
+        // GET: Capacitacion/Ver
         public ActionResult Ver(int? id)
         {
             if (id == null)
@@ -42,7 +59,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // GET: Capactitacion/Crear
+        // GET: Capacitacion/Crear
         public ActionResult Crear()
         {
             AtestadoDTO capacitacion = new AtestadoDTO();
@@ -59,7 +76,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(capacitacion);
         }
 
-        // POST: Capactitacion/Crear
+        // POST: Capacitacion/Crear
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Crear([Bind(Include = "Fecha,Archivos,AtestadoID,Enlace,HoraCreacion,Nombre,CantidadHoras,Observaciones,Persona,PersonaID,RubroID,FechaInicio,FechaFinal,Lugar,NumeroAutores")] AtestadoDTO atestado)
@@ -91,7 +108,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // GET: Capactitacion/Editar
+        // GET: Capacitacion/Editar
         public ActionResult Editar(int? id)
         {
             if (id == null)
@@ -114,7 +131,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(a);
         }
 
-        // POST: Capactitacion/Editar
+        // POST: Capacitacion/Editar
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -148,7 +165,7 @@ namespace Atestados.UI.Controllers.Atestados
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersonaPorTipo(infoAtestado.ObtenerIDdeRubro(Rubro), (int)Session["UsuarioID"]);
             return View(atestado);
         }
-        // GET: Libro/Borrar
+        // GET: Capacitacion/Borrar
         public ActionResult Borrar(int? id)
         {
             if (id == null)
@@ -163,7 +180,7 @@ namespace Atestados.UI.Controllers.Atestados
             return View(atestado);
         }
 
-        // POST: Libro/Borrar
+        // POST: Capacitacion/Borrar
         [HttpPost, ActionName("Borrar")]
         [ValidateAntiForgeryToken]
         public ActionResult Borrar(int id)

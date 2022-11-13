@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers.Atestados
 {
@@ -19,6 +20,22 @@ namespace Atestados.UI.Controllers.Atestados
         private InformacionGeneral infoGeneral = new InformacionGeneral();
 
         private string Rubro = "Ponencia"; // esta como otras obras profesionales
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
 
         // GET: Ponencia
         public ActionResult Index()
@@ -237,14 +254,7 @@ namespace Atestados.UI.Controllers.Atestados
 
             ViewBag.Revisor = infoGeneral.CargarPersona(usuario.UsuarioID);
             ViewBag.Atestado = infoAtestado.CargarAtestado(id);
-            /*
-            if (e != null)
-            {
-                EvaluacionXAtestadoDTO edto = AutoMapper.Mapper.Map<EvaluaciónXAtestado, EvaluacionXAtestadoDTO>(e);
-                ViewBag.Evaluacion = edto;
-                return View(edto);
-            }
-            */
+            
             AtestadoDTO atestado = infoAtestado.CargarAtestado(id);
             if (atestado == null)
             {
@@ -267,15 +277,6 @@ namespace Atestados.UI.Controllers.Atestados
                 evaluacion.AtestadoID = (int)Session["idAtestado"];
                 evaluacion.PersonaID = (int)Session["idUsuario"];
 
-                //evaluacion.Observaciones = (string)Session["observaciones"];
-                //evaluacion.PorcentajeObtenido = (float)Session["nota"];
-
-                //EvaluaciónXAtestado e = AutoMapper.Mapper.Map<EvaluacionXAtestadoDTO, EvaluaciónXAtestado>(evaluacion);
-
-                //e.Atestado = AutoMapper.Mapper.Map<AtestadoDTO, Atestado>(infoAtestado.CargarAtestado((int)Session["idAtestado"]));
-                //e.Persona = AutoMapper.Mapper.Map<PersonaDTO, Persona>(infoGeneral.CargarPersona((int)Session["idUsuario"]));
-
-
                 EvaluaciónXAtestado e = new EvaluaciónXAtestado()
                 {
                     AtestadoID = evaluacion.AtestadoID,
@@ -284,21 +285,9 @@ namespace Atestados.UI.Controllers.Atestados
                     Observaciones = evaluacion.Observaciones
                 };
 
-                /*
-                EvaluaciónXAtestado evaluacionActual = infoAtestado.ObtenerEvaluacionXAtestado((int)Session["idAtestado"], (int)Session["idUsuario"]);
-
-                if (evaluacionActual != null)
-                {
-                    //db.EvaluaciónXAtestado.Remove(evaluacionActual);
-                    infoAtestado.BorrarEvaluacion((int)Session["idAtestado"], (int)Session["idUsuario"]);
-                }
-                */
                 db.EvaluaciónXAtestado.Add(e);
 
-
                 db.SaveChanges();
-
-
 
                 AtestadoDTO atestado = infoAtestado.CargarAtestado((int)Session["idAtestado"]);
 
