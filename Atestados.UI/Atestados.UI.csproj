@@ -483,6 +483,7 @@
     <Content Include="Views\Shared\_SeleccionTabla.cshtml" />
     <Content Include="Views\Shared\_Tiempo.cshtml" />
     <Content Include="Views\revisor.cshtml" />
+    <Content Include="Views\Shared\EvaluarPrototipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
