@@ -101,10 +101,10 @@ namespace Atestados.Negocios.Negocios
 
         public Rubrica CargarRubricaActualPorRubro(int? idRubro)
         {
-            return (Rubrica)db.Rubrica
+            return db.Rubrica
                 .Where(ru => ru.RubroID == idRubro)
                 .OrderByDescending(ru => ru.Fecha)
-                .Take(1);
+                .Take(1).First();
         }
 
         public void BorrarRubrica(int? id)
