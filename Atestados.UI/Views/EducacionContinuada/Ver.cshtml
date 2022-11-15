@@ -118,18 +118,53 @@
     </div>
     <div class="row">
         <p>
-            <a href="@Url.Action("Editar", "EducacionContinuada", new { id = Model.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
-                @Html.Partial("BotonEditar")
-            </a>
-            <a href="@Url.Action("Borrar","EducacionContinuada", new {id = Model.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
-                @Html.Partial("BotonBorrar")
-            </a>
+            @if ((int)Session["TipoUsuario"] == 1 || (int)Session["TipoUsuario"] == 3)
+            {
+                <a href="@Url.Action("Editar", "EducacionContinuada", new { id = Model.AtestadoID })" class="btn btn-warning btn-sm" title="Editar">
+                    @Html.Partial("BotonEditar")
+                </a>
+                <a href="@Url.Action("Borrar","EducacionContinuada", new {id = Model.AtestadoID})" class="btn btn-danger btn-sm" title="Borrar">
+                    @Html.Partial("BotonBorrar")
+                </a>
+            }
+            @if ((int)Session["TipoUsuario"] == 1 || (int)Session["TipoUsuario"] == 2)
+            {
+                <input type="submit" class="btn btn-outline-primary" value="Evaluar Atestado" form="subirArchivo" data-bs-toggle="modal" data-bs-target="#requisitos" />
+            }
         </p>
     </div>
 </div>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
+@*Modal de rubrica automática.*@
+<div id="requisitos" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Evaluar requisitos</h4>
+                    <button id="closeModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <h1>¿El atestado cumple con todos los siguientes requisitos?</h1>
+                <ul>
+                    @foreach (var item in ViewBag.RequisitosEval)
+                    {
+                        <li>
+                            @item.Descripcion
+                        </li>
+                    }
+                </ul>
+                <input class="form-check-input" type="checkbox" value="yes" id="requisitosCheckboxEval" />
+                <label for="observacionesEval">Observaciones:</label>
+                <textarea id="observacionesEval" name="observacionesEval" rows="4" cols="50"></textarea>
+                <button type="button" class="btn btn-primary" id="EvaluacionConfirmar">Confirmar</button>
+            </div>
+
+            ¿
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
 
     var id = @Model.AtestadoID;
 
@@ -148,4 +183,27 @@
         }
     })
 
-</script>
+    </script>
+
+    <script type="text/javascript">
+    $('#EvaluacionConfirmar').click(function () {
+        var evaluacion = new Object();
+        evaluacion.requisitosChecked = $('#requisitosCheckboxEval').prop('checked');
+        evaluacion.observaciones = $('#observacionesEval').val();
+        console.log(evaluacion)
+        $.ajax({
+            type: 'POST',
+            url: `@Variables.BaseUrl/EducacionContinuada/Evaluar`,
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(evaluacion),
+            success: function (response) {
+                $('#closeModal').click()
+            }
+
+        }
+
+        });
+    });
+    </script>
