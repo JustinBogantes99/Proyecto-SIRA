@@ -141,10 +141,10 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel">Evaluar requisitos</h4>
+                    <h2 class="modal-title" id="staticBackdropLabel">Evaluar atestado</h2>
                     <button id="closeModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <h1>¿El atestado cumple con todos los siguientes requisitos?</h1>
+                <h4>Requisitos del atestado:</h4>
                 <ul>
                     @foreach (var item in ViewBag.RequisitosEval)
                     {
@@ -153,7 +153,10 @@
                         </li>
                     }
                 </ul>
+                <label for="requisitosCheckboxEval">¿Cumple con los requisitos?</label>
                 <input class="form-check-input" type="checkbox" value="yes" id="requisitosCheckboxEval" />
+                <p>
+                </p>
                 <label for="observacionesEval">Observaciones:</label>
                 <textarea id="observacionesEval" name="observacionesEval" rows="4" cols="50"></textarea>
                 <button type="button" class="btn btn-primary" id="EvaluacionConfirmar">Confirmar</button>
@@ -188,8 +191,8 @@
     <script type="text/javascript">
     $('#EvaluacionConfirmar').click(function () {
         var evaluacion = new Object();
-        evaluacion.requisitosChecked = $('#requisitosCheckboxEval').prop('checked');
-        evaluacion.observaciones = $('#observacionesEval').val();
+        evaluacion.TieneRequisitos = $('#requisitosCheckboxEval').prop('checked');
+        evaluacion.Observaciones = $('#observacionesEval').val();
         console.log(evaluacion)
         $.ajax({
             type: 'POST',
@@ -199,11 +202,10 @@
             dataType: 'html',
             data: JSON.stringify(evaluacion),
             success: function (response) {
-                $('#closeModal').click()
+                window.location.reload()
             }
 
-        }
-
         });
+
     });
     </script>

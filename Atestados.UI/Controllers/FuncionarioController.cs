@@ -161,7 +161,16 @@ namespace Atestados.UI.Controllers
         [HttpPost]
         public float notaAtestado(AtestadoDTO atestado)
         {
-            return infoRubrica.CargarEvaluacionDeAtestado(atestado.AtestadoID).Puntaje;
+            var puntaje= infoRubrica.CargarEvaluacionDeAtestado(atestado.AtestadoID);
+            if (puntaje == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return puntaje.Puntaje;
+            }    
+            
         }
 
     }
