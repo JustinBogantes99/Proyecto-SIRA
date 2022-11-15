@@ -131,6 +131,7 @@ namespace Atestados.Negocios.Negocios
 
         public void GuardarEvaluacion(Evaluacion evaluacion)
         {
+            db.Evaluacion.RemoveRange(db.Evaluacion.Where(e => e.AtestadoID == evaluacion.AtestadoID));
             db.Evaluacion.Add(evaluacion);
             db.SaveChanges();
         }
