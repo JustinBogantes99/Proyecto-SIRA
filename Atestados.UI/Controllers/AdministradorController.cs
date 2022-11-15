@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Atestados.Objectos;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers
 {
@@ -23,6 +24,23 @@ namespace Atestados.UI.Controllers
 
         InformacionGeneral info = new InformacionGeneral();
         InformacionAtestado infoAtestado = new InformacionAtestado();
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
+
         // GET: Administrador
         public ActionResult Index()
         {

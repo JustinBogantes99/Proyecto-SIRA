@@ -9,6 +9,7 @@ using Atestados.Objetos.Dtos;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers.Atestados
 {
@@ -19,6 +20,22 @@ namespace Atestados.UI.Controllers.Atestados
         private InformacionGeneral infoGeneral = new InformacionGeneral();
         private readonly string Rubro = "Actividades para el fortalecimiento de la investigación y la extensión";
         public static List<ArchivoDTO> archivosOld = null;
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
 
         // GET: FortalecimientoInvExt
         public ActionResult Index()

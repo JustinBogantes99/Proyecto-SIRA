@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using System.Web.WebPages;
 using Atestados.Objetos.Dtos;
 using Atestados.Negocios.Negocios;
+using System.Web.Routing;
 
 namespace Atestados.UI.Controllers
 {
@@ -33,6 +34,22 @@ namespace Atestados.UI.Controllers
 
         private InformacionGeneral info = new InformacionGeneral();
         #endregion
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            // Si la sesión es null, se redirige a la página de login
+            if (Session["Usuario"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(
+                    new RouteValueDictionary
+                    {
+                        {"controller", "Login"},
+                        {"action", "Index"}
+                    }
+                );
+                return;
+            }
+        }
 
         [Route("")]
         [Route("Home")]

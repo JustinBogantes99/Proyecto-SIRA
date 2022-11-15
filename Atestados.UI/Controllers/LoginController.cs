@@ -96,7 +96,7 @@ namespace Atestados.UI.Controllers
         //Cerrar sesión de aplicación
         public ActionResult CerrarSesion()
         {
-            //inserta en bitácora del sistema de seguridad la salida
+            //inserta en bitácora del sist ema de seguridad la salida
             if (Session["Usuario"] != null)
             {
                 // ServiciosSeguridad.InsertarBitacoraSistema("Cierre de sesión Usuario : " + Session[ConfigurationManager.AppSettings["UsuarioLogueado"]].ToString(), Constantes.CodigosBitacora.INACTIVAR, "LoginController - Interno", "CerrarSesion", false, Convert.ToInt32(Session[ConfigurationManager.AppSettings["CodigoUsuarioLogueado"]]), Session[ConfigurationManager.AppSettings["UsuarioLogueado"]].ToString(), Utilitarios.Clases.Utilitarios.GetIpAddress(), Session[sessionId].ToString(), null);
