@@ -260,7 +260,7 @@ namespace Atestados.UI.Controllers.Atestados
 
             infoRubrica.GuardarEvaluacion(evaluacion);
 
-            return RedirectToAction("Ver/"+ (int)Session["idAtestado"]);
+            return RedirectToAction("Ver", (int)Session["idAtestado"]);
         }
     }
 }
