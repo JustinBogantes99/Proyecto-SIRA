@@ -235,7 +235,7 @@ namespace Atestados.UI.Controllers.Atestados
             Rubrica rubrica = (Rubrica)Session["Rubrica"];
             int puntaje = 0;
 
-            if (eval.tieneRequisitos)
+            if (eval.TieneRequisitos)
             {
                 puntaje = (int)rubrica.ValorPuntaje;
             }
@@ -243,7 +243,7 @@ namespace Atestados.UI.Controllers.Atestados
             evaluacion.AtestadoID = (int)Session["idAtestado"];
             evaluacion.RubricaID = rubrica.RubricaID;
             evaluacion.Puntaje = puntaje;
-            evaluacion.Observaciones = eval.observaciones;
+            evaluacion.Observaciones = eval.Observaciones;
 
             infoRubrica.GuardarEvaluacion(evaluacion);
 

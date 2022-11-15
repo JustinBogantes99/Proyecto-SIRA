@@ -8,7 +8,7 @@ namespace Atestados.Objetos.Dtos
 {
     public class EvaluacionParams
     {
-        public bool tieneRequisitos { get; set; }
-        public string observaciones { get; set }
+        public bool TieneRequisitos { get; set; }
+        public string Observaciones { get; set; }
     }
 }
