@@ -2,6 +2,7 @@
 
 @using Atestados.Negocios.Negocios;
 @using Atestados.Objetos.Dtos;
+
 @{
     ViewBag.Title = "EvaluarPrototipo";
 }
@@ -27,16 +28,14 @@
                     </dd>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Nombre)
-                    </dd>
-
-                    <dd>
                         @Html.DisplayFor(model => model.Fecha.FechaFinal)
                     </dd>
                     <dd>
                         @Html.DisplayFor(model => model.Observaciones)
                     </dd>
-
+                    <dd id="nota">
+                        <h4>Nota ponderada:</h4>
+                    </dd>
                 </dl>
             </div>
             <div class="col-lg-4">
@@ -81,7 +80,7 @@
                         {
                             <tr>
                                 <td>
-                                    ¿ Cumple con el requisitio @item.Nombre ?
+                                    ¿Cumple con el requisitio @item.Nombre ?
                                 </td>
                                 <td>
                                     <input class="form-check-input" type="checkbox" value="" id="hiddenCheck" name="hiddenCheck" />
