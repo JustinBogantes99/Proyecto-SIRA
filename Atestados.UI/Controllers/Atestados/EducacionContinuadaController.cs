@@ -19,6 +19,7 @@ namespace Atestados.UI.Controllers.Atestados
         private AtestadosEntities db = new AtestadosEntities();
         private InformacionAtestado infoAtestado = new InformacionAtestado();
         private InformacionGeneral infoGeneral = new InformacionGeneral();
+        private InformacionRubrica infoRubrica = new InformacionRubrica();
         private readonly string Rubro = "Cursos de educación continuada";
         public static List<ArchivoDTO> archivosOld = null;
 
@@ -46,6 +47,9 @@ namespace Atestados.UI.Controllers.Atestados
             ViewBag.Autores = infoAtestado.CargarAutoresAtestado(id);
             ViewBag.NotasPonderadas = infoAtestado.CargarNotasPonderadasAutores(id);
             ViewBag.Puntos = infoAtestado.CargarPuntosAutores(id);
+            Rubrica rubrica = infoRubrica.CargarRubricaActualPorRubro(atestado.RubroID);
+            ViewBag.RequisitosEval = infoRubrica.CargarRequisitosDeRubrica(rubrica.RubricaID);
+            Session["Rubrica"] = rubrica;
             Session["TipoUsuario"] = usuario.TipoUsuario;
             Session["idAtestado"] = id;
             Session["idUsuario"] = usuario.UsuarioID;
@@ -222,6 +226,28 @@ namespace Atestados.UI.Controllers.Atestados
             ViewBag.Atestados = infoAtestado.CargarAtestadosDePersonaPorTipo(infoAtestado.ObtenerIDdeRubro(Rubro), (int)Session["UsuarioID"]);
             ViewBag.Autores = infoAtestado.CargarAutoresAtestado(atestado.AtestadoID);
             return View(atestado);
+        }
+
+        [HttpPost]
+        public ActionResult Evaluar(EvaluacionParams eval)
+        {
+            Evaluacion evaluacion = new Evaluacion();
+            Rubrica rubrica = (Rubrica)Session["Rubrica"];
+            int puntaje = 0;
+
+            if (eval.tieneRequisitos)
+            {
+                puntaje = (int)rubrica.ValorPuntaje;
+            }
+
+            evaluacion.AtestadoID = (int)Session["idAtestado"];
+            evaluacion.RubricaID = rubrica.RubricaID;
+            evaluacion.Puntaje = puntaje;
+            evaluacion.Observaciones = eval.observaciones;
+
+            infoRubrica.GuardarEvaluacion(evaluacion);
+
+            return RedirectToAction("Ver");
         }
     }
 }

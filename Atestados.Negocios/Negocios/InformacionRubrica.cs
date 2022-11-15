@@ -99,6 +99,14 @@ namespace Atestados.Negocios.Negocios
             return db.Rubrica.Find(id);
         }
 
+        public Rubrica CargarRubricaActualPorRubro(int? idRubro)
+        {
+            return (Rubrica)db.Rubrica
+                .Where(ru => ru.RubroID == idRubro)
+                .OrderByDescending(ru => ru.Fecha)
+                .Take(1);
+        }
+
         public void BorrarRubrica(int? id)
         {
             db.Rubrica.RemoveRange(db.Rubrica.Where(r => r.RubricaID == id));
@@ -114,6 +122,16 @@ namespace Atestados.Negocios.Negocios
         public void GuardarRubrica(Rubrica rubrica)
         {
             db.Rubrica.Add(rubrica);
+            db.SaveChanges();
+        }
+
+        #endregion
+
+        #region Evaluacion
+
+        public void GuardarEvaluacion(Evaluacion evaluacion)
+        {
+            db.Evaluacion.Add(evaluacion);
             db.SaveChanges();
         }
 
