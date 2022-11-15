@@ -98,6 +98,19 @@
         controllers.push(@infoAtestado.ObtenerIDdeRubro("Ponencia"))
         controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"))
 
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"))
+
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Desarrollo de software"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Obras artísticas"))
+
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Cursos de educación continuada"))
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Cursos libres"))
+
+        controllers.push(@infoAtestado.ObtenerIDdeRubro("Actividades para el fortalecimiento de la investigación y la extensión"))
+        
+
+        //esta funcion es necesaria para poder visualizar los atestado en la opcion de evaluar 
         $('#seleccionarTodos').click(function (e) {
                 var table = $(e.target).closest('table');
             $('td input:checkbox', table).prop('checked', this.checked);
@@ -138,6 +151,27 @@
                     break;
                 case controllers[8].toString():
                     url = "/Proyecto/" + action + "/" + atestado
+                    break;
+                case controllers[9].toString():
+                    url = "/ProyectoGradGalar/" + action + "/" + atestado
+                    break;
+                case controllers[10].toString():
+                    url = "/ProyectoInvDocente/" + action + "/" + atestado
+                    break;
+                case controllers[11].toString():
+                    url = "/DesarrolloSoftware/" + action + "/" + atestado
+                    break;
+                case controllers[12].toString():
+                    url = "/ObraArtistica/" + action + "/" + atestado
+                    break;
+                case controllers[13].toString():
+                    url = "/EducacionContinuada/" + action + "/" + atestado
+                    break;
+                case controllers[14].toString():
+                    url = "/CursoLibre/" + action + "/" + atestado
+                    break;
+                case controllers[15].toString():
+                    url = "/FortalecimientoInvExt /" + action + "/" + atestado
                     break;
                 default:
                     url = "/" + action + "/" + atestado

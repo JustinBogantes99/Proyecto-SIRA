@@ -7,7 +7,7 @@ CREATE TABLE [dbo].[Rubrica] (
   [ValorPuntaje] FLOAT NULL,
   [DescripcionPuntaje] NVARCHAR(1000) NULL,
   [PuntajeTiempoID] INT NULL,
-  [Fecha] DATE NOT NULL,
+  [Fecha] DATETIME NOT NULL,
   [RubroID] INT NOT NULL CONSTRAINT [Rubrica_pkey] PRIMARY KEY ([RubricaID]),
 );
 
