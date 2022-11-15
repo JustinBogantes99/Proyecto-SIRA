@@ -183,9 +183,10 @@
         var evaluacion = new Object();
         evaluacion.requisitosChecked = $('#requisitosCheckboxEval').prop('checked');
         evaluacion.observaciones = $('#observacionesEval').val();
+        console.log(evaluacion)
         $.ajax({
             type: 'POST',
-            url: `${baseUrl}/EducacionContinuada/Evaluar`,
+            url: `@Variables.BaseUrl/EducacionContinuada/Evaluar`,
             async: false,
             contentType: 'application/json; charset=utf-8',
             dataType: 'html',
