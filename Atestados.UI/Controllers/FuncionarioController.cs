@@ -19,6 +19,7 @@ namespace Atestados.UI.Controllers
     {
         private readonly InformacionAtestado infoAtestado = new InformacionAtestado();
         private readonly InformacionGeneral infoGeneral = new InformacionGeneral();
+        private readonly InformacionRubrica infoRubrica = new InformacionRubrica();
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -160,7 +161,7 @@ namespace Atestados.UI.Controllers
         [HttpPost]
         public float notaAtestado(AtestadoDTO atestado)
         {
-            return infoAtestado.ObtenerNotaAtestado(atestado);           
+            return infoRubrica.CargarEvaluacionDeAtestado(atestado.AtestadoID).Puntaje;
         }
 
     }

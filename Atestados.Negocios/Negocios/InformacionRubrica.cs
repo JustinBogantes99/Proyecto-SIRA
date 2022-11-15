@@ -136,6 +136,11 @@ namespace Atestados.Negocios.Negocios
             db.SaveChanges();
         }
 
+        public Evaluacion CargarEvaluacionDeAtestado(int idAtestado)
+        {
+            return db.Evaluacion.Where(e => e.AtestadoID == idAtestado).FirstOrDefault();
+        }
+
         #endregion
 
     }
