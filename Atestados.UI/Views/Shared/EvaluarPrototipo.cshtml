@@ -1,0 +1,94 @@
+﻿@model Atestados.Objetos.Dtos.AtestadoDTO
+
+@using Atestados.Negocios.Negocios;
+@using Atestados.Objetos.Dtos;
+
+@{
+    ViewBag.Title = "EvaluarPrototipo";
+}
+
+    <div class="container-fluid">
+        @RenderPage("~/Views/Shared/BotonRegresar.cshtml")
+        <div class="mt-4">
+            <h2>Evaluar Atestado</h2>
+            <hr />
+        </div>
+        <div class="row w-100">
+            <div class="col-lg-6">
+                <!-- columna izquierda -->
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Persona.Nombre)
+                        @Html.DisplayFor(model => model.Persona.PrimerApellido)
+                        @Html.DisplayFor(model => model.Persona.SegundoApellido)
+                    </dd>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Fecha.FechaFinal)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Observaciones)
+                    </dd>
+                    <dd id="nota">
+                        <h4>Nota ponderada:</h4>
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-lg-4">
+                <!-- columna derecha -->
+                <div class="row table-wraper scrollbar-atestados">
+                    <h4>Archivos</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nombre
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Archivos)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Nombre
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group pt-1">
+                <div class="col-md-10">
+                    <input type="submit" class="btn btn-outline-primary" " value="Evaluar Atestado" form="subirArchivo" data-bs-toggle="modal" data-bs-target="#requisitos" />
+                </div>
+            </div>
+        </div>
+
+        @*Modal de rubrica.*@
+        <div id="requisitos" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <h1>
+                        @foreach (var item in Model.Archivos) 
+                        {
+                            <tr>
+                                <td>
+                                    ¿Cumple con el requisitio @item.Nombre ?
+                                </td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="" id="hiddenCheck" name="hiddenCheck" />
+                                </td>
+                            </tr>
+                        }
+                    </h1>
+
+                </div>
+            </div>
+        </div>

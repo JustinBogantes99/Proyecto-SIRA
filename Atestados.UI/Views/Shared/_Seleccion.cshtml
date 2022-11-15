@@ -1,14 +1,18 @@
-﻿@using Atestados.Negocios.Negocios;
+﻿@model Atestados.Objetos.Dtos.RubricaDTO
+@using Atestados.Negocios.Negocios;
 @using Atestados.Objetos.Dtos;
 
 <div class="form-group pt-2">
     <h3>Seleccion</h3>
-    <table class="table">
-        <tr>
-            <td>
-                <input class="form-control" type="text" placeholder="Descripcíon puntaje" id="DescripcionPuntaje" />
-            </td>
-            <td><input class="form-control" type="number" placeholder="Valor" id="valor" /></td>
-        </tr>
-    </table>
+    @Html.Partial("_SeleccionTabla")
+    <div class="input-group">
+        <input class="form-control" type="text" placeholder="Descripción del puntaje" id="descripcionSeleccion" runat="server" />
+        <input class="form-control" type="number" placeholder="Puntaje" id="puntajeSeleccion" runat="server" />
+    </div>
+    <p> </p>
+    <div >
+        
+        <button type="button" class="btn btn-primary" id="SeleccionPuntajeAgregar">Agregar</button>
+    </div>
+</div>
 </div>
