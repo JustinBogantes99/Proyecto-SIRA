@@ -54,16 +54,15 @@ namespace Atestados.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(PersonaDTO persona)
+        public ActionResult Index(List<int> atestadosID)
         {
-            foreach(AtestadoDTO a in persona.PorEnviar)
+            foreach( int valorID in atestadosID)
             {
-                if (a.MarcarEnviado)
-                {
-                    Atestado atestado = infoAtestado.CargarAtestadoParaEditar(a.AtestadoID);
-                    atestado.Enviado = a.MarcarEnviado ? 1 : 0;
-                    infoAtestado.EditarAtestado(atestado);
-                }      
+                
+                Atestado atestado = infoAtestado.CargarAtestadoParaEditar(valorID);
+                atestado.Enviado = 1;
+                infoAtestado.EditarAtestado(atestado);
+                
             }
             return View(ObtenerPersona());
         }

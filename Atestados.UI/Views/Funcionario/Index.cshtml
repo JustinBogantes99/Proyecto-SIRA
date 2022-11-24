@@ -16,7 +16,7 @@
         <h4>Documentos sin enviar</h4>
     </div>
     <div class="container-fluid">
-        @using (Html.BeginForm("Index", "Funcionario", FormMethod.Post))
+        @using (Html.BeginForm())
         {
             @Html.HiddenFor(model => model.PersonaID)
             @Html.HiddenFor(model => model.Nombre)
@@ -26,7 +26,7 @@
             @Html.HiddenFor(model => model.Telefono)
             @Html.HiddenFor(model => model.TipoUsuario)
             @Html.HiddenFor(model => model.CategoriaActual)
-            <table class="table table-striped">
+            <table class="table table-striped" id="EnviarTable">
                 <thead>
                     <tr>
                         <th scope="col" style="width:5%">
@@ -49,10 +49,10 @@
                     {
                         <tr>
                             <td scope="col">
-                                @Html.CheckBoxFor(m => m.PorEnviar[i].MarcarEnviado)
+                                @Html.CheckBoxFor(m => m.PorEnviar[i].MarcarEnviado, new { id = "marcarEnviado" })
                             </td>
-                            <td scope="col">
-                                @Html.DisplayFor(m => m.PorEnviar[i].AtestadoID, new { @readonly = "readonly", @style = "border: none"})
+                            <td scope="col" id = "enviarID" >
+                                @Html.DisplayFor(m => m.PorEnviar[i].AtestadoID, new { @readonly = "readonly", @style = "border: none" ,id = "enviarID" })
 
                             </td>
                             <td scope="col">
@@ -201,8 +201,24 @@
     controllers.push(@infoAtestado.ObtenerIDdeRubro("Ponencia"))
     /**/
     /**/
-    controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de investigación y extensión"))
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de graduación galardonados"))
     /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Obras artísticas"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Proyectos de innovación docente"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Cursos libres"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Capacitación interna"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Desarrollo de software"))
+    /**/
+    /**/
+    controllers.push(@infoAtestado.ObtenerIDdeRubro("Actividades para el fortalecimiento de la investigación y la extensión"))
 
     $('#seleccionarTodos').click(function (e) {
         var table = $(e.target).closest('table');
@@ -262,3 +278,26 @@
 });
 </script>
 
+<script type="text/javascript">
+
+    $('#submit').click(function (e) {
+        var id = []
+        $('#EnviarTable tr').each(function () {
+            var check = $(this).find('#marcarEnviado').prop('checked')
+            if (check) {
+                var atestadoID = parseInt($(this).find('#enviarID').text())
+                id.push(atestadoID)
+            }
+        });
+        if (id.length>0) {
+            $.ajax({
+            type: 'POST',
+            url: '@Variables.BaseUrl/Funcionario',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: JSON.stringify(id)
+        })
+        }
+    });
+</script>
