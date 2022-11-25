@@ -9,10 +9,15 @@
 
 */
 Use Atestados;
-INSERT INTO Persona VALUES ('Administrador', 'Admin', 'Admin', 'admin@mail.com', 1, 1, 00000000, 1); /* Crear Persona Primero */
+INSERT INTO Persona (Nombre, PrimerApellido, SegundoApellido, Email, CategoriaActual, TipoUsuario, Telefono, esActivo)
+VALUES ('Administrador', 'Admin', 'Admin', 'admin@mail.com', 1, 1, 00000000, 1); /* Crear Persona Primero */
 
-/* Crear Usuario Segundo, el primer valor es el ID de Persona, sino es 1, cambiar por el correcto */
-INSERT INTO Usuario VALUES (1, 'admin@mail.com', '$2a$11$NgjqSiLeSzWHFQWiLaMSbOARNgwS0dAakduZCckAcfPmBMPzjEKoC', 1)  
+/* Crear Usuario Segundo */
+INSERT INTO Usuario VALUES ((
+	select PersonaID 
+	from Persona
+	where Email = 'admin@mail.com'), 
+	'admin@mail.com', '$2a$11$NgjqSiLeSzWHFQWiLaMSbOARNgwS0dAakduZCckAcfPmBMPzjEKoC', 1)  
 
 -- SELECT TOP (1000) [TipoCategoriaID] ,[Nombre] FROM [Atestados].[dbo].[TipoCategoria]
 -- SELECT TOP (1000) [TipoUsuarioID] ,[Nombre] FROM [Atestados].[dbo].[TipoUsuario]
